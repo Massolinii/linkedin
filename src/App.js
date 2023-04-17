@@ -1,15 +1,15 @@
 import "./App.css";
-
+import MyNav from "./component/MyNav";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Container, Row, Col } from "react-bootstrap";
-import Test from "./component/test";
+
 
 function App() {
   return (
     <BrowserRouter>
+    <MyNav/>
       <Container>
         <Row></Row>
-        <Test />
         <Routes>
           <Route path="*" />
           <Route path="/profile" element={<></>} />
