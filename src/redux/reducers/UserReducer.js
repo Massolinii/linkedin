@@ -6,12 +6,12 @@ const initialState = {
 };
 const UserReducer = (state = initialState, action) => {
   switch (action.type) {
-    case SET_OTHER_PEOPLE:
+    case SET_MY_PROFILE:
       return {
         ...state,
         myProfile: action.payload,
       };
-    case SET_MY_PROFILE:
+    case SET_OTHER_PEOPLE:
       return {
         ...state,
         otherPeople: action.payload,
