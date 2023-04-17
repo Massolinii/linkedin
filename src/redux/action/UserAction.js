@@ -15,7 +15,7 @@ export const setOtherPeople = (data) => {
 };
 
 const API_KEY =
-  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDNjZjQ2YTE4NmE4NzAwMTQzODY3YjciLCJpYXQiOjE2ODE3MTYzMzAsImV4cCI6MTY4MjkyNTkzMH0.W_8jJorRnuOYGtkVo1rTmrMx0Jj18Heth2NyOzc8ytc";
+  "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDNjZjQ2YTE4NmE4NzAwMTQzODY3YjciLCJpYXQiOjE2ODE3MTYzMzAsImV4cCI6MTY4MjkyNTkzMH0.W_8jJorRnuOYGtkVo1rTmrMx0Jj18Heth2NyOzc8ytc";
 
 export const getData = async () => {
   try {
@@ -23,7 +23,8 @@ export const getData = async () => {
       `https://striveschool-api.herokuapp.com/api/profile/me`,
       {
         headers: {
-          "Authorization": API_KEY,
+          'Content-type': "application/json",
+          Authorization: API_KEY,
         },
       }
     );
