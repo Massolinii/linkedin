@@ -8,7 +8,7 @@ function App() {
   return (
     <BrowserRouter>
       <Container>
-        <Row>{/*MyNav*/}</Row>
+        <Row></Row>
         <Test />
         <Routes>
           <Route path="*" />

@@ -1,8 +1,18 @@
-import { SET_MY_PROFILE, SET_OTHER_PEOPLE } from "../action/UserAction";
+import { Profiler } from "react";
+import {
+  SET_MY_PROFILE,
+  SET_OTHER_PEOPLE,
+  SET_THIS_PROFILE,
+  SET_USER_ID,
+} from "../action/UserAction";
 
 const initialState = {
   myProfile: {}, //fetch profile/me
-  otherPeople: [],
+  otherPeople: [], //fetch profile/
+  thisProfile: {
+    userID: null,
+    profile: {},
+  }, //fetch profile/{userID}
 };
 const UserReducer = (state = initialState, action) => {
   switch (action.type) {
@@ -15,6 +25,19 @@ const UserReducer = (state = initialState, action) => {
       return {
         ...state,
         otherPeople: action.payload,
+      };
+    case SET_USER_ID:
+      return {
+        ...state,
+        thisProfile: { ...state.thisProfile, userID: action.payload },
+      };
+    case SET_THIS_PROFILE:
+      return {
+        ...state,
+        thisProfile: {
+          ...state.thisProfile.userID,
+          thisProfile: action.payload,
+        },
       };
     default:
       return state;
