@@ -145,3 +145,77 @@ body {
     position: absolute !important;
   }
 }
+
+
+
+
+
+
+
+.footer {
+  
+  background-color: white;
+  color: gray;
+  padding-left: 12em;
+  padding-right: 5em;
+}
+
+.freccia-dropdown {
+  font-size: 22px;
+}
+
+
+
+.footer {
+  background-color: #f3f2ee;
+}
+
+.footer-col,
+.footerCopiright {
+  padding: 0;
+}
+
+.footerCopiright {
+  font-size: 0.8em;
+}
+
+.footer-col ul {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+  
+}
+
+.footer-col ul li {
+  margin: 10px 0;
+  font-size: 12px;
+  font-weight: 600;
+  
+}
+
+.col-2{
+  padding-right: 0;
+  width: auto;
+}
+.fourcol{
+  
+  padding: 0;
+  font-size: 12px;
+  font-weight: 600;
+  
+}
+.i-footer {
+  font-size: 20px;
+  padding: 0px;
+ 
+  
+}
+
+.footer select {
+  width: 85%;
+}
+
+
+
+

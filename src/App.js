@@ -14,10 +14,13 @@ function App() {
           <Route path="*" />
           <Route path="/profile" element={<></>} />
         </Routes>
-        <Row>{/*MyFooter*/}</Row>
+        
       </Container>
+      <MyFooter></MyFooter>
     </BrowserRouter>
   );
 }
 
 export default App;
+
+
