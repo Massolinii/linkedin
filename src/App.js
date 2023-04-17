@@ -1,7 +1,8 @@
 import "./App.css";
 import MyNav from "./component/MyNav";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { Container, Row, Col } from "react-bootstrap";
+import { Container, Row,  } from "react-bootstrap";
+import MyFooter from "./component/MyFooter";
 
 
 function App() {
