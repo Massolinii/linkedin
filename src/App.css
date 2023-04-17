@@ -1,38 +1,222 @@
-.App {
-  text-align: center;
+body {
+  background-color: #f3f2ee;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+
+
+
+.navbar-navigation{
+  padding: 0 7rem;
+  background-color: white;
+  color: gray;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.navbar-navigation {
+  border-bottom: 1px solid lightgray;
+  text-align: center !important;
+  margin-left: 1px;
+  position: sticky !important;
+  z-index: 9;
+  top: 0 !important;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.link-nav {
+  text-decoration: none !important;
+}
+
+.nav-col {
+  display: flex;
+
+  padding: 10px 0 0;
+}
+
+.text-secondary-special {
+  color: gray !important;
+}
+
+.nav-col .form {
+  position: relative;
+  margin-left: 10px;
+  width: 20rem;
+  height: 45px;
+}
+
+.linkedin-logo {
+  font-size: 55px;
+  color: rgb(10, 102, 194);
+}
+
+
+
+
+
+.input-search {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.form-ricerca {
+  background-color: #eef3f8;
+  padding-left: 45px;
+}
+
+.ul-nav {
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  margin: 0;
+  padding: 0;
+}
+
+.ul-ul {
+  border-left: 1px solid lightgray;
+}
+
+.ul-nav li {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  padding: 0 20px;
+  font-size: 0.8em;
 }
 
-.App-link {
-  color: #61dafb;
+.ul-nav li span {
+  display: flex;
+  align-items: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.ul-nav li a {
+  color: #282c34;
+}
+
+.freccia-dropdown {
+  font-size: 22px;
+}
+
+.i-nav {
+  font-size: 25px;
+}
+
+
+
+
+
+/* MEDIA QUERY PER NAVBAR MOBILE */
+
+@media only screen and (max-width: 600px) {
+
+  .i-nav,
+  .premium,
+  .linkedin-logo {
+    display: none !important;
   }
-  to {
-    transform: rotate(360deg);
+
+  .home {
+    display: block !important;
+    margin-left: 40px !important;
+  }
+
+  .tu {
+    display: block !important;
+  }
+
+  .navbar-navigation {
+    display: flex;
+    justify-content: space-between !important;
+    padding: 0 !important;
+  }
+
+  .nav-col {
+    padding: 0 !important;
+    height: 100 px !important;
+    margin-left: 30px !important;
+  }
+
+  .ul-nav {
+    text-align: center !important;
   }
 }
+
+@media only screen and (min-width: 857px) {
+  .background {
+    width: 92% !important;
+    background-size: cover !important;
+    height: 180px !important;
+    position: absolute !important;
+  }
+}
+
+
+
+
+
+
+
+.footer {
+  
+  background-color: white;
+  color: gray;
+  padding-left: 12em;
+  padding-right: 5em;
+}
+
+.freccia-dropdown {
+  font-size: 22px;
+}
+
+
+
+.footer {
+  background-color: #f3f2ee;
+}
+
+.footer-col,
+.footerCopiright {
+  padding: 0;
+}
+
+.footerCopiright {
+  font-size: 0.8em;
+}
+
+.footer-col ul {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+  
+}
+
+.footer-col ul li {
+  margin: 10px 0;
+  font-size: 12px;
+  font-weight: 600;
+  
+}
+
+.col-2{
+  padding-right: 0;
+  width: auto;
+}
+.fourcol{
+  
+  padding: 0;
+  font-size: 12px;
+  font-weight: 600;
+  
+}
+.i-footer {
+  font-size: 20px;
+  padding: 0px;
+ 
+  
+}
+
+.footer select {
+  width: 85%;
+}
+
+
+
+

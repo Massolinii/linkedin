@@ -1,21 +1,28 @@
-import "./App.css";
-
+import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { Container, Row, Col } from "react-bootstrap";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "./App.css";
+import { Container, Row } from "react-bootstrap";
+import MyFooter from "./component/MyFooter";
+
 
 function App() {
   return (
     <BrowserRouter>
+   
       <Container>
-        <Row>{/*MyNav*/}</Row>
+        
         <Routes>
           <Route path="*" />
           <Route path="/profile" element={<></>} />
         </Routes>
-        <Row>{/*MyFooter*/}</Row>
+        
       </Container>
+      <MyFooter></MyFooter>
     </BrowserRouter>
   );
 }
 
 export default App;
+
+
