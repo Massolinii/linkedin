@@ -1,14 +1,18 @@
 import { Container, Row, Col } from "react-bootstrap";
-import MyNav from "./MyNav";
-import MyFooter from "./MyFooter";
+// import MyNav from "./MyNav";
+// import MyFooter from "./MyFooter";
+import HeroProfile from "./profileRoute/HeroProfile";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 const MyProfilePage = () => {
   return (
     <>
       <Container fluid>
-        <MyNav />
+        {/* <MyNav /> */}
         <Row className="justify-content-center">
-          <Col am={12} md={7}>
+          <Col sm={12} md={7}>
+            <HeroProfile />
+            <h1>Ciao</h1>
             <Row>{/* HERO */}</Row>
             <Row>{/* INFORMAZIONI */}</Row>
             <Row>{/* INTERESSI */}</Row>
@@ -20,7 +24,7 @@ const MyProfilePage = () => {
             <Row>{/* MY FRIENDs */}</Row>
           </Col>
         </Row>
-        <MyFooter />
+        {/* <MyFooter /> */}
       </Container>
     </>
   );
