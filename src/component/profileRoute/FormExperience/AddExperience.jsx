@@ -20,8 +20,6 @@ function AddExperience({ handleClose }) {
   return (
     <>
       <Form>
-        <h4>Aggiungi esperienza</h4>
-
         <p> Indica che è obbligatorio</p>
 
         {/* INPUT QUALIFICA */}
