@@ -113,7 +113,8 @@ function AddExperience({ handleClose }) {
         {/* INPUT DESCRIZIONE */}
         <Form.Group className="mb-3">
           <Form.Label>Descrizione</Form.Label>
-          <Form.Control as="texarea" />
+          <Form.Control as="textarea" />
+          <p className="offset-end">0/2.000</p>
           We'll never share your email with anyone else.
         </Form.Group>
 
