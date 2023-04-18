@@ -2,10 +2,16 @@ import { Container, Row, Col } from "react-bootstrap";
 
 const Interests = () => {
   return (
-    <Container>
+    <Container className="mt-4 p-4 border rounded-3 bg-light">
       <Row>
-        <Col>
-          <h4>{/* INTERESSI */}</h4>
+        <Col xs={12} md={8}>
+          <h3>Interessi</h3>
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ducimus
+            reprehenderit dignissimos qui maiores fugit quos temporibus dolore,
+            mollitia quod, in voluptate et facere. Nisi commodi temporibus
+            tempora delectus sapiente ullam!
+          </p>
         </Col>
       </Row>
     </Container>
