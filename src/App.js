@@ -1,21 +1,21 @@
 import "./App.css";
 import MyNav from "./component/MyNav";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { Container, Row,  } from "react-bootstrap";
+import { Container, Row } from "react-bootstrap";
 import MyFooter from "./component/MyFooter";
 
+import MyProfilePage from "./component/MyProfilePage";
 
 function App() {
   return (
     <BrowserRouter>
-    <MyNav/>
+      <MyNav />
       <Container>
         <Row></Row>
         <Routes>
           <Route path="*" />
-          <Route path="/profile" element={<></>} />
+          <Route path="/" element={<MyProfilePage />} />
         </Routes>
-        
       </Container>
       <MyFooter></MyFooter>
     </BrowserRouter>
@@ -23,5 +23,3 @@ function App() {
 }
 
 export default App;
-
-
