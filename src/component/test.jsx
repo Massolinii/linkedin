@@ -12,7 +12,7 @@ const Test = () => {
   const { userID } = useParams();
 
   //const thisID = useSelector((state) => state.user.thisProfile.userID);
-  useEffect(() => {
+  const checkUserID = () => {
     if (userID) {
       dispatch(setThisUserID(userID));
     } else {
@@ -20,15 +20,27 @@ const Test = () => {
     }
     // dispatch(getThisProfile);
     console.log(userID);
-  }, [userID]);
+  };
   useEffect(() => {
+    checkUserID();
     dispatch(getAllProfile);
     dispatch(getUserProfile);
   }, []);
   return (
     <>
       <p>Sono una prova</p>;
-      <Link to="/5fc4ae95b708c200175de88d">altro utente</Link>
+      {userID ? (
+        <Link to="/profile" onClick={() => dispatch(setThisUserID(null))}>
+          mioProfilo
+        </Link>
+      ) : (
+        <></>
+      )}
+      {userID ? (
+        <></>
+      ) : (
+        <Link to="/profile/5fc4ae95b708c200175de88d">altro utente</Link>
+      )}
     </>
   );
 };
