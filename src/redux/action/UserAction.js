@@ -1,8 +1,10 @@
+/* AZIONI PROFILE */
 export const SET_MY_PROFILE = "SET_MY_PROFILE";
 export const SET_OTHER_PEOPLE = "SET_OTHER_PEOPLE";
 export const SET_THIS_PROFILE = "SET_THIS_PROFILE";
 export const SET_USER_ID = "SET_USER_ID";
 
+/* EXPORT AZIONI PROFILE */
 export const setMyProfile = (data) => {
   return {
     type: SET_MY_PROFILE,
@@ -54,6 +56,7 @@ export const getUserProfile = async (dispatch) => {
     console.log("Fetch try failed,", error);
   }
 };
+
 export const getAllProfile = async (dispatch) => {
   try {
     let response = await fetch(
@@ -75,6 +78,7 @@ export const getAllProfile = async (dispatch) => {
     console.log("Fetch try failed,", error);
   }
 };
+
 /*export const getThisProfile = async (dispatch) => {
   try {
     let response = await fetch(

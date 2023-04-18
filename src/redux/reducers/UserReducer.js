@@ -1,4 +1,3 @@
-import { Profiler } from "react";
 import {
   SET_MY_PROFILE,
   SET_OTHER_PEOPLE,
