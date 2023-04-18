@@ -5,7 +5,7 @@ import ExperienceReducer from "../reducers/ExperienceReducer";
 
 const bigReducer = combineReducers({
   user: UserReducer,
-  experience : ExperienceReducer,
+  experience: ExperienceReducer,
 });
 const store = configureStore({
   reducer: bigReducer,

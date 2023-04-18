@@ -1,16 +1,25 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { getUserExperience, createExperience, getSingleExperience, editExperience,removeExperience } from "../redux/action/ExperienceAction";
+import {
+  getUserExperience,
+  createExperience,
+  getSingleExperience,
+  editExperience,
+  removeExperience,
+  setExpID,
+} from "../redux/action/ExperienceAction";
+import { getAllProfile } from "../redux/action/UserAction";
 
 const ExperienceTest = () => {
   const experiences = useSelector((state) => state.experience.experiences);
   const dispatch = useDispatch();
 
   useEffect(() => {
+    dispatch(getAllProfile);
     dispatch(getUserExperience);
+    dispatch(createExperience);
+    dispatch(createExperience);
   }, []);
-
-  const expID = "fjsdfjds";
 
   const handleCreateExperience = () => {
     const newExperienceData = {
@@ -21,7 +30,7 @@ const ExperienceTest = () => {
       description: "New experience",
       area: "New Area",
     };
-    dispatch(createExperience(newExperienceData));
+    dispatch(createExperience);
   };
 
   const handleFetchSingleExperience = () => {
@@ -40,7 +49,8 @@ const ExperienceTest = () => {
     dispatch(editExperience);
   };
 
-  const handleDeleteExperience = () => {
+  const handleDeleteExperience = (id) => {
+    dispatch(setExpID(id));
     dispatch(removeExperience);
   };
 
@@ -49,12 +59,17 @@ const ExperienceTest = () => {
       <h2>Experiences:</h2>
       {experiences.map((exp) => (
         <div key={exp._id}>
-          <h3>{exp.role}</h3>
+          <h3>{exp.role} </h3>
           <p>{exp.company}</p>
+          <button onClick={() => handleDeleteExperience([exp.user, exp._id])}>
+            delete
+          </button>
         </div>
       ))}
       <button onClick={handleCreateExperience}>Create Experience</button>
-      <button onClick={handleFetchSingleExperience}>Fetch Single Experience</button>
+      <button onClick={handleFetchSingleExperience}>
+        Fetch Single Experience
+      </button>
       <button onClick={handleEditExperience}>Edit Experience</button>
       <button onClick={handleDeleteExperience}>Delete Experience</button>
     </div>
