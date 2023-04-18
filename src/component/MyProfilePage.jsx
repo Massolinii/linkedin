@@ -7,8 +7,34 @@ import StaticComponent from "./profileRoute/StaticComponent";
 import Experience from "./profileRoute/Expirience";
 import Formation from "./profileRoute/Formation";
 import Skills from "./profileRoute/Skills";
+import { useEffect } from "react";
+import { useParams } from "react-router";
+import { useDispatch } from "react-redux";
+import {
+  getAllProfile,
+  getUserProfile,
+  setThisUserID,
+} from "../redux/action/UserAction";
 
 const MyProfilePage = () => {
+  const dispatch = useDispatch();
+  const { userID } = useParams();
+
+  //const thisID = useSelector((state) => state.user.thisProfile.userID);
+  const checkUserID = () => {
+    if (userID) {
+      dispatch(setThisUserID(userID));
+    } else {
+      dispatch(setThisUserID(null));
+    }
+    // dispatch(getThisProfile);
+    console.log(userID);
+  };
+  useEffect(() => {
+    checkUserID();
+    dispatch(getAllProfile);
+    dispatch(getUserProfile);
+  }, []);
   return (
     <Container>
       <Row className="justify-content-center">
