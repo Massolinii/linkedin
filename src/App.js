@@ -14,10 +14,16 @@ function App() {
         <Row></Row>
         <Routes>
           <Route path="*" />
-          <Route path="/" element={<MyProfilePage />} />
+          <Route
+            path="/profile/:userID"
+            element={<MyProfilePage></MyProfilePage>}
+          />
+          <Route path="/profile" element={<MyProfilePage></MyProfilePage>} />
         </Routes>
+        <Row>
+          <MyFooter></MyFooter>
+        </Row>
       </Container>
-      <MyFooter></MyFooter>
     </BrowserRouter>
   );
 }
