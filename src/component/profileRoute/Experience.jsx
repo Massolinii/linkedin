@@ -1,4 +1,4 @@
-import { Container, Row, Col, Modal, Button } from "react-bootstrap";
+import { Container, Row, Col, Modal } from "react-bootstrap";
 import {
   BsPlusLg,
   BsPencil,
@@ -9,11 +9,13 @@ import { Dropdown } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import React, { useState } from "react";
 import AddExperience from "./FormExperience/AddExperience";
+import BreakExperience from "./FormExperience/BreakExperience";
 
 const Experience = () => {
   const [showDropdown, setShowDropdown] = useState(false);
   const [showModal, setShowModal] = useState(false);
   const [show, setShow] = useState(false);
+  const [showPause, setShowPause] = useState(false);
 
   const handleToggle = () => {
     setShowDropdown(!showDropdown);
@@ -28,7 +30,7 @@ const Experience = () => {
         <Row>
           <div className="d-flex justify-content-between">
             <h4>Esperienza</h4>
-            <div className="d-flex justify-content-between">
+            <div>
               <div>
                 <Dropdown
                   show={showDropdown}
@@ -54,6 +56,8 @@ const Experience = () => {
               </div>
               <BsPencil />
             </div>
+
+            {/* ADDEXPERIENCE */}
             <div id="modal">
               <Modal show={show} onHide={handleClose} size="lg">
                 <Modal.Header closeButton>

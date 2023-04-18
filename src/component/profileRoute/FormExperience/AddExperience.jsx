@@ -35,8 +35,18 @@ function AddExperience({ handleClose }) {
 
         {/* INPUT TIPO DI IMPIEGO */}
         <Form.Group className="mb-3">
-          <Form.Label></Form.Label>
-          <Form.Control type="email" placeholder="Enter email" />
+          <Form.Label>Tipo di impiego</Form.Label>
+          <Form.Control as="select" defaultValue="">
+            <option value="">Seleziona</option>
+            <option value="A tempo pieno">A tempo pieno</option>
+            <option value="Part-time">Part-time</option>
+            <option value="Autonomo">Autonomo</option>
+            <option value="Freelance">Freelance</option>
+            <option value="A contratto">A contratto</option>
+            <option value="Stage">Stage</option>
+            <option value="Apprendistato">Apprendistato</option>
+            <option value="Stagionale">Stagionale</option>
+          </Form.Control>
           <p>
             Scopri di più sui
             <a href=".">tipi di impiego</a>.
@@ -103,7 +113,7 @@ function AddExperience({ handleClose }) {
         {/* INPUT DESCRIZIONE */}
         <Form.Group className="mb-3">
           <Form.Label>Descrizione</Form.Label>
-          <Form.Control type="texarea" />
+          <Form.Control as="texarea" />
           We'll never share your email with anyone else.
         </Form.Group>
 
