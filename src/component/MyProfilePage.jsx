@@ -8,33 +8,31 @@ import Experience from "./profileRoute/Expirience";
 import Formation from "./profileRoute/Formation";
 import Skills from "./profileRoute/Skills";
 import { useEffect } from "react";
-import { useParams } from "react-router";
 import { useDispatch } from "react-redux";
+import { useParams } from "react-router-dom";
 import {
-  getAllProfile,
-  getUserProfile,
+  getThisProfile,
+  resetThisProfile,
   setThisUserID,
 } from "../redux/action/UserAction";
 
 const MyProfilePage = () => {
-  const dispatch = useDispatch();
   const { userID } = useParams();
-
-  //const thisID = useSelector((state) => state.user.thisProfile.userID);
+  const dispatch = useDispatch();
+  let fetcha = userID ? true : false;
+  //se user id e` presente setta l'id e fetcha lutente da mostrare
+  //se ci troviamo nella nostra pagine lo resetta
   const checkUserID = () => {
     if (userID) {
       dispatch(setThisUserID(userID));
+      dispatch(getThisProfile);
     } else {
-      dispatch(setThisUserID(null));
+      dispatch(resetThisProfile());
     }
-    // dispatch(getThisProfile);
-    console.log(userID);
   };
   useEffect(() => {
     checkUserID();
-    dispatch(getAllProfile);
-    dispatch(getUserProfile);
-  }, []);
+  }, [fetcha]);
   return (
     <Container>
       <Row className="justify-content-center">

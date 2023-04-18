@@ -5,7 +5,28 @@ body {
 .App {
   text-align: center;
 }
-
+.dropdown-menu {
+  width: 270px;
+}
+.dropdown-item-text > a {
+  color: gray !important;
+  text-decoration: none;
+  font-size: 0.9em;
+}
+.dropdown-item-text > a:hover {
+  color: rgb(74, 74, 74) !important;
+  text-decoration: underline;
+}
+.toProfile {
+  border-radius: 10cm !important;
+  width: 230px !important;
+}
+.toProfile:hover {
+  text-decoration: none !important;
+}
+.notfound {
+  height: 65vh;
+}
 .navbar-navigation {
   padding: 0 7rem;
   background-color: white;
@@ -80,7 +101,11 @@ body {
 }
 
 .ul-nav li a {
-  color: #282c34;
+  color: #808080;
+  text-decoration: none;
+}
+.ul-nav li a:hover {
+  text-decoration: underline;
 }
 
 .freccia-dropdown {
