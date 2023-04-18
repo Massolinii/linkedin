@@ -1,4 +1,4 @@
-import { Container, Row, Col } from "react-bootstrap";
+import { Container, Row, Col, Modal, Button } from "react-bootstrap";
 import {
   BsPlusLg,
   BsPencil,
@@ -13,18 +13,14 @@ import AddExperience from "./FormExperience/AddExperience";
 const Experience = () => {
   const [showDropdown, setShowDropdown] = useState(false);
   const [showModal, setShowModal] = useState(false);
+  const [show, setShow] = useState(false);
 
   const handleToggle = () => {
     setShowDropdown(!showDropdown);
   };
 
-  const handleModalClose = () => {
-    setShowModal(false);
-  };
-
-  const handleAddPosition = () => {
-    setShowModal(true);
-  };
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
 
   return (
     <>
@@ -46,7 +42,7 @@ const Experience = () => {
                     onClick={handleToggle}
                   />
                   <Dropdown.Menu>
-                    <Dropdown.Item onClick={handleAddPosition}>
+                    <Dropdown.Item onClick={handleShow}>
                       <BsBriefcaseFill className="me-2" /> Aggiungi Posizione
                       Lavorativa
                     </Dropdown.Item>
@@ -57,6 +53,16 @@ const Experience = () => {
                 </Dropdown>
               </div>
               <BsPencil />
+            </div>
+            <div id="modal">
+              <Modal show={show} onHide={handleClose} size="lg">
+                <Modal.Header closeButton>
+                  <Modal.Title>Aggiungi esperienza</Modal.Title>
+                </Modal.Header>
+                <Modal.Body>
+                  <AddExperience handleClose={handleClose} />
+                </Modal.Body>
+              </Modal>
             </div>
           </div>
           <Col className="d-flex">
@@ -72,7 +78,6 @@ const Experience = () => {
           </Col>
         </Row>
       </Container>
-      <AddExperience show={showModal} onClose={handleModalClose} />
     </>
   );
 };
