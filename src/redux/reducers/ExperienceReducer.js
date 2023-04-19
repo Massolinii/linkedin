@@ -2,15 +2,24 @@ import {
   SET_EXPERIENCES,
   SET_SINGLE_EXPERIENCE,
   ADD_EXPERIENCE,
-  UPDATE_EXPERIENCE,
   DELETE_EXPERIENCE,
   SET_EXP_ID,
+  SET_NEW_EXP,
 } from "../action/ExperienceAction";
 
 const initialState = {
   experiences: [],
   singleExperience: {},
   IDs: { userID: "", expID: "" },
+  newExp: {
+    role: "",
+    company: "",
+    startDate: "",
+    endDate: null,
+    description: "",
+    area: "",
+    username: "",
+  },
 };
 
 const ExperienceReducer = (state = initialState, action) => {
@@ -35,12 +44,10 @@ const ExperienceReducer = (state = initialState, action) => {
         ...state,
         experiences: [...state.experiences, action.payload],
       };
-    case UPDATE_EXPERIENCE:
+    case SET_NEW_EXP:
       return {
         ...state,
-        experiences: state.experiences.map((experience) =>
-          experience._id === action.payload._id ? action.payload : experience
-        ),
+        newExp: action.payload,
       };
     case DELETE_EXPERIENCE:
       return {

@@ -16,6 +16,7 @@ import {
   setThisUserID,
 } from "../redux/action/UserAction";
 import { useEffect, useState } from "react";
+import { getUserExperience } from "../redux/action/ExperienceAction";
 
 const MyNav = () => {
   const dispatch = useDispatch();
@@ -29,6 +30,7 @@ const MyNav = () => {
     } else {
       dispatch(getAllProfile);
       dispatch(getUserProfile);
+      dispatch(getUserExperience);
       setFetch(true);
     }
   };
@@ -118,9 +120,11 @@ const MyNav = () => {
                       <Row className="pt-1 pb-2">
                         <span>
                           {" "}
-                          {/* {profile.title.length < 16
-                            ? profile.title
-                            : profile.title.substring(0, 16) + "..."} */}
+                          {profile.title
+                            ? profile.title.length < 16
+                              ? profile.title
+                              : profile.title.substring(0, 16) + "..."
+                            : ""}
                         </span>
                       </Row>
                     </Col>

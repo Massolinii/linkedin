@@ -2,19 +2,19 @@ import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import Modal from "react-bootstrap/Modal";
 import { Row, Col } from "react-bootstrap";
-import React, { useState } from "react";
+import React from "react";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  createExperience,
+  setNewExp,
+} from "../../../redux/action/ExperienceAction";
 
 function AddExperience({ handleClose }) {
-  const [esperienze, setEsperienze] = useState({
-    startDate: "",
-    endDate: "",
-  });
-
-  const handleChange = (field, value) => {
-    setEsperienze({
-      ...esperienze,
-      [field]: value,
-    });
+  const dispatch = useDispatch();
+  const newExp = useSelector((state) => state.experience.newExp);
+  const sendForm = () => {
+    handleClose();
+    dispatch(createExperience);
   };
 
   return (
@@ -28,6 +28,15 @@ function AddExperience({ handleClose }) {
           <Form.Control
             type="text"
             placeholder="Esempio: Retail Sales Manager"
+            value={newExp.role}
+            onChange={(e) =>
+              dispatch(
+                setNewExp({
+                  ...newExp,
+                  role: e.target.value,
+                })
+              )
+            }
           />
         </Form.Group>
 
@@ -47,20 +56,44 @@ function AddExperience({ handleClose }) {
           </Form.Control>
           <p>
             Scopri di più sui
-            <a href=".">tipi di impiego</a>.
+            <a href="."> tipi di impiego</a>.
           </p>
         </Form.Group>
 
         {/* INPUT NOME AZIENDA */}
         <Form.Group className="mb-3" required>
           <Form.Label>Nome azienda*</Form.Label>
-          <Form.Control type="text" placeholder="Esempio: Microsoft" />
+          <Form.Control
+            type="text"
+            placeholder="Esempio: Microsoft"
+            value={newExp.company}
+            onChange={(e) =>
+              dispatch(
+                setNewExp({
+                  ...newExp,
+                  company: e.target.value,
+                })
+              )
+            }
+          />
         </Form.Group>
 
         {/* INPUT LOCALITA */}
         <Form.Group className="mb-3">
           <Form.Label>Località</Form.Label>
-          <Form.Control type="text" placeholder="Esempio: Milano, Italia" />
+          <Form.Control
+            type="text"
+            placeholder="Esempio: Milano, Italia"
+            value={newExp.area}
+            onChange={(e) =>
+              dispatch(
+                setNewExp({
+                  ...newExp,
+                  area: e.target.value,
+                })
+              )
+            }
+          />
           <p>Scegli un tipo di località &lpar;es.da remoto&rpar;</p>
         </Form.Group>
 
@@ -71,10 +104,15 @@ function AddExperience({ handleClose }) {
             <Form.Control
               type="date"
               placeholder="Data di inizio"
-              value={esperienze.startDate}
-              onChange={(e) => {
-                handleChange("startDate", e.target.value);
-              }}
+              value={newExp.startDate}
+              onChange={(e) =>
+                dispatch(
+                  setNewExp({
+                    ...newExp,
+                    startDate: e.target.value,
+                  })
+                )
+              }
             />
           </Col>
           <Col>
@@ -82,10 +120,15 @@ function AddExperience({ handleClose }) {
             <Form.Control
               type="date"
               placeholder="Data di fine"
-              value={esperienze.endDate}
-              onChange={(e) => {
-                handleChange("endDate", e.target.value);
-              }}
+              value={newExp.endDate}
+              onChange={(e) =>
+                dispatch(
+                  setNewExp({
+                    ...newExp,
+                    endDate: e.target.value,
+                  })
+                )
+              }
             />
           </Col>
         </Row>
@@ -111,7 +154,18 @@ function AddExperience({ handleClose }) {
         {/* INPUT DESCRIZIONE */}
         <Form.Group className="mb-3">
           <Form.Label>Descrizione</Form.Label>
-          <Form.Control as="textarea" />
+          <Form.Control
+            as="textarea"
+            value={newExp.description}
+            onChange={(e) =>
+              dispatch(
+                setNewExp({
+                  ...newExp,
+                  description: e.target.value,
+                })
+              )
+            }
+          />
           <p className="offset-end">0/2.000</p>
           We'll never share your email with anyone else.
         </Form.Group>
@@ -148,7 +202,7 @@ function AddExperience({ handleClose }) {
         <Button variant="secondary" onClick={handleClose}>
           Annulla
         </Button>
-        <Button variant="primary" type="submit" onClick={handleClose}>
+        <Button variant="primary" type="submit" onClick={sendForm}>
           Salva
         </Button>
       </Modal.Footer>
