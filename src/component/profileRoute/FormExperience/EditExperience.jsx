@@ -1,22 +1,17 @@
-import Button from "react-bootstrap/Button";
-import Form from "react-bootstrap/Form";
-import Modal from "react-bootstrap/Modal";
-import { Row, Col } from "react-bootstrap";
-import React from "react";
+import { Button, Col, Form, Modal, Row } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import {
-  createExperience,
-  setNewExp,
+  editExperience,
+  setSingleExperience,
 } from "../../../redux/action/ExperienceAction";
 
-function AddExperience({ handleClose }) {
+const EditExperience = ({ handleClose }) => {
   const dispatch = useDispatch();
-  const newExp = useSelector((state) => state.experience.newExp);
+  const exp = useSelector((state) => state.experience.singleExperience);
   const sendForm = () => {
     handleClose();
-    dispatch(createExperience);
+    dispatch(editExperience);
   };
-
   return (
     <>
       <Form>
@@ -28,11 +23,11 @@ function AddExperience({ handleClose }) {
           <Form.Control
             type="text"
             placeholder="Esempio: Retail Sales Manager"
-            value={newExp.role}
+            value={exp.role}
             onChange={(e) =>
               dispatch(
-                setNewExp({
-                  ...newExp,
+                setSingleExperience({
+                  ...exp,
                   role: e.target.value,
                 })
               )
@@ -66,11 +61,11 @@ function AddExperience({ handleClose }) {
           <Form.Control
             type="text"
             placeholder="Esempio: Microsoft"
-            value={newExp.company}
+            value={exp.company}
             onChange={(e) =>
               dispatch(
-                setNewExp({
-                  ...newExp,
+                setSingleExperience({
+                  ...exp,
                   company: e.target.value,
                 })
               )
@@ -84,11 +79,11 @@ function AddExperience({ handleClose }) {
           <Form.Control
             type="text"
             placeholder="Esempio: Milano, Italia"
-            value={newExp.area}
+            value={exp.area}
             onChange={(e) =>
               dispatch(
-                setNewExp({
-                  ...newExp,
+                setSingleExperience({
+                  ...exp,
                   area: e.target.value,
                 })
               )
@@ -104,11 +99,11 @@ function AddExperience({ handleClose }) {
             <Form.Control
               type="date"
               placeholder="Data di inizio"
-              value={newExp.startDate}
+              value={exp.startDate}
               onChange={(e) =>
                 dispatch(
-                  setNewExp({
-                    ...newExp,
+                  setSingleExperience({
+                    ...exp,
                     startDate: e.target.value,
                   })
                 )
@@ -120,11 +115,11 @@ function AddExperience({ handleClose }) {
             <Form.Control
               type="date"
               placeholder="Data di fine"
-              value={newExp.endDate}
+              value={exp.endDate}
               onChange={(e) =>
                 dispatch(
-                  setNewExp({
-                    ...newExp,
+                  setSingleExperience({
+                    ...exp,
                     endDate: e.target.value,
                   })
                 )
@@ -156,11 +151,11 @@ function AddExperience({ handleClose }) {
           <Form.Label>Descrizione</Form.Label>
           <Form.Control
             as="textarea"
-            value={newExp.description}
+            value={exp.description}
             onChange={(e) =>
               dispatch(
-                setNewExp({
-                  ...newExp,
+                setSingleExperience({
+                  ...exp,
                   description: e.target.value,
                 })
               )
@@ -208,6 +203,5 @@ function AddExperience({ handleClose }) {
       </Modal.Footer>
     </>
   );
-}
-
-export default AddExperience;
+};
+export default EditExperience;

@@ -104,7 +104,7 @@ const SideBarProfile = () => {
 
         <p className="Altro  d-flex justify-content-center text-secondary mb-0">
           <Button variant="trasparent" onClick={() => handleClose()}>
-            {showMore ? "back" : "Visualzza Altro ▼"}
+            {showMore ? "Visualzza Altro ▼" : "back"}
           </Button>
         </p>
       </div>
