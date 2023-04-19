@@ -1,5 +1,5 @@
 /* AZIONI EXPERIENCE */
-export const SET_POST = "SET_POST";
+export const SET_POSTS = "SET_POST";
 export const SET_SINGLE_POST = "SET_SINGLE_POST";
 export const ADD_POST = "ADD_POST";
 export const UPDATE_POST = "UPDATE_POST";
@@ -9,7 +9,7 @@ export const SET_POST_ID = "SET_POST_ID";
 /* EXPORT AZIONI POST */
 export const setPosts = (data) => {
   return {
-    type: SET_POST,
+    type: SET_POSTS,
     payload: data,
   };
 };
@@ -27,7 +27,7 @@ export const setExpID = (id) => {
   };
 };
 
-export const addExperience = (data) => {
+export const addPost = (data) => {
   return {
     type: ADD_POST,
     payload: data,
@@ -79,3 +79,34 @@ const API_KEY =
       console.log("GET Fetch try failed,", error);
     }
   };
+
+  /* POST - NEW EXPERIENCE*/
+export const createPost = async (dispatch) => {
+
+  let newPostData = {
+    text: "This is a new Post! Hi everybody!"
+  };
+
+  try {
+    let response = await fetch(
+      `https://striveschool-api.herokuapp.com/api/posts/`,
+      {
+        method: "POST",
+        headers: {
+          "Content-type": "application/json",
+          Authorization: API_KEY,
+        },
+        body: JSON.stringify(newPostData),
+      }
+    );
+
+    if (response.ok) {
+      let newPost = await response.json();
+      dispatch(addPost(newPost));
+    } else {
+      console.log("Error has happened with the POST request");
+    }
+  } catch (error) {
+    console.log("POST Fetch try failed,", error);
+  }
+};

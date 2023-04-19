@@ -15,6 +15,7 @@ import {
   getUserProfile,
   setThisUserID,
 } from "../redux/action/UserAction";
+import { getPosts } from "../redux/action/PostAction";
 import { useEffect, useState } from "react";
 
 const MyNav = () => {
@@ -29,11 +30,13 @@ const MyNav = () => {
     } else {
       dispatch(getAllProfile);
       dispatch(getUserProfile);
+      dispatch(getPosts)
       setFetch(true);
     }
   };
   useEffect(() => {
     checkFetch();
+    
   }, []);
   return (
     <Row className="w-100 navbar-navigation d-flex justify-content-center">
