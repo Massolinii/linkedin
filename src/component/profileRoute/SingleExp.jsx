@@ -1,5 +1,4 @@
-import { Row, Col } from "react-bootstrap";
-import { BsPlusLg, BsPencil } from "react-icons/bs";
+import { Card, ListGroup, Image, Row, Col } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useDispatch } from "react-redux";
 import {
@@ -37,15 +36,62 @@ const SingleExp = ({ exp }) => {
           </div>
           {/* <img src="*" alt="LOGO AZIENDA" className="me-2" /> */}
         </Col>
-        {/* <Col xs={10}>
-          {" "}
-          <h5>{exp.company}</h5>
-          <p>Start date: {exp.startDate.slice(0, 10)}</p>
-          <p>{exp.area}</p>
-          <p>
-            Competenze: <span>{exp.description}</span>
-          </p>
-        </Col>  */}
+
+        {/* PER ANTONIO */}
+        <Col xs={10}>
+          <Card>
+            <Card.Header>
+              <Col md="auto">
+                <Image
+                  src={
+                    {
+                      /* logo azienda */
+                    }
+                  }
+                  alt="Logo azienda"
+                  rounded
+                  fluid
+                />
+              </Col>
+
+              <Card.Title>
+                {
+                  {
+                    /* exp.company */
+                  }
+                }
+              </Card.Title>
+            </Card.Header>
+            <Card.Body>
+              <Card.Subtitle className="mb-2 text-muted">
+                {
+                  {
+                    /* {exp.startDate.slice(0, 10)} */
+                  }
+                }
+              </Card.Subtitle>
+
+              <Card.Text>
+                {
+                  {
+                    /* exp.area */
+                  }
+                }
+              </Card.Text>
+              <ListGroup variant="flush">
+                {/* {props.skills.map((skill, index) => (
+                  <ListGroup.Item key={index}>{skill}</ListGroup.Item>
+                ))} */}
+
+                {/* oppure */}
+
+                {/* <p>
+                  Competenze: <span> {} </span>
+                </p> */}
+              </ListGroup>
+            </Card.Body>
+          </Card>
+        </Col>
         <Row>
           <Col className="text-center">
             <button
