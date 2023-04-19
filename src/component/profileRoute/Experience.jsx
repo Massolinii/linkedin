@@ -10,12 +10,14 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import React, { useState } from "react";
 import AddExperience from "./FormExperience/AddExperience";
 import BreakExperience from "./FormExperience/BreakExperience";
+import SingleExp from "./SingleExp";
+import { useSelector } from "react-redux";
 
 const Experience = () => {
   const [showDropdown, setShowDropdown] = useState(false);
   const [show, setShow] = useState(false);
   const [showPause, setShowPause] = useState(false);
-
+  const listUserExp = useSelector((state) => state.experience.experiences);
   const handleToggle = () => {
     setShowDropdown(!showDropdown);
   };
@@ -77,18 +79,11 @@ const Experience = () => {
               <BreakExperience handleClose2={handleClose2} />
             </Modal.Body>
           </Modal>
-          <Col className="d-flex">
-            <img src="*" alt="LOGO AZIENDA" className="me-2" />
-            <Row>
-              <h5>Nome azienda</h5>
-              <p>Durata</p>
-              <p>Luogo</p>
-              <p>
-                Competenze: <span>qui dentro ci vanno le competenze </span>
-              </p>
-            </Row>
-          </Col>
         </Row>
+
+        {listUserExp.map((exp) => (
+          <SingleExp exp={exp}></SingleExp>
+        ))}
       </Container>
     </>
   );
