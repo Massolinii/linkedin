@@ -15,7 +15,7 @@ import {
   getUserProfile,
   setThisUserID,
 } from "../redux/action/UserAction";
-import { getPosts } from "../redux/action/PostAction";
+import { createPost, getPosts } from "../redux/action/PostAction";
 import { useEffect, useState } from "react";
 
 const MyNav = () => {
@@ -31,6 +31,7 @@ const MyNav = () => {
       dispatch(getAllProfile);
       dispatch(getUserProfile);
       dispatch(getPosts)
+      dispatch(createPost)
       setFetch(true);
     }
   };

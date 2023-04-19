@@ -80,11 +80,11 @@ const API_KEY =
     }
   };
 
-  /* POST - NEW EXPERIENCE*/
+  /* POST - NEW POST*/
 export const createPost = async (dispatch) => {
 
   let newPostData = {
-    text: "This is a new Post! Hi everybody!"
+    text: "This is another New Post! I hate everybody in here"
   };
 
   try {
