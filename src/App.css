@@ -299,12 +299,10 @@ h4 {
   flex-direction: row;
 }
 .Questionicon {
-.Questionicon {
   color: gray;
   font-size: 1.2em;
 }
 
-.otherProfile {
 .otherProfile {
   font-weight: 600;
   font-size: 1.15em;
@@ -315,7 +313,6 @@ h4 {
   font-size: 17px;
   color: black;
 }
-.gradueSide {
 .gradueSide {
   font-weight: 100;
 }
@@ -354,7 +351,6 @@ h4 {
   margin-right: 8px;
 }
 
-.Altro {
 .Altro {
   font-size: 16px;
 }
