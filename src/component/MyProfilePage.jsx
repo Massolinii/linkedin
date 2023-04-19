@@ -4,35 +4,37 @@ import HeroProfile from "./profileRoute/HeroProfile";
 import Information from "./profileRoute/Information";
 import Interests from "./profileRoute/Interests";
 import StaticComponent from "./profileRoute/StaticComponent";
-import Experience from "./profileRoute/Experience";
+import Experience from "./profileRoute/Expirience";
 import Formation from "./profileRoute/Formation";
 import Skills from "./profileRoute/Skills";
 import { useEffect } from "react";
+import { useParams } from "react-router";
 import { useDispatch } from "react-redux";
-import { useParams } from "react-router-dom";
 import {
-  getThisProfile,
-  resetThisProfile,
+  getAllProfile,
+  getUserProfile,
   setThisUserID,
 } from "../redux/action/UserAction";
 
 const MyProfilePage = () => {
-  const { userID } = useParams();
   const dispatch = useDispatch();
-  let fetcha = userID ? true : false;
-  //se user id e` presente setta l'id e fetcha lutente da mostrare
-  //se ci troviamo nella nostra pagine lo resetta
+  const { userID } = useParams();
+
+  //const thisID = useSelector((state) => state.user.thisProfile.userID);
   const checkUserID = () => {
     if (userID) {
       dispatch(setThisUserID(userID));
-      dispatch(getThisProfile);
     } else {
-      dispatch(resetThisProfile());
+      dispatch(setThisUserID(null));
     }
+    // dispatch(getThisProfile);
+    console.log(userID);
   };
   useEffect(() => {
     checkUserID();
-  }, [fetcha]);
+    dispatch(getAllProfile);
+    dispatch(getUserProfile);
+  }, []);
   return (
     <Container>
       <Row className="justify-content-center">

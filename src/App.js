@@ -5,19 +5,20 @@ import { Container, Row } from "react-bootstrap";
 import MyFooter from "./component/MyFooter";
 
 import MyProfilePage from "./component/MyProfilePage";
-import NotFound from "./component/NotFound";
 
 function App() {
   return (
     <BrowserRouter>
-      <Container fluid>
-        <Row>
-          <MyNav />
-        </Row>
+      <MyNav />
+      <Container>
+        <Row></Row>
         <Routes>
-          <Route path="/profile/:userID" element={<MyProfilePage />} />
-          <Route path="/profile" element={<MyProfilePage />} />
-          <Route path="*" element={<NotFound></NotFound>} />
+          <Route path="*" />
+          <Route
+            path="/profile/:userID"
+            element={<MyProfilePage></MyProfilePage>}
+          />
+          <Route path="/profile" element={<MyProfilePage></MyProfilePage>} />
         </Routes>
         <Row>
           <MyFooter></MyFooter>
