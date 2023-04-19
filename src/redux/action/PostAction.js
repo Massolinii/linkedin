@@ -34,7 +34,7 @@ export const addPost = (data) => {
   };
 };
 
-export const updateExperience = (data) => {
+export const updatePost = (data) => {
   return {
     type: UPDATE_POST,
     payload: data,
@@ -110,3 +110,48 @@ export const createPost = async (dispatch) => {
     console.log("POST Fetch try failed,", error);
   }
 };
+
+/* DELETE - DELETE POST */
+export const deletePost = async (post_id) => {
+  try {
+    let resp = await fetch(`https://striveschool-api.herokuapp.com/api/posts/`, + post_id,
+     {
+      method: "DELETE",
+      headers: {
+        Authorization: API_KEY,
+      },
+    });
+
+    let data = await resp.json();
+    if (resp.ok) {
+      console.log(data);
+    }
+  } catch (error) {
+    console.log("Error:", error);
+  }
+}
+
+/* PUT - EDIT POST*/
+
+export const editPost = async (formData, post_id) => {
+  try {
+    let response = await fetch(
+      `https://striveschool-api.herokuapp.com/api/posts/` + post_id,
+      {
+        method: "PUT",
+        headers: {
+          "Content-type": "application/json",
+          Authorization: API_KEY,
+        },
+        body: JSON.stringify(formData),
+      }
+    );
+    if (response.ok) {
+      alert("Post successfully modified.")
+    } else {
+      alert("There was a problem modifying this Post")
+    }
+  } catch (error) {
+    console.log("Error:", error)
+  }
+}
