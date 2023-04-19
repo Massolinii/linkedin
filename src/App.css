@@ -193,20 +193,24 @@ body {
 }
 
 /* BTN HERO */
-#btn-hero Button {
-  font-weight: bold;
-  margin: 5px;
-  width: 150px;
-  height: 40px;
+.btn-hero a {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-decoration: none !important;
+  font-weight: bold !important;
+  margin: 5px !important;
+  width: 150px !important;
+  height: 40px !important;
 }
 
-#btn-hero Button:nth-child(2) {
+.btn-hero a:nth-child(2) {
   border: 1px solid rgba(0, 68, 255, 0.434) !important;
-  width: 250px;
+  width: 250px !important;
 }
 
-#btn-hero Button:nth-child(3) {
-  width: 90px;
+.btn-hero a:nth-child(3) {
+  width: 90px !important;
   border: 1px solid gray !important;
 }
 
@@ -230,6 +234,7 @@ h4 {
 .profileCover {
   height: 300px;
   width: 100%;
+  background-image: url("https://placekitten.com/800/300");
   background-size: cover;
   background-position: center;
 }
@@ -282,4 +287,10 @@ h4 {
 
 .btnChange a {
   color: black !important;
+}
+
+.btnChange:hover {
+  cursor: pointer;
+  background-color: lightgray !important;
+  border-radius: 20px !important;
 }

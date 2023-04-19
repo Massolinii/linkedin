@@ -4,7 +4,7 @@ import Modal from "react-bootstrap/Modal";
 import { Row, Col } from "react-bootstrap";
 import React, { useState } from "react";
 
-function BreakExperience({ handleClose }) {
+function BreakExperience({ handleClose2 }) {
   const [esperienze, setEsperienze] = useState({
     startDate: "",
     endDate: "",
@@ -98,10 +98,10 @@ function BreakExperience({ handleClose }) {
         </Button>
       </Form>
       <Modal.Footer>
-        <Button variant="secondary" onClick={handleClose}>
+        <Button variant="secondary" onClick={handleClose2}>
           Annulla
         </Button>
-        <Button variant="primary" type="submit" onClick={handleClose}>
+        <Button variant="primary" type="submit" onClick={handleClose2}>
           Salva
         </Button>
       </Modal.Footer>
