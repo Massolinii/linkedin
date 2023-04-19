@@ -23,6 +23,7 @@ const Experience = () => {
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+  const handleShowPause = () => setShowPause(true); // Aggiunto
 
   return (
     <>
@@ -48,7 +49,7 @@ const Experience = () => {
                       <BsBriefcaseFill className="me-2" /> Aggiungi Posizione
                       Lavorativa
                     </Dropdown.Item>
-                    <Dropdown.Item>
+                    <Dropdown.Item onClick={handleShowPause}>
                       <BsClockFill className="me-2" /> Aggiungi Pausa Lavorativa
                     </Dropdown.Item>
                   </Dropdown.Menu>
@@ -68,6 +69,19 @@ const Experience = () => {
                 </Modal.Body>
               </Modal>
             </div>
+
+            {/* BREAKEXPERIENCE */}
+            <div id="modal-pause">
+              <Modal show={showPause} onHide={() => setShowPause(false)} size="lg">
+                <Modal.Header closeButton>
+                  <Modal.Title>Aggiungi pausa lavorativa</Modal.Title>
+                </Modal.Header>
+                <Modal.Body>
+                  <BreakExperience handleClose={() => setShowPause(false)} />
+                </Modal.Body>
+              </Modal>
+            </div>
+
           </div>
           <Col className="d-flex">
             <img src="*" alt="LOGO AZIENDA" className="me-2" />
