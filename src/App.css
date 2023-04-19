@@ -17,9 +17,21 @@ body {
   z-index: 9;
   top: 0 !important;
 }
-
+p{
+  font-size: 11px;
+  color: gray;
+  text-decoration: none !important;
+}
+.linkLavoro{
+  text-decoration: none;
+  color: grey !important;
+}
+#container-all{
+  position:relative;
+}
 .link-nav {
   text-decoration: none !important;
+  color:gray
 }
 
 .nav-col {
