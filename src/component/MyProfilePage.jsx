@@ -4,7 +4,7 @@ import HeroProfile from "./profileRoute/HeroProfile";
 import Information from "./profileRoute/Information";
 import Interests from "./profileRoute/Interests";
 import StaticComponent from "./profileRoute/StaticComponent";
-import Experience from "./profileRoute/Expirience";
+import Experience from "./profileRoute/Experience";
 import Formation from "./profileRoute/Formation";
 import Skills from "./profileRoute/Skills";
 import { useEffect } from "react";
