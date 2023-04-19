@@ -9,7 +9,15 @@ import {
 
 const initialState = {
   experiences: [],
-  singleExperience: {},
+  singleExperience: {
+    role: "",
+    company: "",
+    startDate: "",
+    endDate: null,
+    description: "",
+    area: "",
+    username: "Salcana",
+  },
   IDs: { userID: "", expID: "" },
   newExp: {
     role: "",
@@ -18,7 +26,7 @@ const initialState = {
     endDate: null,
     description: "",
     area: "",
-    username: "",
+    username: "Salcana",
   },
 };
 

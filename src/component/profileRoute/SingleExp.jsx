@@ -1,19 +1,35 @@
-import { Row, Col } from "react-bootstrap";
+import { Row, Col, ButtonGroup, Button, Modal } from "react-bootstrap";
 import { BsPlusLg, BsPencil } from "react-icons/bs";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import {
+  getSingleExperience,
+  getUserExperience,
   removeExperience,
   setExpID,
+  setNewExp,
 } from "../../redux/action/ExperienceAction";
 import { useState } from "react";
+import EditExperience from "./FormExperience/EditExperience";
 
 const SingleExp = ({ exp }) => {
+  //console.log(exp);
+  const expToEdit = useSelector((state) => state.experience.singleExperience);
+
   const dispatch = useDispatch();
   const [IDs, setIDs] = useState([exp.user, exp._id]);
+  const [show, setShow] = useState(false);
+  const handleShow = () => setShow(true);
+  const handleClose = () => setShow(false);
+
+  const handleEditExperience = (id) => {
+    dispatch(setExpID(id));
+    handleShow();
+    dispatch(getSingleExperience);
+  };
   const handleDeleteExperience = (id) => {
     dispatch(setExpID(id));
-    console.log(id);
+    //console.log(id);
     if (id[0]) {
       dispatch(removeExperience);
     }
@@ -40,6 +56,7 @@ const SingleExp = ({ exp }) => {
         <Col xs={10}>
           {" "}
           <h5>{exp.company}</h5>
+          <p>role:{exp.role}</p>
           <p>Start date: {exp.startDate.slice(0, 10)}</p>
           <p>{exp.area}</p>
           <p>
@@ -48,14 +65,31 @@ const SingleExp = ({ exp }) => {
         </Col>
         <Row>
           <Col className="text-center">
-            <button
-              className="btn btn-outline-secondary"
-              onClick={() => handleDeleteExperience(IDs)}
-            >
-              delete
-            </button>
+            <ButtonGroup>
+              <Button
+                className="btn btn-outline-secondary"
+                onClick={() => handleDeleteExperience(IDs)}
+              >
+                delete
+              </Button>
+              <Button
+                className="btn btn-outline-secondary"
+                onClick={() => handleEditExperience(IDs)}
+              >
+                edit
+              </Button>
+            </ButtonGroup>
           </Col>
         </Row>
+        {/* BREAKEXPERIENCE */}
+        <Modal show={show} onHide={handleClose} size="lg">
+          <Modal.Header closeButton>
+            <Modal.Title>Modifica la tua esperienza lavorativa</Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            <EditExperience exp={expToEdit} handleClose={handleClose} />
+          </Modal.Body>
+        </Modal>
       </Row>
     </>
   );

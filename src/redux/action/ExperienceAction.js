@@ -57,7 +57,6 @@ const API_KEY =
 export const getUserExperience = async (dispatch, getState) => {
   let state = getState();
   let userID = state.user.thisProfile.userID;
-  console.log(userID);
 
   try {
     let response = await fetch(
@@ -75,7 +74,7 @@ export const getUserExperience = async (dispatch, getState) => {
     if (response.ok) {
       let experiences = await response.json();
       dispatch(setExperiences(experiences));
-      console.log(experiences);
+      //console.log(experiences);
     } else {
       console.log("Error has happened with the GET request");
     }
@@ -89,7 +88,7 @@ export const createExperience = async (dispatch, getState) => {
   let state = getState();
   let userID = state.user.myProfile._id;
   let newExp = state.experience.newExp;
-  console.log(JSON.stringify(newExp));
+  // console.log(JSON.stringify(singleExperience));
 
   try {
     let response = await fetch(
@@ -109,8 +108,8 @@ export const createExperience = async (dispatch, getState) => {
 
     if (response.ok) {
       let data = await response.json();
-      console.log(data);
-      dispatch(addExperience(newExp));
+      // console.log(data);
+      dispatch(addExperience(data));
     } else {
       console.log("Error has happened with the POST request");
     }
@@ -122,13 +121,16 @@ export const createExperience = async (dispatch, getState) => {
 // GET - SPECIFIC EXPERIENCE
 export const getSingleExperience = async (dispatch, getState, expId) => {
   let state = getState();
-  let userID = state.user.thisProfile.userID;
+  let userID = state.experience.IDs.userID;
+  let expID = state.experience.IDs.expID;
+
   try {
     let response = await fetch(
-      `https://striveschool-api.herokuapp.com/api/profile/${userID}/experiences/${expId}`,
+      `https://striveschool-api.herokuapp.com/api/profile/${userID}/experiences/${expID}`,
       {
         headers: {
           "Content-type": "application/json",
+
           Authorization: API_KEY,
         },
       }
@@ -146,24 +148,21 @@ export const getSingleExperience = async (dispatch, getState, expId) => {
 };
 
 // PUT - MODIFY EXPERIENCE
-/*export const editExperience = async (
-  dispatch,
-  getState,
-  expId,
-  updatedData
-) => {
+export const editExperience = async (dispatch, getState) => {
   let state = getState();
-  let userID = state.user.thisProfile.userID;
+  let userID = state.experience.IDs.userID;
+  let expID = state.experience.IDs.expID;
+  let singleExperience = state.experience.singleExperience;
   try {
     let response = await fetch(
-      `https://striveschool-api.herokuapp.com/api/profile/${userID}/experiences/${expId}`,
+      `https://striveschool-api.herokuapp.com/api/profile/${userID}/experiences/${expID}`,
       {
         method: "PUT",
         headers: {
           "Content-type": "application/json",
           Authorization: API_KEY,
         },
-        body: JSON.stringify(updatedData),
+        body: JSON.stringify(singleExperience),
       }
     );
 
@@ -176,7 +175,7 @@ export const getSingleExperience = async (dispatch, getState, expId) => {
   } catch (error) {
     console.log("PUT Fetch try failed,", error);
   }
-};*/
+};
 
 // DELETE - DELETE EXPERIENCE
 export const removeExperience = async (dispatch, getState) => {
@@ -184,7 +183,7 @@ export const removeExperience = async (dispatch, getState) => {
   let userID = state.experience.IDs.userID;
   let expID = state.experience.IDs.expID;
   let listExp = state.experience.experiences;
-
+  //console.log(userID, expID);
   try {
     let response = await fetch(
       `https://striveschool-api.herokuapp.com/api/profile/${userID}/experiences/${expID}`,

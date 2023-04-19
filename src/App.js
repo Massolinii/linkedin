@@ -6,13 +6,14 @@ import MyFooter from "./component/MyFooter";
 
 import MyProfilePage from "./component/MyProfilePage";
 import NotFound from "./component/NotFound";
+import MyNav2 from "./component/MyNav2";
 
 function App() {
   return (
     <BrowserRouter>
       <Container fluid>
         <Row>
-          <MyNav />
+          <MyNav2 />
         </Row>
         <Routes>
           <Route path="/profile/:userID" element={<MyProfilePage />} />
