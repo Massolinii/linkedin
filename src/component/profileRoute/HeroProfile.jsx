@@ -1,8 +1,11 @@
-import { Container, Row, Col, Image, Button } from "react-bootstrap";
+import { Container, Row, Col, Image } from "react-bootstrap";
 import { BsPencil, BsX } from "react-icons/bs";
 import "bootstrap/dist/css/bootstrap.min.css";
+import { useSelector } from "react-redux";
 
 function HeroProfile() {
+  const profile = useSelector((state) => state.user.myProfile);
+
   return (
     // HERO SECTION
     <Container
@@ -10,22 +13,15 @@ function HeroProfile() {
       md={8}
       className="cover-image mt-4 p-3 border rounded-3 bg-light"
     >
-      <Container className="profile-container">
+      <Container>
         <Row className="d-flex align-items-end">
           <Container>
-            <Row>
-              <Col className="p-0">
-                <div
-                  className="profileCover"
-                  style={{
-                    backgroundImage: "url(https://placekitten.com/800/300)",
-                  }}
-                >
-                  {/* IMMAGINE COPERTINA */}
-                </div>
+            <Row style={{ height: "400px" }}>
+              <Col className="p-0 m-0">
+                <Col className="profileCover">{/* IMMAGINE COPERTINA */}</Col>
                 <div className="profilePicWrap">
                   <Image
-                    src="https://placekitten.com/200"
+                    src={profile.image}
                     alt="profile-picture"
                     roundedCircle
                     className="profilePic"
@@ -37,12 +33,14 @@ function HeroProfile() {
           </Container>{" "}
           <Row className="ancorHero" style={{ fontSize: "15px" }}>
             <div className="d-flex justify-content-between">
-              <h2 className="mb-0 mt-0">Pinco Pallino</h2>
+              <h2 className="mb-0 mt-0">
+                {profile.name} {profile.surname}
+              </h2>
               <BsPencil />
             </div>
-            <p className="mb-0">Web Developer || Full-Stak</p>
+            <p className="mb-0">{profile.title}</p>
             <p className="mb-0 mt-3 text-secondary">
-              Milano, Lombardia, Italia &middot;{" "}
+              {profile.area} &middot;{" "}
               <a
                 href="*"
                 style={{ textDecoration: "none", fontWeight: "bold" }}
@@ -58,16 +56,19 @@ function HeroProfile() {
               245 collegamenti
             </a>
           </Row>
-          <Row id="btn-hero" className="mt-2">
-            <Button className="bg-primary text-light border rounded-5">
+          <Row className="mt-2 btn-hero">
+            <a className="bg-primary text-light border rounded-5" href=".">
               Disponibile per
-            </Button>
-            <Button className="bg-light border rounded-5 text-primary">
+            </a>
+            <a
+              className="bg-light border rounded-5 text-primary btnQuiz"
+              href="."
+            >
               Aggiungi sezione del profilo
-            </Button>
-            <Button className="bg-light border rounded-5 text-secondary">
+            </a>
+            <a className="bg-light border rounded-5 text-secondary" href=".">
               Altro
-            </Button>
+            </a>
           </Row>
         </Row>
         <Row>
