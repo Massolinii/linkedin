@@ -1,5 +1,5 @@
 const MiddleHome = () => {
-  return <h1>ciano 2</h1>;
+  return ;
 };
 
 export default MiddleHome;

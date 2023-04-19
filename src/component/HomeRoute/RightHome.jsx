@@ -1,5 +1,5 @@
 const RightHome = () => {
-  return <h1>ciano 3</h1>;
+  return ;
 };
 
 export default RightHome;
