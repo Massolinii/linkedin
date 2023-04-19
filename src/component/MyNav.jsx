@@ -1,4 +1,4 @@
-import {
+/* import {
   Navbar,
   Form,
   Nav,
@@ -11,8 +11,18 @@ import { MdWork } from "react-icons/md";
 import { RiMessage3Fill } from "react-icons/ri";
 import { IoMdSettings } from "react-icons/io";
 import { CgMenuGridR } from "react-icons/cg";
-import { useSelector } from "react-redux";
-import "../App.css";
+import { Link, useParams } from "react-router-dom";
+import { TbMessageCircle2Filled } from "react-icons/tb";
+
+
+import { useDispatch, useSelector } from "react-redux";
+import {
+  getAllProfile,
+  getThisProfile,
+  getUserProfile,
+  setThisUserID,
+} from "../redux/action/UserAction";
+import { useEffect, useState } from "react";
 
 const MyNav = () => {
   const profile = useSelector((state) => state.user.myProfile);
@@ -23,14 +33,11 @@ const MyNav = () => {
     } else {
       dispatch(getAllProfile);
       dispatch(getUserProfile);
-      dispatch(getPosts)
-      dispatch(createPost)
       setFetch(true);
     }
   };
   useEffect(() => {
     checkFetch();
-    
   }, []);
   return (
     <>
@@ -168,3 +175,4 @@ const MyNav = () => {
 };
 
 export default MyNav;
+*/
