@@ -40,28 +40,28 @@ const MiddleHome = () => {
 
           <div className="d-flex justify-content-between mt-4">
             {/* ICONA POST IMMAGINE */}
-            <div id="postIcon" alt="icona-immagine">
-              <a href="*" className="PostIcon">
+            <div id="postIcon">
+              <a href="*" className="PostIcon ">
                 <BsImage className="text-primary" />
               </a>
               <p>Foto</p>
             </div>
             {/* ICONA POST VIDEO */}
-            <div id="postIcon" alt="icona-video">
+            <div id="postIcon">
               <a href="*" className="PostIcon">
                 <BsPlayBtnFill className="text-success" />
               </a>
               <p>Video</p>
             </div>
             {/* ICONA POST EVENTO */}
-            <div id="postIcon" alt="icona-evento">
+            <div id="postIcon">
               <a href="*" className="PostIcon">
                 <BsCalendar2DateFill className="text-warning" />
               </a>
               <p>Evento</p>
             </div>
             {/* ICONA POST SCRIVI UN ARTICOLO */}
-            <div id="postIcon" alt="icona-articoo">
+            <div id="postIcon">
               <a href="*" className="PostIcon">
                 <BsTextIndentLeft className="text-danger" />
               </a>

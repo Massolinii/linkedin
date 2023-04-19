@@ -393,6 +393,15 @@ h4 {
   background-color: rgba(211, 211, 211, 0.76) !important;
 }
 
+.btnPubblish {
+  border-radius: 20px !important;
+  font-weight: bold !important;
+  width: 100px;
+  background-color: rgb(231, 229, 229) !important;
+  color: gray !important;
+  border: none !important;
+}
+
 /* ICON UNDER AVVIA POST */
 
 .PostIcon {
@@ -432,23 +441,65 @@ h4 {
 /* ICONE CREA POST */
 
 .btnn {
-  width: 130px;
+  width: 120px;
   height: 160px;
   border-radius: 20px !important;
   margin: 5px;
+  position: relative;
+}
+
+.btnn:hover {
+  box-shadow: 0px 5px 4px 0px rgba(0, 0, 0, 0.36) !important;
+  background-color: none !important;
+}
+
+.roundBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 40px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+}
+.foto p,
+.video p,
+.evento p,
+.altro p {
+  text-align: center;
+  margin-top: 100px;
+}
+
+/* SECONDA PARTE SELETTORI ICONE */
+
+.foto {
+  background-color: #dbe7e9 !important;
+}
+
+.video {
+  background-color: #fde2ba !important;
+}
+
+.evento {
+  background-color: #fadfd8 !important;
+}
+
+.altro {
+  background-color: #f3f2ef !important;
 }
 
 /* TEXTAREA PER CREA POST */
 .postArea {
   border: none !important;
-}
-
-.postArea::placeholder {
   outline: none !important;
 }
 
-.custom-modal {
-  width: 500px !important;
+.postArea {
+  outline: none !important;
 }
 
 /* HOME PAGE COL RIGHT  */
