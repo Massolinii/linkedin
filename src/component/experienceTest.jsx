@@ -17,8 +17,8 @@ const ExperienceTest = () => {
   useEffect(() => {
     dispatch(getAllProfile);
     dispatch(getUserExperience);
-    dispatch(createExperience);
-    dispatch(createExperience);
+    // dispatch(createExperience);
+    // dispatch(createExperience);
   }, []);
 
   const handleCreateExperience = () => {
