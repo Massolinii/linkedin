@@ -332,3 +332,9 @@ h4 {
 .btnChange a {
   color: black !important;
 }
+
+.btnChange:hover {
+  cursor: pointer;
+  background-color: lightgray !important;
+  border-radius: 20px !important;
+}
