@@ -280,3 +280,31 @@ h4 {
   height: 100%;
   object-fit: cover;
 }
+
+/*  colonna destra */
+.sidebar {
+  position: absolute;
+  right: 1;
+  width: 300px;
+  height: 100vh;
+  margin-top: 0.5em;
+}
+
+.attivitaAmiciNome {
+  font-weight: bold;
+  font-size: 13px;
+}
+
+.attivitaAmici {
+  font-size: 11px;
+}
+
+.attivitaAmiciOre {
+  font-size: 10px;
+}
+
+/* AGGIUNG E MODIFICA */
+
+.btnChange a {
+  color: black !important;
+}
