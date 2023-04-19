@@ -15,6 +15,7 @@ import {
   resetThisProfile,
   setThisUserID,
 } from "../redux/action/UserAction";
+import SideBarProfile from "./SideBarProfile";
 
 const MyProfilePage = () => {
   const { userID } = useParams();
@@ -36,7 +37,7 @@ const MyProfilePage = () => {
   return (
     <Container>
       <Row className="justify-content-center">
-        <Col sm={8} md={8} lg={12}>
+        <Col sm={12} md={8} lg={8}>
           {/* HERO SECTION */}
           <Row>
             <Col>
@@ -81,9 +82,7 @@ const MyProfilePage = () => {
           </Row>
         </Col>
         <Col sm={4} md={4} lg={4}>
-          <Row>{/* OTHER PEOPLE */}</Row>
-          <Row>{/* SUGGESTED*/}</Row>
-          <Row>{/* MY FRIENDs */}</Row>
+          <SideBarProfile></SideBarProfile>
         </Col>
       </Row>
     </Container>
