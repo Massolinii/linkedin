@@ -272,31 +272,28 @@ h4 {
 .linkAside {
   display: flex;
   flex-direction: row;
-  
 }
-.Questionicon{
+.Questionicon {
   color: gray;
   font-size: 1.2em;
-  
 }
 
-.otherProfile{
+.otherProfile {
   font-weight: 600;
-  font-size:1.15em;
+  font-size: 1.15em;
 }
 .attivitaAmiciNome {
   font-weight: 600;
   font-size: 17px;
   color: black;
 }
-.gradueSide{
+.gradueSide {
   font-weight: 100;
 }
 .attivitaAmici {
   font-size: 15px;
   padding-bottom: 1em;
   font-weight: 400;
-
 }
 
 .attivitaAmiciOre {
@@ -310,7 +307,7 @@ h4 {
   border: solid 1px rgb(60, 60, 60);
   border-radius: 50px;
   padding: 3px 13px;
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   color: grey;
   font-size: 16px;
   font-weight: 400;
@@ -318,7 +315,7 @@ h4 {
 }
 
 .secondary-button:hover {
-  background-color: #EDEFF1;
+  background-color: #edeff1;
   border: solid 3px rgb(72, 72, 72);
 }
 
@@ -328,7 +325,7 @@ h4 {
   margin-right: 8px;
 }
 
-.Altro{
+.Altro {
   font-size: 16px;
 }
 
@@ -342,4 +339,49 @@ h4 {
   cursor: pointer;
   background-color: lightgray !important;
   border-radius: 20px !important;
+}
+
+/* BACHECA ICONA PROFILO */
+.profileIcon {
+  width: 85px !important;
+  margin-right: 10px;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+}
+
+/* BTN AVVIA POST */
+
+.btnStartPost {
+  margin-left: 10px !important;
+  background-color: transparent !important;
+  color: gray !important;
+  font-weight: bold !important;
+  border: 1px solid gray !important;
+  border-radius: 50px !important;
+  width: 100%;
+  text-align: start !important;
+}
+
+.btnStartPost:hover {
+  background-color: rgba(211, 211, 211, 0.76) !important;
+}
+
+/* ICON UNDER AVVIA POST */
+
+.PostIcon {
+  display: flex;
+  justify-content: center;
+}
+
+#postIcon {
+  display: flex !important;
+  font-size: 22px;
+}
+
+#postIcon p {
+  font-size: 14px !important;
+  color: gray;
+  font-weight: bold;
+  margin-left: 15px;
 }
