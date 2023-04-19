@@ -33,7 +33,7 @@ const PostReducer = (state = initialState, action) => {
     case ADD_POST:
       return {
         ...state,
-        experiences: [...state.posts, action.payload],
+        post: [...state.posts, action.payload],
       };
     case UPDATE_POST:
       return {
