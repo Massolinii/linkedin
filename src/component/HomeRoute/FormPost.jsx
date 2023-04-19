@@ -5,7 +5,7 @@ import {
   BsWordpress,
   BsEmojiExpressionless,
   BsImage,
-  BsCloudFog,
+  BsFillCaretDownFill,
 } from "react-icons/bs";
 
 function FormPost({ handleclose3 }) {
@@ -15,40 +15,66 @@ function FormPost({ handleclose3 }) {
       style={{ display: "block", position: "initial" }}
     >
       <Form>
-        <div className="d-flex justify-content-between">
-          <div>
+        <div className="d-flex">
+          <div className="icona-per-post">
             <img src="https://placekitten.com/200" alt="" />
           </div>
-          <div>
+          <div className="privacyPost mx-2">
             <h5>Nome utente</h5>
             <a href="*">
-              <BsWordpress /> Chiunque
+              <BsWordpress className="mx-2" /> Chiunque{" "}
+              <BsFillCaretDownFill className="mx-2" />
             </a>
           </div>
         </div>
-        <Form.Group className="mb-3">
-          <Form.Control as="textarea" placeholder="Di cosa vorresti paralre?" />
+        <Form.Group className="mb-3 mt-3">
+          <Form.Control
+            as="textarea"
+            placeholder="Di cosa vorresti paralre?"
+            className="postArea"
+          />
         </Form.Group>
-        <BsEmojiExpressionless />
+        <BsEmojiExpressionless className="ms-3 " />
 
-        <div>
-          <div>
-            <Button variant="primary" type="submit">
+        <div className="d-flex mt-3">
+          {/* FOTO */}
+          <Button variant="primary" type="submit" className="btnn foto">
+            <div>
               <BsImage />
-              Foto
-            </Button>
-          </div>
+            </div>
+            <p>Foto</p>
+          </Button>
+
+          {/* VIDEO */}
+          <Button variant="primary" type="submit" className="btnn foto">
+            <div>
+              <BsImage />
+            </div>
+            <p>Video</p>
+          </Button>
+
+          {/* EVENTO */}
+          <Button variant="primary" type="submit" className="btnn foto">
+            <div>
+              <BsImage />
+            </div>
+            <p>Evento</p>
+          </Button>
+
+          {/* ALTRO */}
+          <Button variant="primary" type="submit" className="btnn foto">
+            <div>
+              <BsImage />
+            </div>
+            <p>Altro</p>
+          </Button>
         </div>
       </Form>
 
-      <Modal.Footer>
-        <div className="d-flex justify-content-between">
-          <a href="*">
-            <BsCloudFog />
-            Tutti
-          </a>
-          <Button variant="primary">Pubblica</Button>
-        </div>
+      <Modal.Footer className="mt-4">
+        <Button type="submit" variant="primary">
+          Pubblica
+        </Button>
       </Modal.Footer>
     </div>
   );

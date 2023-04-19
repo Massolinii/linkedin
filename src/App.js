@@ -20,16 +20,31 @@ function App() {
           <Route path="/home" element={<MyHomePage />} />
           <Route
             path="/profile/:userID"
-            element={<MyProfilePage></MyProfilePage>}
+            element={
+              <>
+                <MyProfilePage /> <MyFooter />
+              </>
+            }
           />
-          <Route path="/profile" element={<MyProfilePage></MyProfilePage>} />
+          <Route
+            path="/profile"
+            element={
+              <>
+                <MyProfilePage /> <MyFooter />
+              </>
+            }
+          />
           <Route path="/profile/:userID" element={<MyProfilePage />} />
-          <Route path="/profile" element={<MyProfilePage />} />
+          <Route
+            path="/profile"
+            element={
+              <>
+                <MyProfilePage /> <MyFooter />
+              </>
+            }
+          />
           <Route path="*" element={<NotFound></NotFound>} />
         </Routes>
-        <Row>
-          <MyFooter></MyFooter>
-        </Row>
       </Container>
     </BrowserRouter>
   );

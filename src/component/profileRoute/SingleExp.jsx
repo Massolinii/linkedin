@@ -37,7 +37,7 @@ const SingleExp = ({ exp }) => {
           </div>
           {/* <img src="*" alt="LOGO AZIENDA" className="me-2" /> */}
         </Col>
-        <Col xs={10}>
+        {/* <Col xs={10}>
           {" "}
           <h5>{exp.company}</h5>
           <p>Start date: {exp.startDate.slice(0, 10)}</p>
@@ -45,7 +45,7 @@ const SingleExp = ({ exp }) => {
           <p>
             Competenze: <span>{exp.description}</span>
           </p>
-        </Col>
+        </Col>  */}
         <Row>
           <Col className="text-center">
             <button

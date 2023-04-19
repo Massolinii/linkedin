@@ -7,13 +7,13 @@ const MyHomePage = () => {
   return (
     <Container>
       <Row>
-        <Col sm={0} md={3} lg={2}>
+        <Col sm={0} md={3} lg={2} xl={2}>
           <LeftHome />
         </Col>
-        <Col sm={0} md={8} lg={6}>
+        <Col sm={12} md={8} lg={6} xl={6}>
           <MiddleHome />
         </Col>
-        <Col sm={0} md={0} lg={4}>
+        <Col sm={0} md={0} lg={4} xl={4}>
           <RightHome />
         </Col>
       </Row>

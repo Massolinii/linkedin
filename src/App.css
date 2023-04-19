@@ -411,3 +411,88 @@ h4 {
   font-weight: bold;
   margin-left: 15px;
 }
+
+/* ICONA PROFILO DURANTE AVVIA NUOVO POST */
+
+.icona-per-post img {
+  width: 60px;
+  border-radius: 50%;
+}
+
+.privacyPost a {
+  text-decoration: none;
+  align-items: center;
+  display: flex;
+  color: gray !important;
+  border-radius: 20px;
+  padding: 0.4em;
+  border: 1px solid gray;
+}
+
+/* ICONE CREA POST */
+
+.btnn {
+  width: 130px;
+  height: 160px;
+  border-radius: 20px !important;
+  margin: 5px;
+}
+
+/* TEXTAREA PER CREA POST */
+.postArea {
+  border: none !important;
+}
+
+.postArea::placeholder {
+  outline: none !important;
+}
+
+.custom-modal {
+  width: 500px !important;
+}
+
+/* HOME PAGE COL RIGHT  */
+.TitleNew {
+  font-size: 17px;
+}
+
+.CardnewRight {
+  width: 320px;
+  margin-top: 1.5em;
+}
+.Cardrightnew {
+  margin-bottom: 0;
+}
+.fsl {
+  font-weight: 600;
+  font-size: 13px;
+}
+
+.sml {
+  font-size: 11px;
+}
+
+.IconInformation {
+  width: 13px;
+  margin: auto;
+  margin-top: 0.9em;
+}
+
+.footer-card {
+  font-size: 12px;
+}
+.footer-card a {
+  text-decoration: none;
+  color: gray;
+  padding: 1.2em;
+  padding-top: 0;
+  padding-bottom: 0.1em;
+}
+.footerCopirightsec {
+  font-size: 12px;
+}
+
+.linkedLogo {
+  color: rgb(10, 102, 194);
+  width: 15px;
+}
