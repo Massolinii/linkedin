@@ -35,9 +35,9 @@ const MyProfilePage = () => {
     checkUserID();
   }, [fetcha]);
   return (
-    <Container>
-      <Row className="justify-content-center">
-        <Col sm={12} md={8} lg={8}>
+    <Container className="d-flex justify-content-center">
+      <Row>
+        <Col sm={8} md={8} lg={9} xl={9}>
           {/* HERO SECTION */}
           <Row>
             <Col>
@@ -81,8 +81,10 @@ const MyProfilePage = () => {
             </Col>
           </Row>
         </Col>
-        <Col sm={4} md={4} lg={4}>
-          <SideBarProfile></SideBarProfile>
+        <Col sm={0} md={4} lg={3} xl={3}>
+          <Col>
+            <SideBarProfile />
+          </Col>
         </Col>
       </Row>
     </Container>

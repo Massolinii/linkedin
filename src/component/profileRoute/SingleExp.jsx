@@ -53,7 +53,7 @@ const SingleExp = ({ exp }) => {
           </div>
           {/* <img src="*" alt="LOGO AZIENDA" className="me-2" /> */}
         </Col>
-        <Col xs={10}>
+        {/* <Col xs={10}>
           {" "}
           <h5>{exp.company}</h5>
           <p>role:{exp.role}</p>
@@ -62,7 +62,7 @@ const SingleExp = ({ exp }) => {
           <p>
             Competenze: <span>{exp.description}</span>
           </p>
-        </Col>
+        </Col>  */}
         <Row>
           <Col className="text-center">
             <ButtonGroup>
