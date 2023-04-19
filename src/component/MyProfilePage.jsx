@@ -15,7 +15,6 @@ import {
   getUserProfile,
   setThisUserID,
 } from "../redux/action/UserAction";
-import SideBarProfile from "./SideBarProfile";
 
 const MyProfilePage = () => {
   const dispatch = useDispatch();
@@ -37,9 +36,9 @@ const MyProfilePage = () => {
     dispatch(getUserProfile);
   }, []);
   return (
-    <Container className="d-flex justify-content-center">
-      <Row>
-        <Col sm={8} md={8} lg={9} xl={9}>
+    <Container>
+      <Row className="justify-content-center">
+        <Col sm={8} md={8} lg={12}>
           {/* HERO SECTION */}
           <Row>
             <Col>
@@ -83,10 +82,10 @@ const MyProfilePage = () => {
             </Col>
           </Row>
         </Col>
-        <Col sm={0} md={4} lg={3} xl={3}>
-          <Col>
-            <SideBarProfile />
-          </Col>
+        <Col sm={4} md={4} lg={4}>
+          <Row>{/* OTHER PEOPLE */}</Row>
+          <Row>{/* SUGGESTED*/}</Row>
+          <Row>{/* MY FRIENDs */}</Row>
         </Col>
       </Row>
     </Container>
