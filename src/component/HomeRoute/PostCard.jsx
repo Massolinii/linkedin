@@ -50,15 +50,7 @@ const PostCard = ({ post }) => {
       <div className="p-4">
         <div className="initialNews d-flex justify-content-between">
           <div className="d-flex align-items-center ">
-            <div>
-              <div>
-                {" "}
-                <img
-                  src={post.image} alt=""
-                  style={{ aspectRatio: "1 / 1", height: "80px"}}
-                />
-              </div>
-            </div>
+
             <div className="descriptionText mx-2">
               <h6 className="m-0">{post.username.toUpperCase()}</h6>
               <div className=" mt-2 mb-3">{post.text}</div>
@@ -96,7 +88,15 @@ const PostCard = ({ post }) => {
         </div>
       </div>
       <div className="imgNews">
-        {/*<div><img src={news[i]?.image} alt="" /></div>*/}
+      <div className="text-center">
+              <div className="border-top border-bottom">
+                {" "}
+                <img
+                  src={post.image || null} alt={post.image} className="me-2"
+                  style={{ height: "200px"}}
+                />
+              </div>
+            </div>
       </div>
 
       <div className="commentIcons d-flex justify-content-between px-4 py-2">

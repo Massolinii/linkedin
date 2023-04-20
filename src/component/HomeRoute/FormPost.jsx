@@ -64,6 +64,15 @@ function FormPost({ handleclose3 }) {
           />
           {writing ? "true" : "false"}
         </Form.Group>
+        <Form.Group controlId="formFile" className="mb-3">
+              <Form.Label>Choose a pic.</Form.Label>
+              <Form.Control type="file" onChange={(e) => {
+                const file = e.target.files[0];
+                console.log(file);
+                
+                e.append('profile', file);
+              }} />
+            </Form.Group>
         <BsEmojiExpressionless className="ms-3 " />
 
         <div className="d-flex mt-3">
