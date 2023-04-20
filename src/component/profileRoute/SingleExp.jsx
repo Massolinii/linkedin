@@ -112,4 +112,4 @@ const SingleExp = ({ exp }) => {
   );
 };
 
-// export default SingleExp;
+export default SingleExp;
