@@ -1,5 +1,5 @@
-import { Profiler } from "react";
 import {
+  RESET_THIS_PROFILE,
   SET_MY_PROFILE,
   SET_OTHER_PEOPLE,
   SET_THIS_PROFILE,
@@ -10,7 +10,7 @@ const initialState = {
   myProfile: {}, //fetch profile/me
   otherPeople: [], //fetch profile/
   thisProfile: {
-    userID: null,
+    userID: "643cf46a186a8700143867b7",
     profile: {},
   }, //fetch profile/{userID}
 };
@@ -38,6 +38,11 @@ const UserReducer = (state = initialState, action) => {
           ...state.thisProfile.userID,
           thisProfile: action.payload,
         },
+      };
+    case RESET_THIS_PROFILE:
+      return {
+        ...state,
+        thisProfile: { userID: null, thisProfile: {} },
       };
     default:
       return state;

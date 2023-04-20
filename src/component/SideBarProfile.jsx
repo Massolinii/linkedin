@@ -1,10 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
+import { Button } from "react-bootstrap";
 import { AiFillQuestionCircle } from "react-icons/ai";
 import { BsPersonPlusFill } from "react-icons/bs";
+import { useSelector } from "react-redux";
 
-const SideBarProfile = ({ utenti }) => {
-  const handleClick = () => {
-    // handle click logic
+const SideBarProfile = () => {
+  const otherProfile = useSelector((state) => state.user.otherPeople);
+  // console.log(otherProfile.slice(0, 5));
+  const [showMore, setShowMore] = useState(false);
+  const handleClose = () => {
+    showMore ? setShowMore(false) : setShowMore(true);
   };
 
   return (
@@ -46,147 +51,65 @@ const SideBarProfile = ({ utenti }) => {
           <div className="otherProfile d-flex justify-content-start text-black mb-3">
             Altri profili consultati
           </div>
-          <div className="d-flex justify-content-start text-secondary mb-3">
-            <img
-              width="20%"
-              height="20%"
-              className="me-1"
-              src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png"
-              alt=""
-            />
-            <div>
-              <p className="attivitaAmiciNome m-0">
-                Alessadro Monti{" "}
-                <span className="gradueSide m-0 text-secondary ">·2°</span>
-              </p>
-              <p className="attivitaAmici m-0">Experience Transformation</p>
-              <button className="secondary-button" onClick={handleClick}>
-                <BsPersonPlusFill className="button-icon" />
-                Collegati
-              </button>
-            </div>
-          </div>
+          {showMore
+            ? otherProfile.slice(0, 5).map((profile, i) => (
+                <div className="d-flex justify-content-start text-secondary mb-3">
+                  <img
+                    width="20%"
+                    height="20%"
+                    className="me-1"
+                    src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png"
+                    alt=""
+                  />
+                  <div>
+                    <p className="attivitaAmiciNome m-0">
+                      {profile.name} {profile.surname}
+                      <span className="gradueSide m-0 text-secondary ">
+                        ·{i + 1}°
+                      </span>
+                    </p>
+                    <p className="attivitaAmici m-0">{profile.title}</p>
+                    <button className="secondary-button">
+                      <BsPersonPlusFill className="button-icon" />
+                      Collegati
+                    </button>
+                  </div>
+                </div>
+              ))
+            : otherProfile.map((profile, i) => (
+                <div className="d-flex justify-content-start text-secondary mb-3">
+                  <img
+                    width="20%"
+                    height="20%"
+                    className="me-1"
+                    src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png"
+                    alt=""
+                  />
+                  <div>
+                    <p className="attivitaAmiciNome m-0">
+                      {profile.name} {profile.surname}
+                      <span className="gradueSide m-0 text-secondary ">
+                        ·{i + 1}°
+                      </span>
+                    </p>
+                    <p className="attivitaAmici m-0">{profile.title}</p>
+                    <button className="secondary-button">
+                      <BsPersonPlusFill className="button-icon" />
+                      Collegati
+                    </button>
+                  </div>
+                </div>
+              ))}
         </div>
 
-        <hr />
-
-        <div className="d-flex justify-content-start text-secondary mb-3">
-          <img
-            width="20%"
-            height="20%"
-            className="me-1"
-            src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png"
-            alt=""
-          />
-          <div>
-            <p className="attivitaAmiciNome m-0">
-              Alessadro Monti{" "}
-              <span className="gradueSide m-0 text-secondary ">·2°</span>
-            </p>
-            <p className="attivitaAmici m-0">Experience Transformation</p>
-            <button className="secondary-button" onClick={handleClick}>
-              <BsPersonPlusFill className="button-icon" />
-              Collegati
-            </button>
-          </div>
-        </div>
-
-        <hr />
-
-        <div className="d-flex justify-content-start text-secondary mb-3">
-          <img
-            width="20%"
-            height="20%"
-            className="me-1"
-            src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png"
-            alt=""
-          />
-          <div>
-            <p className="attivitaAmiciNome m-0">
-              Alessadro Monti{" "}
-              <span className="gradueSide m-0 text-secondary ">·2°</span>
-            </p>
-            <p className="attivitaAmici m-0">Experience Transformation</p>
-            <button className="secondary-button" onClick={handleClick}>
-              <BsPersonPlusFill className="button-icon" />
-              Collegati
-            </button>
-          </div>
-        </div>
-
-        <hr />
-
-        <div className="d-flex justify-content-start text-secondary mb-3">
-          <img
-            width="20%"
-            height="20%"
-            className="me-1"
-            src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png"
-            alt=""
-          />
-          <div>
-            <p className="attivitaAmiciNome m-0">
-              Alessadro Monti{" "}
-              <span className="gradueSide m-0 text-secondary ">·2°</span>
-            </p>
-            <p className="attivitaAmici m-0">Experience Transformation</p>
-            <button className="secondary-button" onClick={handleClick}>
-              <BsPersonPlusFill className="button-icon" />
-              Collegati
-            </button>
-          </div>
-        </div>
-
-        <hr />
-
-        <div className="d-flex justify-content-start text-secondary mb-3">
-          <img
-            width="20%"
-            height="20%"
-            className="me-1"
-            src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png"
-            alt=""
-          />
-          <div>
-            <p className="attivitaAmiciNome m-0">
-              Alessadro Monti{" "}
-              <span className="gradueSide m-0 text-secondary ">·2°</span>
-            </p>
-            <p className="attivitaAmici m-0">Experience Transformation</p>
-            <button className="secondary-button" onClick={handleClick}>
-              <BsPersonPlusFill className="button-icon" />
-              Collegati
-            </button>
-          </div>
-        </div>
-
-        <hr />
-
-        <div className="d-flex justify-content-start text-secondary mb-3">
-          <img
-            width="20%"
-            height="20%"
-            className="me-1"
-            src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png"
-            alt=""
-          />
-          <div>
-            <p className="attivitaAmiciNome m-0">
-              Alessadro Monti{" "}
-              <span className="gradueSide m-0 text-secondary ">·2°</span>
-            </p>
-            <p className="attivitaAmici m-0">Experience Transformation</p>
-            <button className="secondary-button" onClick={handleClick}>
-              <BsPersonPlusFill className="button-icon" />
-              Collegati
-            </button>
-          </div>
-        </div>
-        <hr />
-        <p className="Altro  d-flex justify-content-center text-secondary mb-0">Visualzza Altro ▼</p>
+        <p className="Altro  d-flex justify-content-center text-secondary mb-0">
+          <Button variant="trasparent" onClick={() => handleClose()}>
+            {showMore ? "Visualzza Altro ▼" : "back"}
+          </Button>
+        </p>
       </div>
 
-{/*persone potresi conscere*/}
+      {/*persone potresi conscere*/}
       <div
         className="mb-2 p-2 text-secondary rounded bg-white"
         style={{
@@ -198,7 +121,6 @@ const SideBarProfile = ({ utenti }) => {
         <div className="mb-2 p-2 rounded bg-white">
           <div className="otherProfile d-flex justify-content-start text-black mb-0">
             Persone che potresti conoscere
-            
           </div>
           <p>Dalla tua scuola o universtà</p>
           <div className="d-flex justify-content-start text-secondary mb-3">
@@ -215,7 +137,7 @@ const SideBarProfile = ({ utenti }) => {
                 <span className="gradueSide m-0 text-secondary ">·2°</span>
               </p>
               <p className="attivitaAmici m-0">Experience Transformation</p>
-              <button className="secondary-button" onClick={handleClick}>
+              <button className="secondary-button">
                 <BsPersonPlusFill className="button-icon" />
                 Collegati
               </button>
@@ -223,101 +145,11 @@ const SideBarProfile = ({ utenti }) => {
           </div>
         </div>
 
-        <hr />
-
-        <div className="d-flex justify-content-start text-secondary mb-3">
-          <img
-            width="20%"
-            height="20%"
-            className="me-1"
-            src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png"
-            alt=""
-          />
-          <div>
-            <p className="attivitaAmiciNome m-0">
-              Alessadro Monti{" "}
-              <span className="gradueSide m-0 text-secondary ">·2°</span>
-            </p>
-            <p className="attivitaAmici m-0">Experience Transformation</p>
-            <button className="secondary-button" onClick={handleClick}>
-              <BsPersonPlusFill className="button-icon" />
-              Collegati
-            </button>
-          </div>
-        </div>
-
-        <hr />
-
-        <div className="d-flex justify-content-start text-secondary mb-3">
-          <img
-            width="20%"
-            height="20%"
-            className="me-1"
-            src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png"
-            alt=""
-          />
-          <div>
-            <p className="attivitaAmiciNome m-0">
-              Alessadro Monti{" "}
-              <span className="gradueSide m-0 text-secondary ">·2°</span>
-            </p>
-            <p className="attivitaAmici m-0">Experience Transformation</p>
-            <button className="secondary-button" onClick={handleClick}>
-              <BsPersonPlusFill className="button-icon" />
-              Collegati
-            </button>
-          </div>
-        </div>
-
-        <hr />
-
-        <div className="d-flex justify-content-start text-secondary mb-3">
-          <img
-            width="20%"
-            height="20%"
-            className="me-1"
-            src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png"
-            alt=""
-          />
-          <div>
-            <p className="attivitaAmiciNome m-0">
-              Alessadro Monti{" "}
-              <span className="gradueSide m-0 text-secondary ">·2°</span>
-            </p>
-            <p className="attivitaAmici m-0">Experience Transformation</p>
-            <button className="secondary-button" onClick={handleClick}>
-              <BsPersonPlusFill className="button-icon" />
-              Collegati
-            </button>
-          </div>
-        </div>
-
-        <hr />
-
-        <div className="d-flex justify-content-start text-secondary mb-3">
-          <img
-            width="20%"
-            height="20%"
-            className="me-1"
-            src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png"
-            alt=""
-          />
-          <div>
-            <p className="attivitaAmiciNome m-0">
-              Alessadro Monti{" "}
-              <span className="gradueSide m-0 text-secondary ">·2°</span>
-            </p>
-            <p className="attivitaAmici m-0">Experience Transformation</p>
-            <button className="secondary-button" onClick={handleClick}>
-              <BsPersonPlusFill className="button-icon" />
-              Collegati
-            </button>
-          </div>
-        </div>
-        <hr />
-        <p className="Altro  d-flex justify-content-center text-secondary mb-0">Visualzza Altro ▼</p>
+        <p className="Altro  d-flex justify-content-center text-secondary mb-0">
+          Visualzza Altro ▼
+        </p>
       </div>
-            <div
+      <div
         className="mb-2 p-2 text-secondary rounded bg-white"
         style={{
           fontSize: "0.9em",
@@ -340,13 +172,10 @@ const SideBarProfile = ({ utenti }) => {
             />
             <div>
               <p className="attivitaAmiciNome m-0">
-              PMO - Project Management OfficePMO - Project Management Office
-                
+                PMO - Project Management OfficePMO - Project Management Office
               </p>
               <p className="attivitaAmici m-0">utenti 217.548</p>
-              <button className="secondary-button" onClick={handleClick}>
-               Partecipa
-              </button>
+              <button className="secondary-button">Partecipa</button>
             </div>
           </div>
         </div>
@@ -363,17 +192,17 @@ const SideBarProfile = ({ utenti }) => {
           />
           <div>
             <p className="attivitaAmiciNome m-0">
-            PMO - Project Management OfficePMO - Project Management Office
+              PMO - Project Management OfficePMO - Project Management Office
             </p>
             <p className="attivitaAmici m-0">utenti 217.548</p>
-            <button className="secondary-button" onClick={handleClick}>
-            Partecipa
-            </button>
+            <button className="secondary-button">Partecipa</button>
           </div>
         </div>
 
         <hr />
-        <p className="Altro  d-flex justify-content-center text-secondary mb-0">Visualzza Altro ▼</p>
+        <p className="Altro  d-flex justify-content-center text-secondary mb-0">
+          Visualzza Altro ▼
+        </p>
       </div>
     </div>
   );

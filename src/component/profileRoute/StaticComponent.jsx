@@ -90,9 +90,8 @@ const StaticComponent = () => {
                 accedi agli strumenti di creazione
               </div>
             </span>
+            <hr className="mt-3" />
           </Row>
-
-          <hr className="mb-2 mt-2 d-flex " style={{ width: "70vw" }} />
 
           {/* LA MIA RETE */}
           <Row>
