@@ -17,8 +17,8 @@ const MiddleHome = () => {
   const handleShow3 = () => setShowPost(true);
   const profile = useSelector((state) => state.user.myProfile);
   return (
-    <Row>
-      <Container className="mt-4 p-4 border rounded-3 bg-white bg-light">
+    <>
+      <Container className="mt-4 p-3 h-25 mb-1 border rounded-3 bg-white bg-light">
         {/* CONTAINER PER BACHECA */}
         <Row>
           <Col>
@@ -84,7 +84,7 @@ const MiddleHome = () => {
           <PostHome />
         </Row>
       </Container>
-    </Row>
+    </>
   );
 };
 

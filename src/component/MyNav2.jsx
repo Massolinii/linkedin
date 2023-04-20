@@ -31,9 +31,8 @@ const MyNav2 = () => {
       dispatch(getAllProfile);
       dispatch(getUserProfile);
       dispatch(getUserExperience);
-      dispatch(getPosts)
+      dispatch(getPosts);
       setFetch(true);
-
     }
   };
   useEffect(() => {
