@@ -58,7 +58,7 @@ const RightHome = () => {
           </ul>
         </Card.Body>
       </Card>
-      <div className="footer-card d-flex justify-content-between mt-4">
+      <div className="footer-card d-flex justify-content-between ms-4 mt-4">
         <div className=" d-flex flex-wrap justify-content-center">
           <a href="*">Informazioni</a>
           <a href="*">Accessibilità</a>
