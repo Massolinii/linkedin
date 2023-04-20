@@ -7,7 +7,7 @@ const LeftHome = () => {
   const user = useSelector((state) => state.user.myProfile);
   return (
     <>
-      <Container className="mt-4 p-0">
+      <Container fluid className="mt-4 p-0">
         <Card>
           <Card.Img
             variant="top"

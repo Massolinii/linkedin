@@ -6,7 +6,7 @@ import RightHome from "./HomeRoute/RightHome";
 const MyHomePage = () => {
   return (
     <Container>
-      <Row>
+      <Row className="justify-content-center">
         <Col sm={0} md={3} lg={2} xl={2} className="d-none d-md-block">
           <LeftHome />
         </Col>
