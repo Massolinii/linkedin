@@ -12,10 +12,8 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { useDispatch, useSelector } from "react-redux";
 import {
   getSingleExperience,
-  getUserExperience,
   removeExperience,
   setExpID,
-  setNewExp,
 } from "../../redux/action/ExperienceAction";
 import { useState } from "react";
 import EditExperience from "./FormExperience/EditExperience";

@@ -76,8 +76,11 @@ const SideBarProfile = () => {
                   </div>
                 </div>
               ))
-            : otherProfile.slice(0, 5).map((profile, i) => (
-                <div className="d-flex justify-content-start text-secondary mb-3">
+            : otherProfile.map((profile, i) => (
+                <div
+                  key={i}
+                  className="d-flex justify-content-start text-secondary mb-3"
+                >
                   <img
                     width="20%"
                     height="20%"

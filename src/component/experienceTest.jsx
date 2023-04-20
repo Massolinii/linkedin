@@ -9,6 +9,7 @@ import {
   setExpID,
 } from "../redux/action/ExperienceAction";
 import { getAllProfile } from "../redux/action/UserAction";
+import { createPost } from "../redux/action/PostAction";
 
 const ExperienceTest = () => {
   const experiences = useSelector((state) => state.experience.experiences);

@@ -26,7 +26,6 @@ const MyNav2 = () => {
 
   const checkFetch = () => {
     if (fetch) {
-      console.log("fetched yet");
     } else {
       dispatch(getAllProfile);
       dispatch(getUserProfile);
@@ -57,31 +56,31 @@ const MyNav2 = () => {
 
         <ul className="ul-nav ms-5">
           <li>
-            <Link className="text-secondary " to="/">
+            <Link className="text-secondary " to="/home">
               <MdHome className="i-nav home" />
               <span className="d-none d-lg-block">Home</span>
             </Link>
           </li>
           <li>
-            <Link to="/rete" className="text-secondary ">
+            <Link to="/home" className="text-secondary ">
               <BsFillPeopleFill className="i-nav" />
               <span className="d-none d-lg-block">Rete</span>
             </Link>
           </li>
           <li>
-            <Link className="text-secondary " to="/job">
+            <Link className="text-secondary " to="/home">
               <MdWork className="i-nav tu text-secondary-special" />
               <span className="d-none d-lg-block">Job</span>
             </Link>
           </li>
           <li>
-            <Link to="/messaggistica" className="text-secondary ">
+            <Link to="/home" className="text-secondary ">
               <TbMessageCircle2Filled className="i-nav" />
               <span className="d-none d-lg-block">Messaggistica</span>
             </Link>
           </li>
           <li>
-            <Link to="/notifiche" className="text-secondary">
+            <Link to="/home" className="text-secondary">
               <MdNotifications className="i-nav" />
               <span className="d-none d-lg-block">Notifiche</span>
             </Link>
