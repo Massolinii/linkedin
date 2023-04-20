@@ -23,6 +23,13 @@ import {
   setThisUserID,
 } from "../redux/action/UserAction";
 import { useEffect, useState } from "react";
+<<<<<<< HEAD
+=======
+import { getUserExperience } from "../redux/action/ExperienceAction";
+import { BiSearchAlt2 } from "react-icons/bi";
+import { InputGroup, FormControl, Button } from "react-bootstrap";
+import { BiSearch } from "react-icons/bi";
+>>>>>>> promi
 
 const MyNav = () => {
   const profile = useSelector((state) => state.user.myProfile);
@@ -112,6 +119,7 @@ const MyNav = () => {
                 className="rounded-circle"
                 style={{ width: "50px", height: "50px" }}
               />
+<<<<<<< HEAD
               <div>
                 <NavDropdown.Item className="text-decoration-none bg-transparent">
                   {profile.name} {profile.surname}
@@ -171,6 +179,99 @@ const MyNav = () => {
         </Nav.Link>
       </Navbar>
     </>
+=======
+              <span className="d-none text-secondary  d-lg-block">Tu</span>
+              <NavDropdown
+                id="navbarScrollingDropdown"
+                className="freccia-dropdown"
+              >
+                <Dropdown.ItemText className="d-block ">
+                  <Row>
+                    <Col xs={2}>
+                      <img
+                        className="rounded-circle"
+                        src={profile.image}
+                        width={50}
+                        alt=""
+                      />
+                    </Col>
+
+                    <Col xs={9} className="ps-4">
+                      <Row>
+                        <b>
+                          {profile.name}
+                          {profile.surname}
+                        </b>
+                      </Row>
+                      <Row className="pt-1 pb-2">
+                        <span>
+                          {" "}
+                          {profile.title
+                            ? profile.title.length < 16
+                              ? profile.title
+                              : profile.title.substring(0, 16) + "..."
+                            : ""}
+                        </span>
+                      </Row>
+                    </Col>
+                  </Row>
+                  <Row className="justify-content-center">
+                    <Col>
+                      <Link
+                        className="toProfile btn btn-outline-primary py-0 "
+                        to="/profile"
+                      >
+                        Visualizza profilo
+                      </Link>
+                    </Col>
+                  </Row>
+                </Dropdown.ItemText>
+                <Dropdown.Divider />
+                <Dropdown.ItemText className="d-block">
+                  <b>Account</b> <br />
+                  <Link to={"/profile/5fc4af0bb708c200175de88e"}>
+                    Impostazioni e privacy
+                  </Link>
+                  <br />
+                  <Link>Guida</Link>
+                  <br />
+                  <Link>Lingua</Link>
+                </Dropdown.ItemText>
+                <Dropdown.Divider />
+                <Dropdown.ItemText className="d-block">
+                  <b>Gestisci</b> <br />
+                  <Link className="text-muted">Post e Attività</Link>
+                  <br />
+                  <Link className="text-muted">
+                    Account per la pubblicazione di offerte
+                  </Link>
+                  <br />
+                </Dropdown.ItemText>
+                <NavDropdown.Divider />
+
+                <Dropdown.Item href="#action5">Esci</Dropdown.Item>
+
+                <Dropdown.Item href="#action5">Esci</Dropdown.Item>
+              </NavDropdown>
+            </span>
+          </li>
+        </ul>
+        <ul className="ul-nav ul-ul">
+          <li>
+            <CgMenuGridR className="i-nav" />
+            <span className="d-none d-lg-block">
+              Lavoro <IoMdArrowDropdown className="freccia-dropdown" />
+            </span>
+          </li>
+          <li>
+            <a className="premium text-secondary " href="a">
+              Prova Premium
+            </a>
+          </li>
+        </ul>
+      </Col>
+    </Row>
+>>>>>>> promi
   );
 };
 
