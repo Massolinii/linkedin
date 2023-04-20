@@ -11,7 +11,7 @@ function HeroProfile() {
     <Container
       sm={12}
       md={8}
-      className="cover-image mt-4 p-3 border rounded-3 bg-light"
+      className="cover-image mt-4 p-0 border rounded-3 bg-light"
     >
       <Container>
         <Row className="d-flex align-items-end">
@@ -31,47 +31,49 @@ function HeroProfile() {
               </Col>
             </Row>
           </Container>{" "}
-          <Row className="ancorHero" style={{ fontSize: "15px" }}>
-            <div className="d-flex justify-content-between">
-              <h2 className="mb-0 mt-0">
-                {profile.name} {profile.surname}
-              </h2>
-              <BsPencil />
-            </div>
-            <p className="mb-0">{profile.title}</p>
-            <p className="mb-0 mt-3 text-secondary">
-              {profile.area} &middot;{" "}
+          <Row className="px-3 mx-0">
+            <Row className="ancorHero" style={{ fontSize: "15px" }}>
+              <div className="d-flex justify-content-between">
+                <h2 className="mb-0 mt-0">
+                  {profile.name} {profile.surname}
+                </h2>
+                <BsPencil />
+              </div>
+              <p className="mb-0">{profile.title}</p>
+              <p className="mb-0 mt-3 text-secondary">
+                {profile.area} &middot;{" "}
+                <a
+                  href="*"
+                  style={{ textDecoration: "none", fontWeight: "bold" }}
+                >
+                  Informazioni di contatto
+                </a>{" "}
+              </p>
               <a
                 href="*"
+                className="mb-0 mt-1"
                 style={{ textDecoration: "none", fontWeight: "bold" }}
               >
-                Informazioni di contatto
-              </a>{" "}
-            </p>
-            <a
-              href="*"
-              className="mb-0 mt-1"
-              style={{ textDecoration: "none", fontWeight: "bold" }}
-            >
-              245 collegamenti
-            </a>
-          </Row>
-          <Row className="mt-2 btn-hero">
-            <a className="bg-primary text-light border rounded-5" href=".">
-              Disponibile per
-            </a>
-            <a
-              className="bg-light border rounded-5 text-primary btnQuiz"
-              href="."
-            >
-              Aggiungi sezione del profilo
-            </a>
-            <a className="bg-light border rounded-5 text-secondary" href=".">
-              Altro
-            </a>
+                245 collegamenti
+              </a>
+            </Row>
+            <Row className="mt-2 btn-hero">
+              <a className="bg-primary text-light border rounded-5" href=".">
+                Disponibile per
+              </a>
+              <a
+                className="bg-light border rounded-5 text-primary btnQuiz"
+                href="."
+              >
+                Aggiungi sezione del profilo
+              </a>
+              <a className="bg-light border rounded-5 text-secondary" href=".">
+                Altro
+              </a>
+            </Row>
           </Row>
         </Row>
-        <Row>
+        <Row className="px-3 mx-0 mb-4">
           <Col
             className="mt-4 p-3 me-4"
             style={{

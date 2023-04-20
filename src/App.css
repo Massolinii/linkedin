@@ -284,9 +284,11 @@ h4 {
 /* BANNER FOTO PROFILO E COPERTINA */
 
 .profileCover {
+  border-top-right-radius: 9px;
+  border-top-left-radius: 9px;
   height: 300px;
   width: 100%;
-  background-image: url("https://placekitten.com/800/300");
+  background-image: url("https://media.licdn.com/dms/image/D4D16AQH_FZDkDj5sow/profile-displaybackgroundimage-shrink_350_1400/0/1670341689480?e=1687392000&v=beta&t=5LSh9omqYGwXGvEo95GlfiwsH12FtnpriAW5rtpPwWM");
   background-size: cover;
   background-position: center;
 }
