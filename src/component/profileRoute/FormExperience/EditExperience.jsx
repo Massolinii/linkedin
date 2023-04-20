@@ -2,16 +2,33 @@ import { Button, Col, Form, Modal, Row } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import {
   editExperience,
+  getUserExperience,
   setSingleExperience,
+  setToUpdate,
 } from "../../../redux/action/ExperienceAction";
+import { useEffect } from "react";
 
 const EditExperience = ({ handleClose }) => {
   const dispatch = useDispatch();
   const exp = useSelector((state) => state.experience.singleExperience);
   const sendForm = () => {
+    dispatch(setToUpdate(toUpdate));
     handleClose();
     dispatch(editExperience);
+    dispatch(getUserExperience);
   };
+
+  const toUpdate = {
+    role: exp.role,
+    company: exp.company,
+    startDate: exp.startDate,
+    endDate: exp.endDate,
+    description: exp.description,
+    area: exp.area,
+    username: "admin",
+  };
+
+  console.log(toUpdate);
   return (
     <>
       <Form>

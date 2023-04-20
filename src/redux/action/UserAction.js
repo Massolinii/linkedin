@@ -38,7 +38,6 @@ export const resetThisProfile = () => {
 
 const API_KEY =
   "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDNjZjQ2YTE4NmE4NzAwMTQzODY3YjciLCJpYXQiOjE2ODE3MTYzMzAsImV4cCI6MTY4MjkyNTkzMH0.W_8jJorRnuOYGtkVo1rTmrMx0Jj18Heth2NyOzc8ytc";
-
 export const getUserProfile = async (dispatch, getState) => {
   try {
     let response = await fetch(

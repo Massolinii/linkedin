@@ -52,7 +52,7 @@ const SideBarProfile = () => {
             Altri profili consultati
           </div>
           {showMore
-            ? otherProfile.slice(0, 5).map((profile, i) => (
+            ? otherProfile.map((profile, i) => (
                 <div className="d-flex justify-content-start text-secondary mb-3">
                   <img
                     width="20%"
@@ -76,7 +76,7 @@ const SideBarProfile = () => {
                   </div>
                 </div>
               ))
-            : otherProfile.map((profile, i) => (
+            : otherProfile.slice(0, 5).map((profile, i) => (
                 <div className="d-flex justify-content-start text-secondary mb-3">
                   <img
                     width="20%"
@@ -104,7 +104,7 @@ const SideBarProfile = () => {
 
         <p className="Altro  d-flex justify-content-center text-secondary mb-0">
           <Button variant="trasparent" onClick={() => handleClose()}>
-            {showMore ? "Visualzza Altro ▼" : "back"}
+            {showMore ? "Visualizza Meno ▲" : "Visualzza Altro ▼"}
           </Button>
         </p>
       </div>
