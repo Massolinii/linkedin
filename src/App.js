@@ -7,6 +7,7 @@ import MyFooter from "./component/MyFooter";
 import MyProfilePage from "./component/MyProfilePage";
 import MyHomePage from "./component/MyHomePage";
 import NotFound from "./component/NotFound";
+import Message from "./component/profileRoute/Message";
 
 function App() {
   return (
@@ -45,6 +46,7 @@ function App() {
           />
           <Route path="*" element={<NotFound></NotFound>} />
         </Routes>
+        <Message/>
       </Container>
     </BrowserRouter>
   );
