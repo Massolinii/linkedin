@@ -1,21 +1,21 @@
 import {
-    SET_POSTS,
-    SET_SINGLE_POST,
-    ADD_POST,
-    UPDATE_POST,
-    DELETE_POST,
-    SET_POST_ID,
-  } from "../action/PostAction";
+  SET_POSTS,
+  SET_SINGLE_POST,
+  ADD_POST,
+  UPDATE_POST,
+  DELETE_POST,
+  SET_POST_ID,
+} from "../action/PostAction";
 
 const initialState = {
-    posts: [],
-    singlePost: {},
-    IDs: { userID: "", postID: "" },
-}
+  posts: [],
+  singlePost: {},
+  IDs: { userID: "", postID: "" },
+};
 
 const PostReducer = (state = initialState, action) => {
-    switch (action.type) {
-        case SET_POSTS:
+  switch (action.type) {
+    case SET_POSTS:
       return {
         ...state,
         posts: action.payload,
@@ -47,10 +47,7 @@ const PostReducer = (state = initialState, action) => {
         ...state,
         posts: [
           ...state.posts.slice(0, action.payload),
-          ...state.posts.slice(
-            action.payload + 1,
-            state.posts.length
-          ),
+          ...state.posts.slice(action.payload + 1, state.posts.length),
         ],
       };
     default:
@@ -59,5 +56,3 @@ const PostReducer = (state = initialState, action) => {
 };
 
 export default PostReducer;
-
-
