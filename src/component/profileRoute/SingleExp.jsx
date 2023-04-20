@@ -1,13 +1,10 @@
 import { Row, Col, ButtonGroup, Button, Modal } from "react-bootstrap";
-import { BsPlusLg, BsPencil } from "react-icons/bs";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useDispatch, useSelector } from "react-redux";
 import {
   getSingleExperience,
-  getUserExperience,
   removeExperience,
   setExpID,
-  setNewExp,
 } from "../../redux/action/ExperienceAction";
 import { useState } from "react";
 import EditExperience from "./FormExperience/EditExperience";
@@ -53,16 +50,16 @@ const SingleExp = ({ exp }) => {
           </div>
           {/* <img src="*" alt="LOGO AZIENDA" className="me-2" /> */}
         </Col>
-        {/* <Col xs={10}>
+         <Col xs={10}>
           {" "}
-          <h5>{exp.company}</h5>
-          <p>role:{exp.role}</p>
-          <p>Start date: {exp.startDate.slice(0, 10)}</p>
-          <p>{exp.area}</p>
-          <p>
+          <h4>{exp.company}</h4>
+          <p className="m-0">Role : {exp.role}</p>
+          <p className="m-0">Start date : {exp.startDate.slice(0, 10)}</p>
+          <p className="m-0">{exp.area}</p>
+          <p className="m-0">
             Competenze: <span>{exp.description}</span>
           </p>
-        </Col>  */}
+        </Col> 
         <Row>
           <Col className="text-center">
             <ButtonGroup>
