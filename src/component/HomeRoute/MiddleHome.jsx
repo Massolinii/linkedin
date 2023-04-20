@@ -26,12 +26,13 @@ const MiddleHome = () => {
               <div className="d-flex h-25">
                 <div className="">
                   <img
+                    id="picProHome"
                     className="profilePictureHome"
                     src={profile.image}
                     alt=""
                   />
                 </div>
-                <Button onClick={handleShow3} className="btnStartPost">
+                <Button onClick={handleShow3} className="btnStartPost shadow">
                   Avvia un post
                 </Button>
               </div>
