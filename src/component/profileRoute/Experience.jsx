@@ -10,7 +10,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import React, { useState } from "react";
 import AddExperience from "./FormExperience/AddExperience";
 import BreakExperience from "./FormExperience/BreakExperience";
-import SingleExp from "./SingleExp";
+// import SingleExp from "./SingleExp";
 import { useSelector } from "react-redux";
 
 const Experience = () => {
@@ -81,9 +81,9 @@ const Experience = () => {
           </Modal>
         </Row>
 
-        {listUserExp.map((exp) => (
+        {/* {listUserExp.map((exp) => (
           <SingleExp exp={exp}></SingleExp>
-        ))}
+        ))} */}
       </Container>
     </>
   );

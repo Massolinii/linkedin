@@ -17,7 +17,7 @@ const MiddleHome = () => {
 
   return (
     <>
-      <Container className="mt-4 p-4 border rounded-3 bg-white bg-light">
+      <Container className="mt-4 p-3 h-25 mb-1 border rounded-3 bg-white bg-light">
         {/* CONTAINER PER BACHECA */}
         <Row>
           <Col>
