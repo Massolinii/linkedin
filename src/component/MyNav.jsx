@@ -17,19 +17,6 @@ import {
 } from "../redux/action/UserAction";
 import { useEffect, useState } from "react";
 import { getUserExperience } from "../redux/action/ExperienceAction";
-import { Link, useParams } from "react-router-dom";
-import { TbMessageCircle2Filled } from "react-icons/tb";
-import Nav from "react-bootstrap/Nav";
-import NavDropdown from "react-bootstrap/NavDropdown";
-import { useDispatch, useSelector } from "react-redux";
-import {
-  getAllProfile,
-  getThisProfile,
-  getUserProfile,
-  setThisUserID,
-} from "../redux/action/UserAction";
-import { useEffect, useState } from "react";
-import { getUserExperience } from "../redux/action/ExperienceAction";
 import { BiSearchAlt2 } from "react-icons/bi";
 import { InputGroup, FormControl, Button } from "react-bootstrap";
 import { BiSearch } from "react-icons/bi";
@@ -183,7 +170,6 @@ const MyNav = () => {
 
                 <Dropdown.Item href="#action5">Esci</Dropdown.Item>
               </NavDropdown>
-            </span>
             </span>
           </li>
         </ul>
