@@ -6,7 +6,6 @@ import {
   setSingleExperience,
   setToUpdate,
 } from "../../../redux/action/ExperienceAction";
-import { useEffect } from "react";
 
 const EditExperience = ({ handleClose }) => {
   const dispatch = useDispatch();
