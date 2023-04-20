@@ -16,8 +16,16 @@ import { createPost } from "../../redux/action/PostAction";
 
 function FormPost({ handleclose3 }) {
   const [postText, setPostText] = useState("");
+  const [writing, setWriting] = useState(false);
   const dispatch = useDispatch();
 
+  const checkWriting = () => {
+    if (postText.length > 0) {
+      writing ? setWriting(false) : setWriting(true);
+    }
+
+    console.log(writing);
+  };
   const handleSubmit = (e) => {
     e.preventDefault();
     dispatch(createPost(postText));
@@ -49,10 +57,12 @@ function FormPost({ handleclose3 }) {
             className="postArea"
             noValidate
             value={postText}
-            onChange={(e) => 
-                setPostText(
-                  e.target.value)}
+            onChange={(e) => {
+              setPostText(e.target.value);
+              checkWriting();
+            }}
           />
+          {writing ? "true" : "false"}
         </Form.Group>
         <BsEmojiExpressionless className="ms-3 " />
 
@@ -94,7 +104,12 @@ function FormPost({ handleclose3 }) {
       </Form>
 
       <Modal.Footer className="mt-4">
-        <Button onClick={handleSubmit} type="submit" variant="none" className="btnPubblish">
+        <Button
+          onClick={handleSubmit}
+          type="submit"
+          variant="none"
+          className="btnPubblish"
+        >
           Pubblica
         </Button>
       </Modal.Footer>

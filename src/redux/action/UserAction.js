@@ -1,3 +1,5 @@
+import { getUserExperience } from "./ExperienceAction";
+
 /* AZIONI PROFILE */
 export const SET_MY_PROFILE = "SET_MY_PROFILE";
 export const SET_OTHER_PEOPLE = "SET_OTHER_PEOPLE";
@@ -38,6 +40,7 @@ export const resetThisProfile = () => {
 
 const API_KEY =
   "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDNjZjQ2YTE4NmE4NzAwMTQzODY3YjciLCJpYXQiOjE2ODE3MTYzMzAsImV4cCI6MTY4MjkyNTkzMH0.W_8jJorRnuOYGtkVo1rTmrMx0Jj18Heth2NyOzc8ytc";
+
 export const getUserProfile = async (dispatch, getState) => {
   try {
     let response = await fetch(
@@ -52,6 +55,7 @@ export const getUserProfile = async (dispatch, getState) => {
     if (response.ok) {
       let details = await response.json();
       dispatch(setMyProfile(details));
+      dispatch(getUserExperience);
       //console.log(details);
     } else {
       console.log("Error has happened with the request");

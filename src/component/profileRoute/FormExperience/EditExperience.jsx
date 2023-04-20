@@ -24,7 +24,6 @@ const EditExperience = ({ handleClose }) => {
     endDate: exp.endDate,
     description: exp.description,
     area: exp.area,
-    username: "admin",
   };
 
   console.log(toUpdate);

@@ -18,13 +18,10 @@ const Experience = () => {
   const [show, setShow] = useState(false);
   const [showPause, setShowPause] = useState(false);
   const listUserExp = useSelector((state) => state.experience.experiences);
-  const handleToggle = () => {
-    setShowDropdown(!showDropdown);
-  };
 
   const handleClose = () => setShow(false);
-  const handleClose2 = () => setShowPause(false);
   const handleShow = () => setShow(true);
+  const handleClose2 = () => setShowPause(false);
   const handleShow2 = () => setShowPause(true);
 
   return (
@@ -34,16 +31,14 @@ const Experience = () => {
           <div className="d-flex justify-content-between">
             <h4>Esperienza</h4>
             <div className="d-flex justify-content-between">
-              <Dropdown
-                show={showDropdown}
-                onClose={() => setShowDropdown(false)}
-              >
-                <BsPlusLg
-                  className="d-flex me-4 btn-outline-dark rounded-circle"
-                  variant="secondary"
-                  id="dropdown-basic"
-                  onClick={handleToggle}
-                />
+              <Dropdown id="dropdown-basic" variant="transparent">
+                <Dropdown.Toggle
+                  id="dropdown-autoclose-true "
+                  variant="link"
+                  className="text-dark"
+                >
+                  <BsPlusLg />
+                </Dropdown.Toggle>
                 <Dropdown.Menu>
                   <Dropdown.Item onClick={handleShow}>
                     <BsBriefcaseFill className="me-2" /> Aggiungi Posizione
@@ -72,7 +67,7 @@ const Experience = () => {
           {/* EDIT EXPERIENCE */}
         </Row>
 
-        {listUserExp.slice(2, listUserExp.length).map((exp, i) => (
+        {listUserExp.slice(0, listUserExp.length).map((exp, i) => (
           <SingleExp exp={exp} key={i}></SingleExp>
         ))}
       </Container>

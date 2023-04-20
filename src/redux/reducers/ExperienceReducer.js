@@ -17,7 +17,6 @@ const initialState = {
     endDate: null,
     description: "",
     area: "",
-    username: "Salcana",
   },
   toUpdate: {},
   IDs: { userID: "", expID: "" },
@@ -28,7 +27,6 @@ const initialState = {
     endDate: null,
     description: "",
     area: "",
-    username: "Salcana",
   },
 };
 
