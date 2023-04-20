@@ -123,6 +123,7 @@ body {
 }
 
 .ul-nav li a {
+  color: #808080;
   text-decoration: none;
 }
 .ul-nav li a:hover {
@@ -132,6 +133,7 @@ body {
 }
 .ul-nav li a:hover {
   text-decoration: underline;
+}
 
 .freccia-dropdown {
   font-size: 22px;
