@@ -39,7 +39,7 @@ const Experience = () => {
                 onClose={() => setShowDropdown(false)}
               >
                 <BsPlusLg
-                  className="d-flex me-4 btnChange"
+                  className="d-flex me-4 btn-outline-dark rounded-circle"
                   variant="secondary"
                   id="dropdown-basic"
                   onClick={handleToggle}
@@ -54,7 +54,6 @@ const Experience = () => {
                   </Dropdown.Item>
                 </Dropdown.Menu>
               </Dropdown>
-              <BsPencil className="btnChange" />
             </div>
           </div>
 
@@ -73,8 +72,8 @@ const Experience = () => {
           {/* EDIT EXPERIENCE */}
         </Row>
 
-        {listUserExp.slice(2, listUserExp.length).map((exp, _id) => (
-          <SingleExp exp={exp} key={_id}></SingleExp>
+        {listUserExp.slice(2, listUserExp.length).map((exp, i) => (
+          <SingleExp exp={exp} key={i}></SingleExp>
         ))}
       </Container>
     </>

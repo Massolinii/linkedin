@@ -5,6 +5,7 @@ import {
   DELETE_EXPERIENCE,
   SET_EXP_ID,
   SET_NEW_EXP,
+  SET_TO_UPDATE,
 } from "../action/ExperienceAction";
 
 const initialState = {
@@ -18,6 +19,7 @@ const initialState = {
     area: "",
     username: "Salcana",
   },
+  toUpdate: {},
   IDs: { userID: "", expID: "" },
   newExp: {
     role: "",
@@ -61,12 +63,17 @@ const ExperienceReducer = (state = initialState, action) => {
       return {
         ...state,
         experiences: [
-          ...state.experiences.slice(0, action.payload),
+          ...state.experiences.slice(3, action.payload),
           ...state.experiences.slice(
             action.payload + 1,
             state.experiences.length
           ),
         ],
+      };
+    case SET_TO_UPDATE:
+      return {
+        ...state,
+        toUpdate: action.payload,
       };
     default:
       return state;
