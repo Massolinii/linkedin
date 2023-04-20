@@ -44,7 +44,7 @@ export const updatePost = (data) => {
 export const deleteThisPost = (i) => {
   return {
     type: DELETE_POST,
-    payload: post_id,
+    payload: i,
   };
 };
 
