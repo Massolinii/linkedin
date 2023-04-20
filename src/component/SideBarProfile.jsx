@@ -76,11 +76,8 @@ const SideBarProfile = () => {
                   </div>
                 </div>
               ))
-            : otherProfile.map((profile, i) => (
-                <div
-                  key={i}
-                  className="d-flex justify-content-start text-secondary mb-3"
-                >
+            : otherProfile.slice(0, 5).map((profile, i) => (
+                <div className="d-flex justify-content-start text-secondary mb-3">
                   <img
                     width="20%"
                     height="20%"
@@ -96,7 +93,7 @@ const SideBarProfile = () => {
                       </span>
                     </p>
                     <p className="attivitaAmici m-0">{profile.title}</p>
-                    <button className="secondary-button">
+                    <button className="secondary-button fw-bold">
                       <BsPersonPlusFill className="button-icon" />
                       Collegati
                     </button>
@@ -140,7 +137,7 @@ const SideBarProfile = () => {
                 <span className="gradueSide m-0 text-secondary ">·2°</span>
               </p>
               <p className="attivitaAmici m-0">Experience Transformation</p>
-              <button className="secondary-button">
+              <button className="secondary-button ">
                 <BsPersonPlusFill className="button-icon" />
                 Collegati
               </button>

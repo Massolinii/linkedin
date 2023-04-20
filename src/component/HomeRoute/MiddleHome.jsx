@@ -74,7 +74,7 @@ const MiddleHome = () => {
         </Row>
       </Container>
 
-      <Container className=" p-4 border rounded-3 bg-white bg-light">
+      <Container>
         <Row>
           <PostHome />
         </Row>

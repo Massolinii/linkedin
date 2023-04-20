@@ -365,11 +365,9 @@ h4 {
   font-size: 16px;
   font-weight: 400;
   cursor: pointer;
-  background-color: #edeff1;
 }
 .secondary-button:hover {
-  background-color: #edeff1;
-  border: solid 3px rgb(72, 72, 72);
+  background-color: #d4d4d4;
 }
 
 .button-icon {
