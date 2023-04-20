@@ -39,7 +39,7 @@ const MyProfilePage = () => {
   return (
     <Container className="d-flex justify-content-center">
       <Row>
-        <Col sm={8} md={8} lg={9} xl={9}>
+        <Col sm={12} md={12} lg={9} xl={9}>
           {/* HERO SECTION */}
           <Row>
             <Col>
@@ -83,10 +83,8 @@ const MyProfilePage = () => {
             </Col>
           </Row>
         </Col>
-        <Col sm={0} md={4} lg={3} xl={3}>
-          <Col>
-            <SideBarProfile />
-          </Col>
+        <Col sm={0} md={0} lg={3} xl={3}  className="d-none d-md-block">
+          <SideBarProfile />
         </Col>
       </Row>
     </Container>

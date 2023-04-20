@@ -1,28 +1,52 @@
 import "./App.css";
-import MyNav from "./component/MyNav";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Container, Row } from "react-bootstrap";
 import MyFooter from "./component/MyFooter";
 
 import MyProfilePage from "./component/MyProfilePage";
+import MyHomePage from "./component/MyHomePage";
+import NotFound from "./component/NotFound";
+import MyNav2 from "./component/MyNav2";
+import Message from "./component/profileRoute/Message";
 
 function App() {
   return (
     <BrowserRouter>
-      <MyNav />
-      <Container>
-        <Row></Row>
+      <Container fluid>
+        <Row>
+          <MyNav2 />
+        </Row>
         <Routes>
           <Route path="*" />
+          <Route path="/home" element={<MyHomePage />} />
           <Route
             path="/profile/:userID"
-            element={<MyProfilePage></MyProfilePage>}
+            element={
+              <>
+                <MyProfilePage /> <MyFooter />
+              </>
+            }
           />
-          <Route path="/profile" element={<MyProfilePage></MyProfilePage>} />
+          <Route
+            path="/profile"
+            element={
+              <>
+                <MyProfilePage /> <MyFooter />
+              </>
+            }
+          />
+          <Route path="/profile/:userID" element={<MyProfilePage />} />
+          <Route
+            path="/profile"
+            element={
+              <>
+                <MyProfilePage /> <MyFooter />
+              </>
+            }
+          />
+          <Route path="*" element={<NotFound></NotFound>} />
         </Routes>
-        <Row>
-          <MyFooter></MyFooter>
-        </Row>
+        <Message/>
       </Container>
     </BrowserRouter>
   );

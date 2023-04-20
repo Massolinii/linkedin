@@ -31,8 +31,7 @@ export const setThisProfile = (data) => {
 
 const API_KEY =
   "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDNjZjQ2YTE4NmE4NzAwMTQzODY3YjciLCJpYXQiOjE2ODE3MTYzMzAsImV4cCI6MTY4MjkyNTkzMH0.W_8jJorRnuOYGtkVo1rTmrMx0Jj18Heth2NyOzc8ytc";
-
-export const getUserProfile = async (dispatch) => {
+export const getUserProfile = async (dispatch, getState) => {
   try {
     let response = await fetch(
       `https://striveschool-api.herokuapp.com/api/profile/me`,
@@ -46,7 +45,7 @@ export const getUserProfile = async (dispatch) => {
     if (response.ok) {
       let details = await response.json();
       dispatch(setMyProfile(details));
-      console.log(details);
+      //console.log(details);
     } else {
       console.log("Error has happened with the request");
     }
@@ -67,7 +66,7 @@ export const getAllProfile = async (dispatch) => {
     if (response.ok) {
       let details = await response.json();
       dispatch(setOtherPeople(details.slice(0, 10)));
-      console.log(details);
+      //  console.log(details);
     } else {
       console.log("Error has happened with the request");
     }
@@ -87,8 +86,8 @@ export const getAllProfile = async (dispatch) => {
     );
     if (response.ok) {
       let details = await response.json();
-      dispatch(setOtherPeople(details.slice(0, 10)));
-      console.log(details);
+      dispatch(setThisProfile(details));
+      //console.log(details);
     } else {
       console.log("Error has happened with the request");
     }
