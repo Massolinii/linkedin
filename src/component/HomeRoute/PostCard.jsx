@@ -54,8 +54,8 @@ const PostCard = ({ post }) => {
               <div>
                 {" "}
                 <img
-                  /*src={news[i]?.user?.image}*/ alt=""
-                  style={{ aspectRatio: "1 / 1", borderRadius: "50%" }}
+                  src={post.image} alt=""
+                  style={{ aspectRatio: "1 / 1", height: "80px"}}
                 />
               </div>
             </div>
