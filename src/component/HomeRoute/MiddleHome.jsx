@@ -8,6 +8,7 @@ import {
 import Modal from "react-bootstrap/Modal";
 import React, { useState } from "react";
 import FormPost from "./FormPost";
+import { PostHome } from "./PostHome";
 
 const MiddleHome = () => {
   const [showPost, setShowPost] = useState(false);
@@ -69,6 +70,9 @@ const MiddleHome = () => {
             </div>
           </div>
         </Col>
+      </Row>
+      <Row>
+        <PostHome />
       </Row>
     </Container>
   );

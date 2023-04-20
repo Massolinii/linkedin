@@ -17,6 +17,7 @@ import {
 } from "../redux/action/UserAction";
 import { useEffect, useState } from "react";
 import { getUserExperience } from "../redux/action/ExperienceAction";
+import { getPosts } from "../redux/action/PostAction";
 
 const MyNav2 = () => {
   const dispatch = useDispatch();
@@ -30,7 +31,9 @@ const MyNav2 = () => {
       dispatch(getAllProfile);
       dispatch(getUserProfile);
       dispatch(getUserExperience);
+      dispatch(getPosts)
       setFetch(true);
+
     }
   };
   useEffect(() => {

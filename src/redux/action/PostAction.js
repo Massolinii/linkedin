@@ -1,4 +1,4 @@
-/* AZIONI EXPERIENCE */
+/* AZIONI POST */
 export const SET_POSTS = "SET_POST";
 export const SET_SINGLE_POST = "SET_SINGLE_POST";
 export const ADD_POST = "ADD_POST";
