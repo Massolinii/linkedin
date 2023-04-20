@@ -14,13 +14,13 @@ export const setPosts = (data) => {
   };
 };
 
-export const setSingleExperience = (data) => {
+export const setSinglePost = (data) => {
   return {
     type: SET_SINGLE_POST,
     payload: data,
   };
 };
-export const setExpID = (id) => {
+export const setPostID = (id) => {
   return {
     type: SET_POST_ID,
     payload: id,
@@ -41,7 +41,7 @@ export const updatePost = (data) => {
   };
 };
 
-export const deleteExperience = (i) => {
+export const deleteThisPost = (i) => {
   return {
     type: DELETE_POST,
     payload: i,
@@ -51,40 +51,38 @@ export const deleteExperience = (i) => {
 const API_KEY =
   "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDNjZjQ2YTE4NmE4NzAwMTQzODY3YjciLCJpYXQiOjE2ODE3MTYzMzAsImV4cCI6MTY4MjkyNTkzMH0.W_8jJorRnuOYGtkVo1rTmrMx0Jj18Heth2NyOzc8ytc";
 
+/* GET - ALL POSTS */
+export const getPosts = async (dispatch, getState) => {
+  let state = getState();
+  let userID = state.user.thisProfile.userID;
+  console.log(userID);
 
-  /* GET - ALL POSTS */
-  export const getPosts = async (dispatch, getState) => {
-    let state = getState();
-    let userID = state.user.thisProfile.userID;
-    console.log(userID);
-  
-    try {
-      let response = await fetch(
-        `https://striveschool-api.herokuapp.com/api/posts/`,
-        {
-          headers: {
-            "Content-type": "application/json",
-            Authorization: API_KEY,
-          },
-        }
-      );
-      if (response.ok) {
-        let posts = await response.json();
-        dispatch(setPosts(posts));
-        console.log(posts);
-      } else {
-        console.log("Error has happened with the GET request");
+  try {
+    let response = await fetch(
+      `https://striveschool-api.herokuapp.com/api/posts/`,
+      {
+        headers: {
+          "Content-type": "application/json",
+          Authorization: API_KEY,
+        },
       }
-    } catch (error) {
-      console.log("GET Fetch try failed,", error);
+    );
+    if (response.ok) {
+      let posts = await response.json();
+      dispatch(setPosts(posts));
+      console.log(posts);
+    } else {
+      console.log("Error has happened with the GET request");
     }
-  };
+  } catch (error) {
+    console.log("GET Fetch try failed,", error);
+  }
+};
 
-  /* POST - NEW POST*/
+/* POST - NEW POST*/
 export const createPost = async (dispatch) => {
-
   let newPostData = {
-    text: "This is another New Post! I hate everybody in here"
+    text: "This is another New Post! I hate everybody in here",
   };
 
   try {
@@ -114,13 +112,16 @@ export const createPost = async (dispatch) => {
 /* DELETE - DELETE POST */
 export const deletePost = async (post_id) => {
   try {
-    let resp = await fetch(`https://striveschool-api.herokuapp.com/api/posts/`, + post_id,
-     {
-      method: "DELETE",
-      headers: {
-        Authorization: API_KEY,
-      },
-    });
+    let resp = await fetch(
+      `https://striveschool-api.herokuapp.com/api/posts/`,
+      +post_id,
+      {
+        method: "DELETE",
+        headers: {
+          Authorization: API_KEY,
+        },
+      }
+    );
 
     let data = await resp.json();
     if (resp.ok) {
@@ -129,7 +130,7 @@ export const deletePost = async (post_id) => {
   } catch (error) {
     console.log("Error:", error);
   }
-}
+};
 
 /* PUT - EDIT POST*/
 
@@ -147,11 +148,11 @@ export const editPost = async (formData, post_id) => {
       }
     );
     if (response.ok) {
-      alert("Post successfully modified.")
+      alert("Post successfully modified.");
     } else {
-      alert("There was a problem modifying this Post")
+      alert("There was a problem modifying this Post");
     }
   } catch (error) {
-    console.log("Error:", error)
+    console.log("Error:", error);
   }
-}
+};

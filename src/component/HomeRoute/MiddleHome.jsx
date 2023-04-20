@@ -9,12 +9,13 @@ import Modal from "react-bootstrap/Modal";
 import React, { useState } from "react";
 import FormPost from "./FormPost";
 import { PostHome } from "./PostHome";
+import { useSelector } from "react-redux";
 
 const MiddleHome = () => {
   const [showPost, setShowPost] = useState(false);
   const handleclose3 = () => setShowPost(false);
   const handleShow3 = () => setShowPost(true);
-
+  const profile = useSelector((state) => state.user.myProfile);
   return (
     <Row>
       <Container className="mt-4 p-4 border rounded-3 bg-white bg-light">
@@ -22,8 +23,12 @@ const MiddleHome = () => {
         <Row>
           <Col>
             <div className="d-flex h-25">
-              <div className="profileIcon">
-                <img src="https://placekitten.com/200" alt="" />
+              <div className="">
+                <img
+                  className="profilePictureHome"
+                  src={profile.image}
+                  alt=""
+                />
               </div>
               <Button onClick={handleShow3} className="btnStartPost">
                 Avvia un post

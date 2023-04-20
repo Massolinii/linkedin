@@ -20,11 +20,10 @@ const EditExperience = ({ handleClose }) => {
   const toUpdate = {
     role: exp.role,
     company: exp.company,
-    startDate: exp.startDate,
-    endDate: exp.endDate,
+    startDate: exp.startDate.slice(0, 10),
+    endDate: exp.endDate ? exp.endDate.slice(0, 10) : "",
     description: exp.description,
     area: exp.area,
-    username: "admin",
   };
 
   console.log(toUpdate);
