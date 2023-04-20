@@ -72,9 +72,9 @@ const Experience = () => {
           {/* EDIT EXPERIENCE */}
         </Row>
 
-        {listUserExp.slice(2, listUserExp.length).map((exp, i) => (
+        {/* {listUserExp.slice(2, listUserExp.length).map((exp, i) => (
           <SingleExp exp={exp} key={i}></SingleExp>
-        ))}
+        ))} */}
       </Container>
     </>
   );
