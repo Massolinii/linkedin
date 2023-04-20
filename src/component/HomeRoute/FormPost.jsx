@@ -12,10 +12,6 @@ import {
 } from "react-icons/bs";
 
 function FormPost({ handleclose3 }) {
-  function attivaButton() {
-    document.querySelector(".btnPubblish").removeAttribute("disabled");
-  }
-
   return (
     <div
       className="modal show"
@@ -82,13 +78,7 @@ function FormPost({ handleclose3 }) {
       </Form>
 
       <Modal.Footer className="mt-4">
-        <Button
-          type="submit"
-          variant="none"
-          className="btnPubblish"
-          onclick={attivaButton()}
-          disabled
-        >
+        <Button type="submit" variant="none" className="btnPubblish" disabled>
           Pubblica
         </Button>
       </Modal.Footer>
