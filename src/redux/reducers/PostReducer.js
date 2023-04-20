@@ -11,6 +11,9 @@ const initialState = {
     posts: [],
     singlePost: {},
     IDs: { userID: "", postID: "" },
+    newPost: {
+      text: "",
+    },
 }
 
 const PostReducer = (state = initialState, action) => {
@@ -33,7 +36,7 @@ const PostReducer = (state = initialState, action) => {
     case ADD_POST:
       return {
         ...state,
-        post: [...state.posts, action.payload],
+        newPost: [...state.posts, action.payload],
       };
     case UPDATE_POST:
       return {
@@ -45,14 +48,8 @@ const PostReducer = (state = initialState, action) => {
     case DELETE_POST:
       return {
         ...state,
-        posts: [
-          ...state.posts.slice(0, action.payload),
-          ...state.posts.slice(
-            action.payload + 1,
-            state.posts.length
-          ),
-        ],
-      };
+        posts: state.posts.filter((post) => post._id !== action.payload),
+    };
     default:
       return state;
   }

@@ -10,8 +10,20 @@ import {
   BsCalendar2DateFill,
   BsThreeDots,
 } from "react-icons/bs";
+import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { createPost } from "../../redux/action/PostAction";
 
 function FormPost({ handleclose3 }) {
+  const [postText, setPostText] = useState("");
+  const dispatch = useDispatch();
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    dispatch(createPost(postText));
+    setPostText(""); // svuota il campo di input
+  };
+
   return (
     <div
       className="modal show"
@@ -23,7 +35,7 @@ function FormPost({ handleclose3 }) {
             <img src="https://placekitten.com/200" alt="" />
           </div>
           <div className="privacyPost mx-2">
-            <h5>Nome utente</h5>
+            <h5>{}</h5>
             <a href="*">
               <BsWordpress className="mx-2" /> Chiunque{" "}
               <BsFillCaretDownFill className="mx-2" />
@@ -36,13 +48,17 @@ function FormPost({ handleclose3 }) {
             placeholder="Di cosa vorresti paralre?"
             className="postArea"
             noValidate
+            value={postText}
+            onChange={(e) => 
+                setPostText(
+                  e.target.value)}
           />
         </Form.Group>
         <BsEmojiExpressionless className="ms-3 " />
 
         <div className="d-flex mt-3">
           {/* FOTO */}
-          <Button variant="light" type="submit" className="btnn foto">
+          <Button variant="light" type="button" className="btnn foto">
             <div className="roundBtn" style={{ backgroundColor: "#0966c2" }}>
               <BsImage style={{ fontSize: "25px", color: "#dbe7e9" }} />
             </div>
@@ -50,7 +66,7 @@ function FormPost({ handleclose3 }) {
           </Button>
 
           {/* VIDEO */}
-          <Button variant="light" type="submit" className="btnn video">
+          <Button variant="light" type="button" className="btnn video">
             <div className="roundBtn" style={{ backgroundColor: "#8F5849" }}>
               <BsCameraVideo style={{ fontSize: "25px", color: "#fde2ba" }} />
             </div>
@@ -58,7 +74,7 @@ function FormPost({ handleclose3 }) {
           </Button>
 
           {/* EVENTO */}
-          <Button variant="light" type="submit" className="btnn evento">
+          <Button variant="light" type="button" className="btnn evento">
             <div className="roundBtn" style={{ backgroundColor: "#81597E" }}>
               <BsCalendar2DateFill
                 style={{ fontSize: "25px", color: "#fadfd8" }}
@@ -68,7 +84,7 @@ function FormPost({ handleclose3 }) {
           </Button>
 
           {/* ALTRO */}
-          <Button variant="light" type="submit" className="btnn altro">
+          <Button variant="light" type="button" className="btnn altro">
             <div className="roundBtn" style={{ backgroundColor: "#666666" }}>
               <BsThreeDots style={{ fontSize: "25px", color: "#f3f2ef" }} />
             </div>
@@ -78,7 +94,7 @@ function FormPost({ handleclose3 }) {
       </Form>
 
       <Modal.Footer className="mt-4">
-        <Button type="submit" variant="none" className="btnPubblish" disabled>
+        <Button onClick={handleSubmit} type="submit" variant="none" className="btnPubblish">
           Pubblica
         </Button>
       </Modal.Footer>

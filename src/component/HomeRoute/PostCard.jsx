@@ -6,7 +6,19 @@ import { AiOutlineMessage } from 'react-icons/ai';
 import { BsArrowLeftRight } from 'react-icons/bs';
 import { FaTelegramPlane } from 'react-icons/fa';
 
+import { useDispatch } from "react-redux";
+import { deletePost } from "../../redux/action/PostAction";
+
 const PostCard = ({ post }) => {
+    
+    const dispatch = useDispatch();
+
+    const handleDeletePost = async () => {
+        if (window.confirm("Sei sicuro di voler eliminare questo post?")) {
+            await dispatch(deletePost(post._id));
+        }
+    };
+
     return (
         <div className="newsCard mb-3 rounded-3 bg-white border">
             <div className='p-4'>
@@ -24,7 +36,7 @@ const PostCard = ({ post }) => {
         
                     <div className='d-flex controlIcon'>
                         <div className='mx-3'><AiOutlinePlus className='mx-1' />Segui</div>
-                        <div><BsThreeDots className='threeIcon' /></div>
+                        <div><BsThreeDots className='threeIcon' onClick={handleDeletePost}/></div>
                     </div>
                 </div>
         
