@@ -61,9 +61,10 @@ function FormEditPost({ post }) {
                 onChange={(e) => setPostText(e.target.value)}
               />
             </Form.Group>
-            <Form.Group controlId="formFile2" className="mb-3">
+            <Form.Group controlId="formFile" className="mb-3 d-none">
               <Form.Label>Choose a pic.</Form.Label>
               <Form.Control
+                id="cliccami"
                 type="file"
                 onChange={(e) => {
                   const file = e.target.files[0];
@@ -76,7 +77,12 @@ function FormEditPost({ post }) {
 
             <div className="d-flex mt-3">
               {/* FOTO */}
-              <Button variant="light" type="button" className="btnn foto">
+              <Button
+                variant="light"
+                type="button"
+                className="btnn foto"
+                onClick={() => document.querySelector("#cliccami").click()}
+              >
                 <div
                   className="roundBtn"
                   style={{ backgroundColor: "#0966c2" }}
