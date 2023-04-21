@@ -8,10 +8,7 @@ import { Link } from "react-router-dom";
 import { TbMessageCircle2Filled } from "react-icons/tb";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import { useDispatch, useSelector } from "react-redux";
-import {
-  getAllProfile,
-  getUserProfile,
-} from "../redux/action/UserAction";
+import { getAllProfile, getUserProfile } from "../redux/action/UserAction";
 import { useEffect, useState } from "react";
 import { getUserExperience } from "../redux/action/ExperienceAction";
 import { getPosts } from "../redux/action/PostAction";
@@ -36,25 +33,8 @@ const MyNav2 = () => {
     checkFetch();
   }, []);
   return (
-    <Container className="w-100 containerNav">
+    <Container className="w-100 containerNav mb-3">
       <Row className="navbar-navigation d-flex justify-content-center">
-        <Col
-          className="nav-col d-flex justify-content-center align-items-center"
-          xs={10}
-        >
-          <div className="input-search d-flex align-items-center">
-            <AiFillLinkedin className="linkedin-logo" />
-            <Form className="d-flex form d-none d-lg-block">
-              <Form.Control
-                type="search"
-                placeholder="Cerca"
-                className="me-2 form-ricerca"
-                aria-label="Search"
-              />
-            </Form>
-          </div>
-    <Container className="stiky-top">
-      <Row className="w-100 navbar-navigation d-flex justify-content-center">
         <Col
           className="nav-col d-flex justify-content-center align-items-center"
           xs={10}
@@ -73,7 +53,7 @@ const MyNav2 = () => {
 
           <ul className="ul-nav ms-5">
             <li>
-              <Link className="text-secondary " to="/home">
+              <Link className="text-secondary " to="/">
                 <MdHome className="i-nav home" />
                 <span className="d-none d-lg-block">Home</span>
               </Link>
@@ -107,7 +87,8 @@ const MyNav2 = () => {
                 <img
                   className="rounded-circle"
                   src={profile.image}
-                  width={20}
+                  width={25}
+                  height={25}
                   alt=""
                 />
                 <span className="d-none text-secondary  d-lg-block">Tu</span>
@@ -122,6 +103,7 @@ const MyNav2 = () => {
                           className="rounded-circle"
                           src={profile.image}
                           width={50}
+                          height={50}
                           alt=""
                         />
                       </Col>
@@ -203,4 +185,3 @@ const MyNav2 = () => {
   );
 };
 export default MyNav2;
-

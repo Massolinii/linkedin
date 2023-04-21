@@ -792,3 +792,6 @@ h4 {
     color: rgb(65, 61, 61);
   }
 }
+.puntatore {
+  cursor: pointer;
+}

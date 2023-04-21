@@ -60,7 +60,7 @@ const PostCard = ({ post }) => {
           </div>
 
           <div className="d-flex controlIcon">
-            <div className="mx-3">
+            <div className="mx-3 text-primary puntatore">
               <AiOutlinePlus className="mx-1" />
               Segui
             </div>
@@ -108,26 +108,26 @@ const PostCard = ({ post }) => {
         <></>
       )}
 
-      <div className="commentIcons d-flex justify-content-between px-4 py-2">
-        <div className="d-flex flex-column align-items-center commentIcon p-1">
+      <div className="commentIcons d-flex justify-content-between px-4 py-2 border-top border-muted">
+        <div className="d-flex flex-column align-items-center commentIcon p-1 puntatore">
           <div>
             <FiThumbsUp />
           </div>
           <div className="d-none d-md-block">Consiglia</div>
         </div>
-        <div className="d-flex flex-column align-items-center commentIcon p-1">
+        <div className="d-flex flex-column align-items-center commentIcon p-1 puntatore">
           <div>
             <AiOutlineMessage />
           </div>
           <div className="d-none d-md-block">Commenta</div>
         </div>
-        <div className="d-flex flex-column align-items-center commentIcon p-1">
+        <div className="d-flex flex-column align-items-center commentIcon p-1 puntatore">
           <div>
             <BsArrowLeftRight />
           </div>
           <div className="d-none d-md-block">Diffondi il post</div>
         </div>
-        <div className="d-flex flex-column align-items-center commentIcon p-1">
+        <div className="d-flex flex-column align-items-center commentIcon p-1 puntatore">
           <div>
             <FaTelegramPlane />
           </div>

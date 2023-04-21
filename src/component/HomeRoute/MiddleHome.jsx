@@ -21,42 +21,9 @@ const MiddleHome = () => {
   const profile = useSelector((state) => state.user.myProfile);
   return (
     <>
-      <Container className="d-sm-none ">
+      <Container className="d-block d-sm-none ">
         <Row className="">
-          <Card>
-            <Card.Img
-              variant="top"
-              src="https://media.licdn.com/dms/image/D4D16AQH_FZDkDj5sow/profile-displaybackgroundimage-shrink_350_1400/0/1670341689480?e=1687392000&v=beta&t=5LSh9omqYGwXGvEo95GlfiwsH12FtnpriAW5rtpPwWM"
-              style={{ height: "60px" }}
-            />
-            <div className="d-flex justify-content-center">
-              <img
-                className="profilePictureHome"
-                src={profile.image}
-                alt="profile"
-              />
-            </div>
-            <Card.Body className="pt-0 ">
-              <Link
-                to="/"
-                style={{ color: "black", textDecoration: "inherit" }}
-              >
-                <Card.Title className="text-center m-0 fs-5 fw-bold">
-                  {profile.name} {profile.surname}
-                </Card.Title>
-              </Link>
-              <Card.Text className="textSmall text-center text-secondary">
-                {profile.title}
-              </Card.Text>
-            </Card.Body>
-          </Card>
-        </Row>
-
-        {/*FINE MOBILE*/}
-      </Container>
-      <Container className="d-sm-none ">
-        <Row className="">
-          <Card>
+          <Card className="px-0">
             <Card.Img
               variant="top"
               src="https://media.licdn.com/dms/image/D4D16AQH_FZDkDj5sow/profile-displaybackgroundimage-shrink_350_1400/0/1670341689480?e=1687392000&v=beta&t=5LSh9omqYGwXGvEo95GlfiwsH12FtnpriAW5rtpPwWM"

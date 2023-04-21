@@ -55,8 +55,8 @@ const SideBarProfile = () => {
             ? otherProfile.map((profile, i) => (
                 <div className="d-flex justify-content-start text-secondary mb-3">
                   <img
-                    width="20%"
-                    height="20%"
+                    width={45}
+                    height={45}
                     className="me-1 rounded-circle"
                     src={profile.image}
                     alt=""
@@ -85,14 +85,14 @@ const SideBarProfile = () => {
             : otherProfile.slice(0, 5).map((profile, i) => (
                 <div className="d-flex justify-content-start text-secondary mb-3">
                   <img
-                    width="20%"
-                    height="20%"
+                    width={45}
+                    height={45}
                     className="me-1 rounded-circle"
                     src={profile.image}
                     alt=""
                   />
-                  <div>
-                    <p className="attivitaAmiciNome m-0">
+                  <div className="ps-2">
+                    <p className="attivitaAmiciNome m-0 ">
                       {profile.name} {profile.surname}
                       <span className="gradueSide m-0 text-secondary ">
                         ·{i + 1}°
@@ -131,13 +131,13 @@ const SideBarProfile = () => {
           <p>Dalla tua scuola o universtà</p>
           <div className="d-flex justify-content-start text-secondary mb-3">
             <img
-              width="20%"
-              height="20%"
+              width={45}
+              height={45}
               className="me-1 rounded-circle"
               src="https://www.iowawild.com/assets/img/TGZ_0168-9301766363.jpg"
               alt=""
             />
-            <div>
+            <div className="ps-2">
               <p className="attivitaAmiciNome m-0">
                 Alessadro Monti{" "}
                 <span className="gradueSide m-0 text-secondary ">·2°</span>
@@ -170,13 +170,13 @@ const SideBarProfile = () => {
           <p>Gruppi per te</p>
           <div className="d-flex justify-content-start text-secondary mb-3">
             <img
-              width="20%"
-              height="20%"
+              width={45}
+              height={45}
               className="me-1 rounded-circle"
               src="https://static.vecteezy.com/system/resources/previews/009/023/888/non_2x/pmo-logo-pmo-letter-pmo-letter-logo-design-initials-pmo-logo-linked-with-circle-and-uppercase-monogram-logo-pmo-typography-for-technology-business-and-real-estate-brand-vector.jpg"
               alt=""
             />
-            <div>
+            <div className="ps-2">
               <p className="attivitaAmiciNome m-0">
                 PMO - Project Management OfficePMO - Project Management Office
               </p>
@@ -190,13 +190,13 @@ const SideBarProfile = () => {
 
         <div className="d-flex justify-content-start text-secondary mb-3">
           <img
-            width="20%"
-            height="20%"
+            width={45}
+            height={45}
             className="me-1 rounded-circle"
             src="https://as2.ftcdn.net/v2/jpg/05/09/87/47/500_F_509874727_6O0NmKoKUBEkDn2UlIZvfDeoK9NtF49e.jpg"
             alt=""
           />
-          <div>
+          <div className="ps-2">
             <p className="attivitaAmiciNome m-0">
               PMO - Project Management OfficePMO - Project Management Office
             </p>
