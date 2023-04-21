@@ -90,7 +90,7 @@ function HeroProfile() {
               <BsPencil />
             </div>
             <p className="mb-0">Ruoli di Sviluppatore Full Stack</p>
-            <a style={{ fontWeight: "bold", textDecoration: "none" }} href="*">
+            <a style={{ fontWeight: "bold", textDecoration: "none" }} href="/profile">
               Mostra dettagli
             </a>
           </Col>
