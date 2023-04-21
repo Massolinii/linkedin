@@ -9,7 +9,10 @@ import {
   BsCameraVideo,
   BsCalendar2DateFill,
   BsThreeDots,
+  BsClock,
+  BsChatText,
 } from "react-icons/bs";
+import { Row, Col } from "react-bootstrap";
 
 function FormPost({ handleclose3 }) {
   return (
@@ -19,7 +22,7 @@ function FormPost({ handleclose3 }) {
     >
       <Form>
         <div className="d-flex">
-          <div className="icona-per-post">
+          <div className="icona-per-post ms-2">
             <img src="https://placekitten.com/200" alt="" />
           </div>
           <div className="privacyPost mx-2">
@@ -37,7 +40,7 @@ function FormPost({ handleclose3 }) {
             className="postArea"
           />
         </Form.Group>
-        <BsEmojiExpressionless className="ms-3 " />
+        <BsEmojiExpressionless className="ms-3 fs-4 text-secondary" />
 
         <div className="d-flex mt-3">
           {/* FOTO */}
@@ -76,10 +79,24 @@ function FormPost({ handleclose3 }) {
         </div>
       </Form>
 
-      <Modal.Footer className="mt-4">
-        <Button type="submit" variant="none" className="btnPubblish" disabled>
-          Pubblica
-        </Button>
+      <Modal.Footer className="mt-4 d-flex justify-content-between">
+        <Col className="d-flex justify-content-between align-items-center">
+          <Col className="text-secondary">
+            <BsChatText className="me-2" />
+            tutti
+          </Col>
+          <span>
+            <BsClock className="me-3 fs-4 text-secondary" />
+            <Button
+              type="submit"
+              variant="none"
+              className="btnPubblish"
+              disabled
+            >
+              Pubblica
+            </Button>
+          </span>
+        </Col>
       </Modal.Footer>
     </div>
   );
