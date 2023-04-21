@@ -2,14 +2,17 @@ import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import Form from "react-bootstrap/Form";
 import {
-  BsWordpress,
+  BsGlobeAmericas,
   BsEmojiExpressionless,
   BsImage,
   BsCameraVideo,
   BsCalendar2DateFill,
   BsThreeDots,
+  BsClock,
+  BsChatText,
   BsFillCaretDownFill,
 } from "react-icons/bs";
+import { Col } from "react-bootstrap";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { createPost } from "../../redux/action/PostAction";
@@ -41,18 +44,18 @@ function FormPost({ handleclose3 }) {
     >
       <Form>
         <div className="d-flex">
-          <div className="icona-per-post">
+          <div className="icona-per-post ms-2">
             <img src={user.image} alt="" />
           </div>
           <div className="privacyPost mx-2">
             <h5>{user.username}</h5>
             <a href="*">
-              <BsWordpress className="mx-2" /> Chiunque{" "}
+              <BsGlobeAmericas className="mx-2" /> Chiunque{" "}
               <BsFillCaretDownFill className="mx-2" />
             </a>
           </div>
         </div>
-        <Form.Group className="mb-3 mt-3">
+        <Form.Group className="mb-5 mt-3">
           <Form.Control
             type="text"
             placeholder="Di cosa vorresti paralre?"
@@ -77,7 +80,7 @@ function FormPost({ handleclose3 }) {
             }}
           />
         </Form.Group>
-        <BsEmojiExpressionless className="ms-3 " />
+        <BsEmojiExpressionless className="ms-3 fs-4 text-secondary" />
 
         <div className="d-flex mt-3">
           {/* FOTO */}
@@ -85,7 +88,7 @@ function FormPost({ handleclose3 }) {
             <div className="roundBtn" style={{ backgroundColor: "#0966c2" }}>
               <BsImage style={{ fontSize: "25px", color: "#dbe7e9" }} />
             </div>
-            <p>Foto</p>
+            <p style={{ color: "#0966c2" }}>Foto</p>
           </Button>
 
           {/* VIDEO */}
@@ -93,7 +96,7 @@ function FormPost({ handleclose3 }) {
             <div className="roundBtn" style={{ backgroundColor: "#8F5849" }}>
               <BsCameraVideo style={{ fontSize: "25px", color: "#fde2ba" }} />
             </div>
-            <p>Video</p>
+            <p style={{ color: "#8F5849" }}>Video</p>
           </Button>
 
           {/* EVENTO */}
@@ -103,7 +106,7 @@ function FormPost({ handleclose3 }) {
                 style={{ fontSize: "25px", color: "#fadfd8" }}
               />
             </div>
-            <p>Evento</p>
+            <p style={{ color: "#81597E" }}>Evento</p>
           </Button>
 
           {/* ALTRO */}
@@ -111,20 +114,29 @@ function FormPost({ handleclose3 }) {
             <div className="roundBtn" style={{ backgroundColor: "#666666" }}>
               <BsThreeDots style={{ fontSize: "25px", color: "#f3f2ef" }} />
             </div>
-            <p>Altro</p>
+            <p style={{ color: "#666666" }}>Altro</p>
           </Button>
         </div>
       </Form>
 
-      <Modal.Footer className="mt-4">
-        <Button
-          onClick={handleSubmit}
-          type="submit"
-          variant="none"
-          className="btnPubblish"
-        >
-          Pubblica
-        </Button>
+      <Modal.Footer className="mt-4 d-flex justify-content-between">
+        <Col className="d-flex justify-content-between align-items-center">
+          <Col className="text-secondary">
+            <BsChatText className="me-2" />
+            <span className="fw-bold">Tutti</span>
+          </Col>
+          <span>
+            <BsClock className="me-3 fs-4 text-secondary" />
+            <Button
+              type="submit"
+              variant="none"
+              className="btnPubblish"
+              disabled
+            >
+              Pubblica
+            </Button>
+          </span>
+        </Col>
       </Modal.Footer>
     </div>
   );

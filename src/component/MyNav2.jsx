@@ -53,10 +53,27 @@ const MyNav2 = () => {
               />
             </Form>
           </div>
+    <Container className="stiky-top">
+      <Row className="w-100 navbar-navigation d-flex justify-content-center">
+        <Col
+          className="nav-col d-flex justify-content-center align-items-center"
+          xs={10}
+        >
+          <div className="input-search d-flex align-items-center">
+            <AiFillLinkedin className="linkedin-logo" />
+            <Form className="d-flex form d-none d-lg-block">
+              <Form.Control
+                type="search"
+                placeholder="Cerca"
+                className="me-2 form-ricerca"
+                aria-label="Search"
+              />
+            </Form>
+          </div>
 
           <ul className="ul-nav ms-5">
             <li>
-              <Link className="text-secondary " to="/">
+              <Link className="text-secondary " to="/home">
                 <MdHome className="i-nav home" />
                 <span className="d-none d-lg-block">Home</span>
               </Link>
@@ -90,8 +107,7 @@ const MyNav2 = () => {
                 <img
                   className="rounded-circle"
                   src={profile.image}
-                  width={25}
-                  height={25}
+                  width={20}
                   alt=""
                 />
                 <span className="d-none text-secondary  d-lg-block">Tu</span>
@@ -106,7 +122,6 @@ const MyNav2 = () => {
                           className="rounded-circle"
                           src={profile.image}
                           width={50}
-                          height={50}
                           alt=""
                         />
                       </Col>
@@ -177,7 +192,7 @@ const MyNav2 = () => {
               </span>
             </li>
             <li>
-              <a className="premium text-secondary" href="a">
+              <a className="premium text-secondary " href="a">
                 Prova Premium
               </a>
             </li>

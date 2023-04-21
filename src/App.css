@@ -173,12 +173,11 @@ body {
     display: none !important;
   }
 
-  .home  {
+  .home {
     display: block !important;
-    
   }
-  .linkedin-logo{
-    display: block!important;
+  .linkedin-logo {
+    display: block !important;
   }
   .tu {
     display: block !important;
@@ -208,7 +207,8 @@ body {
     height: 180px !important;
     position: absolute !important;
   }
-}*/
+}
+*/
 
 /* footer */
 
@@ -431,13 +431,16 @@ h4 {
 /* BTN AVVIA POST */
 
 .btnStartPost {
+  display: flex !important;
+  align-items: center;
   margin-left: 10px !important;
-  background-color: transparent !important;
+  background-color: white !important;
   color: gray !important;
   font-weight: bold !important;
-  border: 1px solid gray !important;
+  border: 1px solid lightgray !important;
   border-radius: 50px !important;
   width: 100%;
+  height: 40px;
   text-align: start !important;
 }
 
@@ -476,8 +479,12 @@ h4 {
 /* ICONA PROFILO DURANTE AVVIA NUOVO POST */
 
 .icona-per-post img {
-  width: 60px;
+  width: 50px;
   border-radius: 50%;
+}
+
+.privacyPost h5 {
+  font-size: 17px;
 }
 
 .privacyPost a {
@@ -488,6 +495,9 @@ h4 {
   border-radius: 20px;
   padding: 0.4em;
   border: 1px solid gray;
+  height: 30px;
+  font-size: smaller;
+  font-weight: bold;
 }
 
 /* ICONE CREA POST */
@@ -524,6 +534,8 @@ h4 {
 .altro p {
   text-align: center;
   margin-top: 100px;
+  font-weight: bold;
+  font-size: 15px;
 }
 
 /* SECONDA PARTE SELETTORI ICONE */
@@ -547,11 +559,12 @@ h4 {
 /* TEXTAREA PER CREA POST */
 .postArea {
   border: none !important;
-  outline: none !important;
+  box-shadow: none !important;
 }
 
-.postArea {
-  outline: none !important;
+.postArea::placeholder {
+  color: gray !important;
+  font-size: 20px !important;
 }
 
 /* HOME PAGE COL RIGHT  */
@@ -620,6 +633,12 @@ h4 {
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
   margin-bottom: 0px;
 }
+
+#picProHome {
+  width: 60px;
+  height: 60px;
+  box-shadow: none;
+}
 /*MODIFICHE POST CARD*/
 .Follow {
   color: rgb(10, 102, 194);
@@ -666,7 +685,6 @@ h4 {
 /* MOBILE*/
 
 @media (max-width: 576px) {
-
   .commentIcon {
     flex-basis: 45%;
     margin: 0;
