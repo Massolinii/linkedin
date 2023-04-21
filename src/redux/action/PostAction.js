@@ -80,7 +80,7 @@ export const getPosts = async (dispatch, getState) => {
 };
 
 /* POST - NEW POST*/
-export const createPost = (postText) => {
+export const createPost = (postText, formData) => {
   return async (dispatch) => {
     let newPostData = {
       text: postText,
@@ -101,6 +101,23 @@ export const createPost = (postText) => {
 
       if (response.ok) {
         let newPost = await response.json();
+        if (formData.get("post")) {
+          let imgResponse = await fetch(
+            `https://striveschool-api.herokuapp.com/api/posts/${newPost._id}`,
+            {
+              method: "POST",
+              headers: {
+                Authorization: API_KEY,
+              },
+              body: formData,
+            }
+          ); 
+          if (imgResponse.ok) {
+            console.log("Photo Uploaded succcessfully!")
+          } else {
+            console.log("There was an error uploading the photo.")
+          }
+        }
         dispatch(addPost(newPost));
       } else {
         console.log("Error has happened with the POST request");

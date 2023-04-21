@@ -9,9 +9,6 @@ import {
   BsCameraVideo,
   BsCalendar2DateFill,
   BsThreeDots,
-  BsCameraVideo,
-  BsCalendar2DateFill,
-  BsThreeDots,
 } from "react-icons/bs";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
@@ -20,6 +17,7 @@ import { createPost } from "../../redux/action/PostAction";
 function FormPost({ handleclose3 }) {
   const [postText, setPostText] = useState("");
   const [writing, setWriting] = useState(false);
+  const [formData, setFormData] = useState(new FormData());
   const dispatch = useDispatch();
 
   const checkWriting = () => {
@@ -31,7 +29,7 @@ function FormPost({ handleclose3 }) {
   };
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(createPost(postText));
+    dispatch(createPost(postText, formData));
     setPostText(""); // svuota il campo di input
   };
 
@@ -74,8 +72,7 @@ function FormPost({ handleclose3 }) {
             onChange={(e) => {
               const file = e.target.files[0];
               console.log(file);
-
-              e.append("profile", file);
+              formData.append("post", file);
             }}
           />
         </Form.Group>
