@@ -68,7 +68,13 @@ const SideBarProfile = () => {
                         ·{i + 1}°
                       </span>
                     </p>
-                    <p className="attivitaAmici m-0">{profile.title}</p>
+                    <p className="attivitaAmici m-0">
+                      {profile.title
+                        ? profile.title.length < 16
+                          ? profile.title
+                          : profile.title.substring(0, 16) + "..."
+                        : ""}
+                    </p>
                     <button className="secondary-button">
                       <BsPersonPlusFill className="button-icon" />
                       Collegati
