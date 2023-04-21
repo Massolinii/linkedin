@@ -20,12 +20,12 @@ function HeroProfile() {
             <Row style={{ height: "400px" }}>
               <Col className="p-0 m-0">
                 <Col className="profileCover">{/* IMMAGINE COPERTINA */}</Col>
-                <div className="profilePicWrap">
+                <div className="linkprofilePicWrap">
                   <Image
                     src={profile.image}
                     alt="profile-picture"
                     roundedCircle
-                    className="profilePic"
+                    className="linkprofilePic"
                   />
                   {/* IMMAGINE PROFILO */}
                 </div>
