@@ -90,7 +90,8 @@ const MyNav2 = () => {
                 <img
                   className="rounded-circle"
                   src={profile.image}
-                  width={20}
+                  width={25}
+                  height={25}
                   alt=""
                 />
                 <span className="d-none text-secondary  d-lg-block">Tu</span>
@@ -105,6 +106,7 @@ const MyNav2 = () => {
                           className="rounded-circle"
                           src={profile.image}
                           width={50}
+                          height={50}
                           alt=""
                         />
                       </Col>

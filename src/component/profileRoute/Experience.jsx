@@ -64,6 +64,16 @@ const Experience = () => {
             </Modal>
           </div>
 
+                    {/* BREAKEXPERIENCE */}
+                    <Modal show={showPause} onHide={handleClose2} size="lg">
+            <Modal.Header closeButton>
+              <Modal.Title>Aggiungi pausa lavorativa</Modal.Title>
+            </Modal.Header>
+            <Modal.Body>
+              <BreakExperience handleClose2={handleClose2} />
+            </Modal.Body>
+          </Modal>
+
           {/* EDIT EXPERIENCE */}
         </Row>
 
