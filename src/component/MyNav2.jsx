@@ -106,6 +106,7 @@ const MyNav2 = () => {
                           className="rounded-circle"
                           src={profile.image}
                           width={50}
+                          height={50}
                           alt=""
                         />
                       </Col>
