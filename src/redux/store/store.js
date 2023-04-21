@@ -1,4 +1,5 @@
-import { combineReducers, configureStore } from "@reduxjs/toolkit";
+import { combineReducers, configureStore, applyMiddleware } from "@reduxjs/toolkit";
+import thunk from "redux-thunk";
 
 import UserReducer from "../reducers/UserReducer";
 import ExperienceReducer from "../reducers/ExperienceReducer";
@@ -11,5 +12,5 @@ const bigReducer = combineReducers({
 });
 const store = configureStore({
   reducer: bigReducer,
-});
+}, applyMiddleware(thunk));
 export default store;

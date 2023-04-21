@@ -10,6 +10,9 @@ import React, { useState } from "react";
 import FormPost from "./FormPost";
 import { PostHome } from "./PostHome";
 import { useSelector } from "react-redux";
+import Card from "react-bootstrap/Card";
+import { Link } from "react-router-dom";
+import RightHome from "./RightHome";
 
 const MiddleHome = () => {
   const [showPost, setShowPost] = useState(false);
@@ -18,7 +21,41 @@ const MiddleHome = () => {
   const profile = useSelector((state) => state.user.myProfile);
   return (
     <Row>
-      <Container className="mt-4 p-4 border rounded-3 bg-white bg-light">
+      {/*SOLO PER MOBILE*/}
+      <Container className="d-sm-none ">
+        <Row className="">
+          <Card>
+            <Card.Img
+              variant="top"
+              src="https://media.licdn.com/dms/image/D4D16AQH_FZDkDj5sow/profile-displaybackgroundimage-shrink_350_1400/0/1670341689480?e=1687392000&v=beta&t=5LSh9omqYGwXGvEo95GlfiwsH12FtnpriAW5rtpPwWM"
+              style={{ height: "60px" }}
+            />
+            <div className="d-flex justify-content-center">
+              <img
+                className="profilePictureHome"
+                src={profile.image}
+                alt="profile"
+              />
+            </div>
+            <Card.Body className="pt-0 ">
+              <Link
+                to="/"
+                style={{ color: "black", textDecoration: "inherit" }}
+              >
+                <Card.Title className="text-center m-0 fs-5 fw-bold">
+                  {profile.name} {profile.surname}
+                </Card.Title>
+              </Link>
+              <Card.Text className="textSmall text-center text-secondary">
+                {profile.title}
+              </Card.Text>
+            </Card.Body>
+          </Card>
+        </Row>
+
+        {/*FINE MOBILE*/}
+      </Container>
+      <Container className="mt-4 p-4 border rounded-3 bg-white flex-wrap bg-light">
         {/* CONTAINER PER BACHECA */}
         <Row>
           <Col>
@@ -45,7 +82,7 @@ const MiddleHome = () => {
               </Modal.Body>
             </Modal>
 
-            <div className="d-flex justify-content-between mt-4">
+            <div className="d-flex justify-content-between   flex-wrap mt-4">
               {/* ICONA POST IMMAGINE */}
               <div id="postIcon" alt="icona-immagine">
                 <a href="*" className="PostIcon">
@@ -82,6 +119,12 @@ const MiddleHome = () => {
       <Container>
         <Row>
           <PostHome />
+        </Row>
+      </Container>
+      {/*PER MOBILE*/}
+      <Container className="d-sm-none">
+        <Row>
+          <RightHome />
         </Row>
       </Container>
     </Row>

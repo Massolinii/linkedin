@@ -1,5 +1,3 @@
-import { useState } from "react";
-
 /* AZIONI EXPERIENCE */
 export const SET_EXPERIENCES = "SET_EXPERIENCES";
 export const SET_SINGLE_EXPERIENCE = "SET_SINGLE_EXPERIENCE";
@@ -68,7 +66,7 @@ export const getUserExperience = async (dispatch, getState) => {
   try {
     let response = await fetch(
       "https://striveschool-api.herokuapp.com/api/profile/" +
-        "643cf46a186a8700143867b7" +
+        userID +
         "/experiences",
 
       {
@@ -129,7 +127,7 @@ export const createExperience = async (dispatch, getState) => {
 // GET - SPECIFIC EXPERIENCE
 export const getSingleExperience = async (dispatch, getState, expId) => {
   let state = getState();
-  let userID = state.experience.IDs.userID;
+  let userID = state.user.myProfile._id;
   let expID = state.experience.IDs.expID;
 
   try {
@@ -158,7 +156,7 @@ export const getSingleExperience = async (dispatch, getState, expId) => {
 // PUT - MODIFY EXPERIENCE
 export const editExperience = async (dispatch, getState) => {
   let state = getState();
-  let userID = state.experience.IDs.userID;
+  let userID = state.user.myProfile._id;
   let expID = state.experience.IDs.expID;
   let expToUpdate = state.experience.toUpdate;
   try {
@@ -188,7 +186,7 @@ export const editExperience = async (dispatch, getState) => {
 // DELETE - DELETE EXPERIENCE
 export const removeExperience = async (dispatch, getState) => {
   let state = getState();
-  let userID = state.experience.IDs.userID;
+  let userID = state.user.myProfile._id;
   let expID = state.experience.IDs.expID;
   let listExp = state.experience.experiences;
   //console.log(userID, expID);
@@ -209,7 +207,6 @@ export const removeExperience = async (dispatch, getState) => {
         //console.log(listExp[i]._id, expID);
         if (listExp[i]._id === expID) {
           dispatch(deleteExperience(i));
-          dispatch(setExpID(["", ""]));
 
           console.log(i);
         }

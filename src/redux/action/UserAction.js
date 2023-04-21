@@ -1,3 +1,5 @@
+import { getUserExperience } from "./ExperienceAction";
+
 /* AZIONI PROFILE */
 export const SET_MY_PROFILE = "SET_MY_PROFILE";
 export const SET_OTHER_PEOPLE = "SET_OTHER_PEOPLE";
@@ -52,6 +54,7 @@ export const getUserProfile = async (dispatch, getState) => {
     if (response.ok) {
       let details = await response.json();
       dispatch(setMyProfile(details));
+      dispatch(getUserExperience);
       //console.log(details);
     } else {
       console.log("Error has happened with the request");

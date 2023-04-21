@@ -1,10 +1,8 @@
 import { Card, Container, Row } from "react-bootstrap";
 import { BsInfoSquareFill } from "react-icons/bs";
-import { AiFillLinkedin } from "react-icons/ai";
+
 const RightHome = () => {
-  {
-    /* const annuncio = useSelector((state) => state.profile);*/
-  }
+  /* const annuncio = useSelector((state) => state.profile);*/
   return (
     <Row>
       <Container>
@@ -72,10 +70,13 @@ const RightHome = () => {
             <a href="*">Altro</a>
             <p className="footerCopirightsec mb-2">
               <span>
-                {" "}
-                <AiFillLinkedin className="linkedLogo" />{" "}
+                <img
+                  src="https://logos-world.net/wp-content/uploads/2020/04/Linkedin-Logo.png"
+                  className="linkedLogo"
+                  alt="logolinkedin"
+                />
               </span>
-              LinkedIn Corporation © 2023
+              Corporation © 2023
             </p>
           </div>
         </div>
