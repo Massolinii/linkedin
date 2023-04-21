@@ -44,7 +44,7 @@ function FormPost({ handleclose3 }) {
             <img src="https://placekitten.com/200" alt="" />
           </div>
           <div className="privacyPost mx-2">
-            <h5>{}</h5>
+            <h5>{user.username}</h5>
             <a href="*">
               <BsWordpress className="mx-2" /> Chiunque{" "}
               <BsFillCaretDownFill className="mx-2" />
