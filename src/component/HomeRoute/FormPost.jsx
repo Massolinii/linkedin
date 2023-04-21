@@ -12,7 +12,7 @@ import {
   BsClock,
   BsChatText,
 } from "react-icons/bs";
-import { Row, Col } from "react-bootstrap";
+import { Col } from "react-bootstrap";
 
 function FormPost({ handleclose3 }) {
   return (
@@ -35,7 +35,7 @@ function FormPost({ handleclose3 }) {
         </div>
         <Form.Group className="mb-5 mt-3">
           <Form.Control
-            as="textarea"
+            type="text"
             placeholder="Di cosa vorresti paralre?"
             className="postArea"
           />
@@ -83,7 +83,7 @@ function FormPost({ handleclose3 }) {
         <Col className="d-flex justify-content-between align-items-center">
           <Col className="text-secondary">
             <BsChatText className="me-2" />
-            tutti
+            <span className="fw-bold">Tutti</span>
           </Col>
           <span>
             <BsClock className="me-3 fs-4 text-secondary" />

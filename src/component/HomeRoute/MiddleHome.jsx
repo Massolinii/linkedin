@@ -39,7 +39,7 @@ const MiddleHome = () => {
               {/* MODAL FOR POST */}
               <Modal show={showPost} onHide={handleclose3} size="lg">
                 <Modal.Header closeButton>
-                  <Modal.Title>Crea un post</Modal.Title>
+                  <Modal.Title className="fs-5 ms-2">Crea un post</Modal.Title>
                 </Modal.Header>
 
                 <Modal.Body>
