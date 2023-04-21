@@ -53,11 +53,16 @@ const PostCard = ({ post }) => {
       <div className="p-4">
         <div className="initialNews d-flex justify-content-between">
           <div className="d-flex align-items-center ">
-            <div className="descriptionText mx-2">
+            <div className="descriptionText mx-2 d-flex">
+              <div>
+              <img src={post.user.image} alt="" className="profilePicWrap me-2"/>
+              </div>
+              <div>
               <h6 className="m-0">{post.username.toUpperCase()}</h6>
               <div className=" mt-2 mb-3">{post.text}</div>
-              <div className="text-muted">
-                {new Date(post.createdAt).toLocaleString()}
+              <div className="text-muted dataPost">
+              {new Date(post.createdAt).toLocaleString([], { year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute:'2-digit'})}
+                </div>
               </div>
             </div>
           </div>
