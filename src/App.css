@@ -81,16 +81,16 @@ body {
   width: 20rem;
   height: 45px;
 }
-
 .linkedin-logo {
-  font-size: 55px;
+  font-size: 50px;
   color: rgb(10, 102, 194);
+  margin-left: 4rem;
 }
-
 .input-search {
   display: flex;
   justify-content: flex-start;
   align-items: center;
+  padding-right: 1rem;
 }
 
 .form-ricerca {
@@ -145,7 +145,7 @@ body {
 
 /* MEDIA QUERY PER NAVBAR MOBILE */
 
-@media only screen and (max-width: 600px) {
+/*@media only screen and (max-width: 600px) {
   .i-nav,
   .premium,
   .linkedin-logo {
@@ -185,7 +185,7 @@ body {
     height: 180px !important;
     position: absolute !important;
   }
-}
+}*/
 
 /* footer */
 

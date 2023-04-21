@@ -13,7 +13,7 @@ export const PostHome = () => {
       };
     
       return (
-        <div className="post-home">
+        <div className="post-home px-0">
           <h2>Ultimi 10 post</h2>
           <div className="card-container">
             {renderPosts()}

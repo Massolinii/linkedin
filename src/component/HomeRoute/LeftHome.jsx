@@ -7,8 +7,8 @@ const LeftHome = () => {
   const user = useSelector((state) => state.user.myProfile);
   return (
     <>
-      <Container className="mt-4 ps-0 pe-0 border rounded-2 bg-white"style={{ width: '300px' }}>
-      <Card className='text-white bg-white border-0 mb-5'>
+      <Container className="mt-4 p-0">
+      <Card>
             <Card.Img variant="top" src="https://media.licdn.com/dms/image/D4D16AQH_FZDkDj5sow/profile-displaybackgroundimage-shrink_350_1400/0/1670341689480?e=1687392000&v=beta&t=5LSh9omqYGwXGvEo95GlfiwsH12FtnpriAW5rtpPwWM" style={{ height: '60px',  }} />
             <div className='d-flex justify-content-center'>
                 <img className='profilePictureHome' src={user.image} alt='profile' />
