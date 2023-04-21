@@ -1,4 +1,4 @@
-import { Col, Row, Form, Dropdown } from "react-bootstrap";
+import { Col, Row, Form, Dropdown, Container } from "react-bootstrap";
 import { AiFillLinkedin } from "react-icons/ai";
 import { IoMdArrowDropdown } from "react-icons/io";
 import { MdHome, MdWork, MdNotifications } from "react-icons/md";
@@ -39,7 +39,8 @@ const MyNav2 = () => {
     checkFetch();
   }, []);
   return (
-    <Row className="w-100 navbar-navigation d-flex justify-content-center">
+    <Container className="w-100 containerNav">
+    <Row className="navbar-navigation d-flex justify-content-center">
       <Col
         className="nav-col d-flex justify-content-center align-items-center"
         xs={10}
@@ -177,13 +178,14 @@ const MyNav2 = () => {
             </span>
           </li>
           <li>
-            <a className="premium text-secondary " href="a">
+            <a className="premium text-secondary" href="a">
               Prova Premium
             </a>
           </li>
         </ul>
       </Col>
     </Row>
+    </Container>
   );
 };
 export default MyNav2;
