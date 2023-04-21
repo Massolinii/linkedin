@@ -1,8 +1,8 @@
 import Dropdown from 'react-bootstrap/Dropdown';
-import DropdownButton from 'react-bootstrap/DropdownButton';
+
 import SplitButton from 'react-bootstrap/SplitButton';
-import { ButtonGroup, FormControl, Button, Card } from 'react-bootstrap';
-import * as Icon from 'react-icons/bs'
+import {  FormControl, Button, } from 'react-bootstrap';
+
 import * as Icon2 from 'react-icons/hi2'
 import { HiOutlinePencilAlt } from "react-icons/hi";
 import { Row, Col, Image } from 'react-bootstrap';
@@ -15,7 +15,7 @@ function Message() {
             
 
                 <SplitButton
-                    className= "dropdown-menu-right position-sticky-bottom"
+                    className= "dropdown-menu-right position-sticky-bottom d-none d-md-block"
                     drop="up-down-center"
                     variant="white"
                     align="start"

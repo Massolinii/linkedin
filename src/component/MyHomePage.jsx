@@ -5,15 +5,15 @@ import RightHome from "./HomeRoute/RightHome";
 
 const MyHomePage = () => {
   return (
-    <Container >
-      <Row>
-        <Col sm={0} md={3} lg={3} xl={3} xxl={3} className="d-none d-md-block">
+    <Container>
+      <Row className="justify-content-center">
+        <Col sm={0} md={3} lg={2} xl={2} className="d-none d-md-block">
           <LeftHome />
         </Col>
-        <Col sm={12} md={8} lg={6} xl={6} xxl={6} >
+        <Col sm={12} md={8} lg={6} xl={6} xxl={6}>
           <MiddleHome />
         </Col>
-        <Col sm={0} md={0} lg={3} xl={3} xxl={3} className="d-none d-md-block">
+        <Col sm={0} md={0} lg={4} xl={4} xxl={4} className="d-none d-md-block">
           <RightHome />
         </Col>
       </Row>

@@ -17,11 +17,9 @@ import {
 } from "../redux/action/UserAction";
 import { useEffect, useState } from "react";
 import { getUserExperience } from "../redux/action/ExperienceAction";
-import { BiSearchAlt2 } from "react-icons/bi";
-import { InputGroup, FormControl, Button } from "react-bootstrap";
-import { BiSearch } from "react-icons/bi";
+import { getPosts } from "../redux/action/PostAction";
 
-const MyNav = () => {
+const MyNav2 = () => {
   const dispatch = useDispatch();
   const profile = useSelector((state) => state.user.myProfile);
   const [fetch, setFetch] = useState(false);
@@ -29,19 +27,20 @@ const MyNav = () => {
 
   const checkFetch = () => {
     if (fetch) {
-      console.log("fetched yet");
     } else {
       dispatch(getAllProfile);
       dispatch(getUserProfile);
       dispatch(getUserExperience);
+      dispatch(getPosts)
       setFetch(true);
+
     }
   };
   useEffect(() => {
     checkFetch();
   }, []);
   return (
-    <Row className="w-100 navbar-navigation d-flex justify-content-center">
+    <Row className="w-100 pe-3 navbar-navigation d-flex justify-content-center">
       <Col
         className="nav-col d-flex justify-content-center align-items-center"
         xs={10}
@@ -49,45 +48,42 @@ const MyNav = () => {
         <div className="input-search d-flex align-items-center">
           <AiFillLinkedin className="linkedin-logo" />
           <Form className="d-flex form d-none d-lg-block">
-            <InputGroup>
-              <FormControl
-                type="search"
-                placeholder="Cerca"
-                className="form-ricerca"
-                aria-label="Search"
-              />
-
-            </InputGroup>
+            <Form.Control
+              type="search"
+              placeholder="Cerca"
+              className="me-2 form-ricerca"
+              aria-label="Search"
+            />
           </Form>
         </div>
 
         <ul className="ul-nav ms-5">
           <li>
-            <Link className="text-secondary " to="/">
+            <Link className="text-secondary " to="/home">
               <MdHome className="i-nav home" />
               <span className="d-none d-lg-block">Home</span>
             </Link>
           </li>
           <li>
-            <Link to="/rete" className="text-secondary ">
+            <Link to="/home" className="text-secondary ">
               <BsFillPeopleFill className="i-nav" />
               <span className="d-none d-lg-block">Rete</span>
             </Link>
           </li>
           <li>
-            <Link className="text-secondary " to="/job">
+            <Link className="text-secondary " to="/home">
               <MdWork className="i-nav tu text-secondary-special" />
               <span className="d-none d-lg-block">Job</span>
             </Link>
           </li>
           <li>
-            <Link to="/messaggistica" className="text-secondary ">
+            <Link to="/home" className="text-secondary ">
               <TbMessageCircle2Filled className="i-nav" />
               <span className="d-none d-lg-block">Messaggistica</span>
             </Link>
           </li>
           <li>
-            <Link to="/notifiche" className="text-secondary">
+            <Link to="/home" className="text-secondary">
               <MdNotifications className="i-nav" />
               <span className="d-none d-lg-block">Notifiche</span>
             </Link>
@@ -191,4 +187,4 @@ const MyNav = () => {
     </Row>
   );
 };
-export default MyNav;
+export default MyNav2;

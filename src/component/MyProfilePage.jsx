@@ -81,7 +81,7 @@ const MyProfilePage = () => {
             </Col>
           </Row>
         </Col>
-        <Col sm={0} md={0} lg={3} xl={3}  className="d-none d-md-block">
+        <Col sm={0} md={0} lg={3} xl={3}  className="d-none d-xl-block">
           <SideBarProfile />
         </Col>
       </Row>

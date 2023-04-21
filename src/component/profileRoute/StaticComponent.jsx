@@ -61,7 +61,7 @@ const StaticComponent = () => {
       {/* SECOND PROFILE SECTION */}
       <Container className="mt-4 p-4 border border-1 rounded-3 bg-light">
         <Row>
-          <Col sm={8} md={12} class>
+          <Col sm={8} md={12}>
             <h4 className="mb-0">Risorse</h4>
             <BsEyeFill className="mt-0 text-secondary" />
             <span className="mt-0 ms-2 text-secondary">Solo per te</span>

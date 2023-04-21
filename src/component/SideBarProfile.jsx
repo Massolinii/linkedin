@@ -52,7 +52,7 @@ const SideBarProfile = () => {
             Altri profili consultati
           </div>
           {showMore
-            ? otherProfile.slice(0, 5).map((profile, i) => (
+            ? otherProfile.map((profile, i) => (
                 <div className="d-flex justify-content-start text-secondary mb-3">
                   <img
                     width="20%"
@@ -76,7 +76,7 @@ const SideBarProfile = () => {
                   </div>
                 </div>
               ))
-            : otherProfile.map((profile, i) => (
+            : otherProfile.slice(0, 5).map((profile, i) => (
                 <div className="d-flex justify-content-start text-secondary mb-3">
                   <img
                     width="20%"
@@ -93,7 +93,7 @@ const SideBarProfile = () => {
                       </span>
                     </p>
                     <p className="attivitaAmici m-0">{profile.title}</p>
-                    <button className="secondary-button">
+                    <button className="secondary-button fw-bold">
                       <BsPersonPlusFill className="button-icon" />
                       Collegati
                     </button>
@@ -104,7 +104,7 @@ const SideBarProfile = () => {
 
         <p className="Altro  d-flex justify-content-center text-secondary mb-0">
           <Button variant="trasparent" onClick={() => handleClose()}>
-            {showMore ? "Visualzza Altro ▼" : "back"}
+            {showMore ? "Visualizza Meno ▲" : "Visualzza Altro ▼"}
           </Button>
         </p>
       </div>
@@ -127,8 +127,8 @@ const SideBarProfile = () => {
             <img
               width="20%"
               height="20%"
-              className="me-1"
-              src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png"
+              className="me-1 rounded-circle"
+              src="https://www.iowawild.com/assets/img/TGZ_0168-9301766363.jpg"
               alt=""
             />
             <div>
@@ -137,7 +137,7 @@ const SideBarProfile = () => {
                 <span className="gradueSide m-0 text-secondary ">·2°</span>
               </p>
               <p className="attivitaAmici m-0">Experience Transformation</p>
-              <button className="secondary-button">
+              <button className="secondary-button ">
                 <BsPersonPlusFill className="button-icon" />
                 Collegati
               </button>
@@ -166,8 +166,8 @@ const SideBarProfile = () => {
             <img
               width="20%"
               height="20%"
-              className="me-1"
-              src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png"
+              className="me-1 rounded-circle"
+              src="https://static.vecteezy.com/system/resources/previews/009/023/888/non_2x/pmo-logo-pmo-letter-pmo-letter-logo-design-initials-pmo-logo-linked-with-circle-and-uppercase-monogram-logo-pmo-typography-for-technology-business-and-real-estate-brand-vector.jpg"
               alt=""
             />
             <div>
@@ -186,8 +186,8 @@ const SideBarProfile = () => {
           <img
             width="20%"
             height="20%"
-            className="me-1"
-            src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png"
+            className="me-1 rounded-circle"
+            src="https://as2.ftcdn.net/v2/jpg/05/09/87/47/500_F_509874727_6O0NmKoKUBEkDn2UlIZvfDeoK9NtF49e.jpg"
             alt=""
           />
           <div>

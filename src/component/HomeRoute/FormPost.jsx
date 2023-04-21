@@ -6,6 +6,9 @@ import {
   BsEmojiExpressionless,
   BsImage,
   BsFillCaretDownFill,
+  BsCameraVideo,
+  BsCalendar2DateFill,
+  BsThreeDots,
 } from "react-icons/bs";
 
 function FormPost({ handleclose3 }) {
@@ -29,42 +32,45 @@ function FormPost({ handleclose3 }) {
         </div>
         <Form.Group className="mb-3 mt-3">
           <Form.Control
-            as="textarea"
+            type="text"
             placeholder="Di cosa vorresti paralre?"
             className="postArea"
+            noValidate
           />
         </Form.Group>
         <BsEmojiExpressionless className="ms-3 " />
 
         <div className="d-flex mt-3">
           {/* FOTO */}
-          <Button variant="primary" type="submit" className="btnn foto">
-            <div>
-              <BsImage />
+          <Button variant="light" type="submit" className="btnn foto">
+            <div className="roundBtn" style={{ backgroundColor: "#0966c2" }}>
+              <BsImage style={{ fontSize: "25px", color: "#dbe7e9" }} />
             </div>
             <p>Foto</p>
           </Button>
 
           {/* VIDEO */}
-          <Button variant="primary" type="submit" className="btnn foto">
-            <div>
-              <BsImage />
+          <Button variant="light" type="submit" className="btnn video">
+            <div className="roundBtn" style={{ backgroundColor: "#8F5849" }}>
+              <BsCameraVideo style={{ fontSize: "25px", color: "#fde2ba" }} />
             </div>
             <p>Video</p>
           </Button>
 
           {/* EVENTO */}
-          <Button variant="primary" type="submit" className="btnn foto">
-            <div>
-              <BsImage />
+          <Button variant="light" type="submit" className="btnn evento">
+            <div className="roundBtn" style={{ backgroundColor: "#81597E" }}>
+              <BsCalendar2DateFill
+                style={{ fontSize: "25px", color: "#fadfd8" }}
+              />
             </div>
             <p>Evento</p>
           </Button>
 
           {/* ALTRO */}
-          <Button variant="primary" type="submit" className="btnn foto">
-            <div>
-              <BsImage />
+          <Button variant="light" type="submit" className="btnn altro">
+            <div className="roundBtn" style={{ backgroundColor: "#666666" }}>
+              <BsThreeDots style={{ fontSize: "25px", color: "#f3f2ef" }} />
             </div>
             <p>Altro</p>
           </Button>
@@ -72,7 +78,7 @@ function FormPost({ handleclose3 }) {
       </Form>
 
       <Modal.Footer className="mt-4">
-        <Button type="submit" variant="primary">
+        <Button type="submit" variant="none" className="btnPubblish" disabled>
           Pubblica
         </Button>
       </Modal.Footer>
