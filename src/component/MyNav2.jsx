@@ -4,11 +4,14 @@ import { IoMdArrowDropdown } from "react-icons/io";
 import { MdHome, MdWork, MdNotifications } from "react-icons/md";
 import { BsFillPeopleFill } from "react-icons/bs";
 import { CgMenuGridR } from "react-icons/cg";
-import { Link, useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { TbMessageCircle2Filled } from "react-icons/tb";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import { useDispatch, useSelector } from "react-redux";
-import { getAllProfile, getUserProfile } from "../redux/action/UserAction";
+import {
+  getAllProfile,
+  getUserProfile,
+} from "../redux/action/UserAction";
 import { useEffect, useState } from "react";
 import { getUserExperience } from "../redux/action/ExperienceAction";
 import { getPosts } from "../redux/action/PostAction";
@@ -183,3 +186,4 @@ const MyNav2 = () => {
   );
 };
 export default MyNav2;
+

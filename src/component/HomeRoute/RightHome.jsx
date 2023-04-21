@@ -59,15 +59,15 @@ const RightHome = () => {
         </Card>
         <div className="footer-card d-flex justify-content-between ms-4 mt-4">
           <div className=" d-flex flex-wrap justify-content-center">
-            <a href="*">Informazioni</a>
-            <a href="*">Accessibilità</a>
-            <a href="*">Centro assistenza</a>
-            <a href="*">Privacy e condizioni</a>
-            <a href="*">Opzioni per gli annunci pubblicitari</a>
-            <a href="*">Pubblicità</a>
-            <a href="*">Servizi alle aziende</a>
-            <a href="*">Scarica l'app LinkedIn</a>
-            <a href="*">Altro</a>
+            <a href="#">Informazioni</a>
+            <a href="#">Accessibilità</a>
+            <a href="#">Centro assistenza</a>
+            <a href="#">Privacy e condizioni</a>
+            <a href="#">Opzioni per gli annunci pubblicitari</a>
+            <a href="#">Pubblicità</a>
+            <a href="#">Servizi alle aziende</a>
+            <a href="#">Scarica l'app LinkedIn</a>
+            <a href="#">Altro</a>
             <p className="footerCopirightsec mb-2">
               <span>
                 <img

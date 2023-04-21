@@ -167,18 +167,19 @@ body {
 
 /* MEDIA QUERY PER NAVBAR MOBILE */
 
-/*@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 576px) {
   .i-nav,
-  .premium,
-  .linkedin-logo {
+  .premium {
     display: none !important;
   }
 
-  .home {
+  .home  {
     display: block !important;
-    margin-left: 40px !important;
+    
   }
-
+  .linkedin-logo{
+    display: block!important;
+  }
   .tu {
     display: block !important;
   }
@@ -665,8 +666,7 @@ h4 {
 /* MOBILE*/
 
 @media (max-width: 576px) {
-  .commentIcons {
-  }
+
   .commentIcon {
     flex-basis: 45%;
     margin: 0;
