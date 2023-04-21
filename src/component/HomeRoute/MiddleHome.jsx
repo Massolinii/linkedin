@@ -32,7 +32,7 @@ const MiddleHome = () => {
                     alt=""
                   />
                 </div>
-                <Button onClick={handleShow3} className="btnStartPost shadow">
+                <Button onClick={handleShow3} className="btnStartPost">
                   Avvia un post
                 </Button>
               </div>
