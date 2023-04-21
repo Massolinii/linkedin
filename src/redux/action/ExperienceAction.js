@@ -6,9 +6,7 @@ export const SET_SINGLE_EXPERIENCE = "SET_SINGLE_EXPERIENCE";
 export const ADD_EXPERIENCE = "ADD_EXPERIENCE";
 export const DELETE_EXPERIENCE = "DELETE_EXPERIENCE";
 export const SET_NEW_EXP = "SET_NEW_EXP";
-export const SET_NEW_EXP = "SET_NEW_EXP";
 export const SET_EXP_ID = "SET_EXP_ID";
-export const SET_TO_UPDATE = "SET_TO_UPDATE";
 export const SET_TO_UPDATE = "SET_TO_UPDATE";
 
 /* EXPORT AZIONI EXPERIENCE */
@@ -58,12 +56,6 @@ export const setToUpdate = (data) => {
     payload: data,
   };
 };
-export const setToUpdate = (data) => {
-  return {
-    type: SET_TO_UPDATE,
-    payload: data,
-  };
-};
 
 const API_KEY =
   "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDNjZjQ2YTE4NmE4NzAwMTQzODY3YjciLCJpYXQiOjE2ODE3MTYzMzAsImV4cCI6MTY4MjkyNTkzMH0.W_8jJorRnuOYGtkVo1rTmrMx0Jj18Heth2NyOzc8ytc";
@@ -76,7 +68,7 @@ export const getUserExperience = async (dispatch, getState) => {
   try {
     let response = await fetch(
       "https://striveschool-api.herokuapp.com/api/profile/" +
-        "643cf46a186a8700143867b7" +
+        userID +
         "/experiences",
 
       {
