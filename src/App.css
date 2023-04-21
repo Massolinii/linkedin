@@ -49,6 +49,28 @@ body {
 .notfound {
   height: 65vh;
 }
+.dropdown-menu {
+  width: 270px;
+}
+.dropdown-item-text > a {
+  color: gray !important;
+  text-decoration: none;
+  font-size: 0.9em;
+}
+.dropdown-item-text > a:hover {
+  color: rgb(74, 74, 74) !important;
+  text-decoration: underline;
+}
+.toProfile {
+  border-radius: 10cm !important;
+  width: 230px !important;
+}
+.toProfile:hover {
+  text-decoration: none !important;
+}
+.notfound {
+  height: 65vh;
+}
 .navbar-navigation {
   padding: 0 7rem;
   background-color: white;
@@ -81,16 +103,16 @@ body {
   width: 20rem;
   height: 45px;
 }
-
 .linkedin-logo {
-  font-size: 55px;
+  font-size: 50px;
   color: rgb(10, 102, 194);
+  margin-left: 4rem;
 }
-
 .input-search {
   display: flex;
   justify-content: flex-start;
   align-items: center;
+  padding-right: 1rem;
 }
 
 .form-ricerca {
@@ -185,7 +207,7 @@ body {
     height: 180px !important;
     position: absolute !important;
   }
-}
+}*/
 
 /* footer */
 
@@ -287,9 +309,11 @@ h4 {
 /* BANNER FOTO PROFILO E COPERTINA */
 
 .profileCover {
+  border-top-right-radius: 9px;
+  border-top-left-radius: 9px;
   height: 300px;
   width: 100%;
-  background-image: url("https://placekitten.com/800/300");
+  background-image: url("https://media.licdn.com/dms/image/D4D16AQH_FZDkDj5sow/profile-displaybackgroundimage-shrink_350_1400/0/1670341689480?e=1687392000&v=beta&t=5LSh9omqYGwXGvEo95GlfiwsH12FtnpriAW5rtpPwWM");
   background-size: cover;
   background-position: center;
 }
@@ -556,10 +580,10 @@ h4 {
   margin-top: 0.9em;
 }
 /* LEFTHOME */
-.textSmall{
+.textSmall {
   font-size: 12px;
 }
-.Plefthome{
+.Plefthome {
   font-size: 11px;
 }
 /* FOOTHOME*/
@@ -597,11 +621,12 @@ h4 {
 }
 /*MODIFICHE POST CARD*/
 .Follow {
-  color:  rgb(10, 102, 194);
+  color: rgb(10, 102, 194);
   font-weight: 600;
 }
 
-.commentIcon:hover, .commentIcon:active{
+.commentIcon:hover,
+.commentIcon:active {
   transform: scale(1.2);
 }
 /* messaggi */
@@ -615,7 +640,7 @@ h4 {
 
 .dropdown-item,
 .dropdown-menu {
-  background-color: white!important;
+  background-color: white !important;
   color: black !important;
 }
 
@@ -641,25 +666,22 @@ h4 {
 
 @media (max-width: 576px) {
   .commentIcons {
-  
   }
   .commentIcon {
     flex-basis: 45%;
     margin: 0;
     margin-bottom: 10px;
     padding: 0;
-    
   }
 
-  .iconpost{
+  .iconpost {
     margin: auto;
   }
 }
 
 /* MOBILE FOOTER*/
 @media (max-width: 576px) {
-
-  .footer{
+  .footer {
     padding-left: 0;
     padding-right: 0;
   }
@@ -675,26 +697,26 @@ h4 {
   .secondcol,
   .thirdcol {
     width: 100%;
-    margin-bottom:1px;
+    margin-bottom: 1px;
     text-align: center;
   }
 
   .secondcol {
     order: 1;
   }
-  
+
   .thirdcol {
     order: 2;
   }
 
-  .fourcol{
-    font-size:12px ;
+  .fourcol {
+    font-size: 12px;
   }
- .QuestinFour {
-  font-size:13px ;
-  color: rgb(43, 43, 43);
-  font-weight: bold;
- }
+  .QuestinFour {
+    font-size: 13px;
+    color: rgb(43, 43, 43);
+    font-weight: bold;
+  }
   .footerCopiright {
     text-align: center;
   }
@@ -707,8 +729,7 @@ h4 {
 }
 
 @media (min-width: 576px) and (max-width: 756px) {
-  .footer{
-    
+  .footer {
     padding-right: 0;
   }
   .footer-col {
@@ -723,26 +744,26 @@ h4 {
   .secondcol,
   .thirdcol {
     width: 100%;
-    margin-bottom:1px;
+    margin-bottom: 1px;
     text-align: center;
   }
 
   .secondcol {
     order: 1;
   }
-  
+
   .thirdcol {
     order: 2;
   }
 
-  .fourcol{
-    font-size:12px ;
+  .fourcol {
+    font-size: 12px;
   }
- .QuestinFour {
-  font-size:13px ;
-  color: rgb(43, 43, 43);
-  font-weight: bold;
- }
+  .QuestinFour {
+    font-size: 13px;
+    color: rgb(43, 43, 43);
+    font-weight: bold;
+  }
   .footerCopiright {
     text-align: center;
   }
@@ -753,4 +774,3 @@ h4 {
     color: rgb(65, 61, 61);
   }
 }
-
