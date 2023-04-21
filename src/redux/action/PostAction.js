@@ -132,7 +132,7 @@ export const createPost = (postText, formData) => {
 
 /* PUT - EDIT POST*/
 
-export const editPost = (textPost, post_id) => {
+export const editPost = (textPost, post_id, formData) => {
   const text = { text: textPost };
   return async (dispatch) => {
     try {
@@ -148,11 +148,28 @@ export const editPost = (textPost, post_id) => {
         }
       );
       if (response.ok) {
-        dispatch(getPosts);
-        console.log("Post successfully modified.");
+        if (formData.get("post")) {
+          console.log("Post successfully modified.");
+          let imgResponse = await fetch(
+            `https://striveschool-api.herokuapp.com/api/posts/${post_id}`,
+            {
+              method: "POST",
+              headers: {
+                Authorization: API_KEY,
+              },
+              body: formData,
+            }
+          );
+          if (imgResponse.ok) {
+            console.log("Photo Uploaded succcessfully!");
+          } else {
+            console.log("There was an error uploading the photo.");
+          }
+        }
       } else {
         alert("There was a problem modifying this Post");
       }
+      dispatch(getPosts);
     } catch (error) {
       console.log("Error:", error);
     }

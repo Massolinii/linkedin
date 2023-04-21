@@ -17,11 +17,12 @@ import { createPost, editPost } from "../../redux/action/PostAction";
 function FormEditPost({ post }) {
   const [postText, setPostText] = useState(post.text);
   console.log(postText);
-
+  const [formData, setFormData] = useState(new FormData());
   const dispatch = useDispatch();
 
   const handleSubmit = () => {
-    dispatch(editPost(postText, post._id));
+    dispatch(editPost(postText, post._id, formData));
+
     handleClose();
     setPostText(""); // svuota il campo di input
   };
@@ -60,7 +61,18 @@ function FormEditPost({ post }) {
                 onChange={(e) => setPostText(e.target.value)}
               />
             </Form.Group>
-            <BsEmojiExpressionless className="ms-3 " />
+            <Form.Group controlId="formFile2" className="mb-3">
+              <Form.Label>Choose a pic.</Form.Label>
+              <Form.Control
+                type="file"
+                onChange={(e) => {
+                  const file = e.target.files[0];
+                  console.log(file);
+                  formData.append("post", file);
+                }}
+              />
+            </Form.Group>
+            <BsEmojiExpressionless className="ms-3 fs-4 text-secondary" />
 
             <div className="d-flex mt-3">
               {/* FOTO */}
