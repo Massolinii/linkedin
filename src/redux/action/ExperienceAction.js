@@ -61,7 +61,6 @@ const API_KEY =
 export const getUserExperience = async (dispatch, getState) => {
   let state = getState();
   let userID = state.user.myProfile._id;
-  console.log(userID);
 
   try {
     let response = await fetch(

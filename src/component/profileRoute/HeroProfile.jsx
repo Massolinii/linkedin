@@ -2,6 +2,7 @@ import { Container, Row, Col, Image } from "react-bootstrap";
 import { BsPencil, BsX } from "react-icons/bs";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useSelector } from "react-redux";
+import EditProfileModal from "./EditProfileModal";
 
 function HeroProfile() {
   const profile = useSelector((state) => state.user.myProfile);
@@ -37,7 +38,7 @@ function HeroProfile() {
                 <h2 className="mb-0 mt-0">
                   {profile.name} {profile.surname}
                 </h2>
-                <BsPencil />
+                <EditProfileModal></EditProfileModal>
               </div>
               <p className="mb-0">{profile.title}</p>
               <p className="mb-0 mt-3 text-secondary">

@@ -107,3 +107,50 @@ export const getThisProfile = async (dispatch, getState) => {
     console.log("Fetch try failed,", error);
   }
 };
+export const editProfileInfo = (newProfile) => {
+  console.log("ciao");
+  return async (dispatch) => {
+    try {
+      let response = await fetch(
+        "https://striveschool-api.herokuapp.com/api/profile/",
+        {
+          method: "PUT",
+          headers: {
+            Authorization: API_KEY,
+          },
+          body: JSON.stringify(newProfile),
+        }
+      );
+      if (response.ok) {
+        console.log("profilo aggiornato");
+        dispatch(getUserProfile);
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+};
+export const editProfileImage = (formData, userID) => {
+  return async (dispatch) => {
+    try {
+      let imgResponse = await fetch(
+        `https://striveschool-api.herokuapp.com/api/profile/${userID}/picture`,
+        {
+          method: "POST",
+          headers: {
+            Authorization: API_KEY,
+          },
+          body: formData,
+        }
+      );
+      if (imgResponse.ok) {
+        dispatch(getUserProfile);
+        console.log("Photo Uploaded succcessfully!");
+      } else {
+        console.log("There was an error uploading the photo.");
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+};

@@ -6,13 +6,12 @@ import { AiOutlineMessage } from "react-icons/ai";
 import { BsArrowLeftRight } from "react-icons/bs";
 import { FaTelegramPlane } from "react-icons/fa";
 
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { deletePost } from "../../redux/action/PostAction";
 import { Dropdown } from "react-bootstrap";
 import { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
-import FormPost from "./FormPost";
 import FormEditPost from "./FormEditPost";
 
 function DeleteModal() {
@@ -43,7 +42,8 @@ function DeleteModal() {
 }
 
 const PostCard = ({ post }) => {
-  const dispatch = useDispatch();
+  const userID = useSelector((state) => state.user.myProfile._id);
+  const [authorization, setAuthorization] = useState(false);
 
   return (
     <div className="newsCard mb-3 rounded-3 bg-white border">
@@ -64,41 +64,49 @@ const PostCard = ({ post }) => {
               <AiOutlinePlus className="mx-1" />
               Segui
             </div>
-            <div>
-              <Dropdown id="dropdown-basic" variant="transparent">
-                <Dropdown.Toggle
-                  id="dropdown-autoclose-true "
-                  variant="link"
-                  className="text-dark"
-                >
-                  <BsThreeDots className="threeIcon" />
-                </Dropdown.Toggle>
-                <Dropdown.Menu>
-                  <Dropdown.Item>
-                    <DeleteModal />
-                  </Dropdown.Item>
-                  <Dropdown.Item>
-                    <FormEditPost />
-                  </Dropdown.Item>
-                </Dropdown.Menu>
-              </Dropdown>
+            {post.user._id === userID ? (
+              <div>
+                <Dropdown id="dropdown-basic" variant="transparent">
+                  <Dropdown.Toggle
+                    id="dropdown-autoclose-true "
+                    variant="link"
+                    className="text-dark"
+                  >
+                    <BsThreeDots className="threeIcon" />
+                  </Dropdown.Toggle>
+                  <Dropdown.Menu>
+                    <Dropdown.Item>
+                      <DeleteModal />
+                    </Dropdown.Item>
+                    <Dropdown.Item>
+                      <FormEditPost />
+                    </Dropdown.Item>
+                  </Dropdown.Menu>
+                </Dropdown>
+              </div>
+            ) : (
+              <></>
+            )}
+          </div>
+        </div>
+      </div>
+      {post.image ? (
+        <div className="imgNews">
+          <div className="text-center">
+            <div className="border-top border-bottom">
+              {" "}
+              <img
+                src={post.image || null}
+                alt={post.image}
+                className="me-2"
+                style={{ height: "200px" }}
+              />
             </div>
           </div>
         </div>
-      </div>
-      <div className="imgNews">
-        <div className="text-center">
-          <div className="border-top border-bottom">
-            {" "}
-            <img
-              src={post.image || null}
-              alt={post.image}
-              className="me-2"
-              style={{ height: "200px" }}
-            />
-          </div>
-        </div>
-      </div>
+      ) : (
+        <></>
+      )}
 
       <div className="commentIcons d-flex justify-content-between px-4 py-2">
         <div className="d-flex flex-column align-items-center commentIcon p-1">
