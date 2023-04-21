@@ -33,7 +33,7 @@ const MiddleHome = () => {
             <div className="d-flex justify-content-center">
               <img
                 className="profilePictureHome"
-                src={user.image}
+                src={profile.image}
                 alt="profile"
               />
             </div>
@@ -43,11 +43,11 @@ const MiddleHome = () => {
                 style={{ color: "black", textDecoration: "inherit" }}
               >
                 <Card.Title className="text-center m-0 fs-5 fw-bold">
-                  {user.name} {user.surname}
+                  {profile.name} {profile.surname}
                 </Card.Title>
               </Link>
               <Card.Text className="textSmall text-center text-secondary">
-                {user.title}
+                {profile.title}
               </Card.Text>
             </Card.Body>
           </Card>

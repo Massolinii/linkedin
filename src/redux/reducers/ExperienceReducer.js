@@ -6,7 +6,6 @@ import {
   SET_EXP_ID,
   SET_NEW_EXP,
   SET_TO_UPDATE,
-  SET_TO_UPDATE,
 } from "../action/ExperienceAction";
 
 const initialState = {

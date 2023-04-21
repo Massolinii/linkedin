@@ -6,18 +6,11 @@ import { BsFillPeopleFill } from "react-icons/bs";
 import { CgMenuGridR } from "react-icons/cg";
 import { Link, useParams } from "react-router-dom";
 import { TbMessageCircle2Filled } from "react-icons/tb";
-import Nav from "react-bootstrap/Nav";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import { useDispatch, useSelector } from "react-redux";
-import {
-  getAllProfile,
-  getThisProfile,
-  getUserProfile,
-  setThisUserID,
-} from "../redux/action/UserAction";
+import { getAllProfile, getUserProfile } from "../redux/action/UserAction";
 import { useEffect, useState } from "react";
 import { getUserExperience } from "../redux/action/ExperienceAction";
-import { getPosts } from "../redux/action/PostAction";
 import { getPosts } from "../redux/action/PostAction";
 
 const MyNav2 = () => {
@@ -49,12 +42,6 @@ const MyNav2 = () => {
           <div className="input-search d-flex align-items-center">
             <AiFillLinkedin className="linkedin-logo" />
             <Form className="d-flex form d-none d-lg-block">
-              <Form.Control
-                type="search"
-                placeholder="Cerca"
-                className="me-2 form-ricerca"
-                aria-label="Search"
-              />
               <Form.Control
                 type="search"
                 placeholder="Cerca"

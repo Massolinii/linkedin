@@ -5,13 +5,10 @@ import {
   BsWordpress,
   BsEmojiExpressionless,
   BsImage,
+  BsCameraVideo,
+  BsCalendar2DateFill,
+  BsThreeDots,
   BsFillCaretDownFill,
-  BsCameraVideo,
-  BsCalendar2DateFill,
-  BsThreeDots,
-  BsCameraVideo,
-  BsCalendar2DateFill,
-  BsThreeDots,
 } from "react-icons/bs";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
