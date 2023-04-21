@@ -457,6 +457,10 @@ h4 {
   border-radius: 50%;
 }
 
+.privacyPost h5 {
+  font-size: 15px;
+}
+
 .privacyPost a {
   text-decoration: none;
   align-items: center;
@@ -465,6 +469,9 @@ h4 {
   border-radius: 20px;
   padding: 0.4em;
   border: 1px solid gray;
+  height: 30px;
+  font-size: smaller;
+  font-weight: bold;
 }
 
 /* ICONE CREA POST */
@@ -501,6 +508,8 @@ h4 {
 .altro p {
   text-align: center;
   margin-top: 100px;
+  font-weight: bold;
+  font-size: 15px;
 }
 
 /* SECONDA PARTE SELETTORI ICONE */
@@ -524,11 +533,12 @@ h4 {
 /* TEXTAREA PER CREA POST */
 .postArea {
   border: none !important;
-  outline: none !important;
+  box-shadow: none !important;
 }
 
-.postArea {
-  outline: none !important;
+.postArea::placeholder {
+  color: gray !important;
+  font-size: 20px !important;
 }
 
 /* HOME PAGE COL RIGHT  */

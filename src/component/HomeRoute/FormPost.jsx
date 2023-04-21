@@ -2,7 +2,7 @@ import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import Form from "react-bootstrap/Form";
 import {
-  BsWordpress,
+  BsGlobeAmericas,
   BsEmojiExpressionless,
   BsImage,
   BsFillCaretDownFill,
@@ -25,17 +25,16 @@ function FormPost({ handleclose3 }) {
           <div className="privacyPost mx-2">
             <h5>Nome utente</h5>
             <a href="*">
-              <BsWordpress className="mx-2" /> Chiunque{" "}
+              <BsGlobeAmericas className="mx-2" /> Chiunque{" "}
               <BsFillCaretDownFill className="mx-2" />
             </a>
           </div>
         </div>
-        <Form.Group className="mb-3 mt-3">
+        <Form.Group className="mb-5 mt-3">
           <Form.Control
-            type="text"
+            as="textarea"
             placeholder="Di cosa vorresti paralre?"
             className="postArea"
-            noValidate
           />
         </Form.Group>
         <BsEmojiExpressionless className="ms-3 " />
@@ -46,7 +45,7 @@ function FormPost({ handleclose3 }) {
             <div className="roundBtn" style={{ backgroundColor: "#0966c2" }}>
               <BsImage style={{ fontSize: "25px", color: "#dbe7e9" }} />
             </div>
-            <p>Foto</p>
+            <p style={{ color: "#0966c2" }}>Foto</p>
           </Button>
 
           {/* VIDEO */}
@@ -54,7 +53,7 @@ function FormPost({ handleclose3 }) {
             <div className="roundBtn" style={{ backgroundColor: "#8F5849" }}>
               <BsCameraVideo style={{ fontSize: "25px", color: "#fde2ba" }} />
             </div>
-            <p>Video</p>
+            <p style={{ color: "#8F5849" }}>Video</p>
           </Button>
 
           {/* EVENTO */}
@@ -64,7 +63,7 @@ function FormPost({ handleclose3 }) {
                 style={{ fontSize: "25px", color: "#fadfd8" }}
               />
             </div>
-            <p>Evento</p>
+            <p style={{ color: "#81597E" }}>Evento</p>
           </Button>
 
           {/* ALTRO */}
@@ -72,7 +71,7 @@ function FormPost({ handleclose3 }) {
             <div className="roundBtn" style={{ backgroundColor: "#666666" }}>
               <BsThreeDots style={{ fontSize: "25px", color: "#f3f2ef" }} />
             </div>
-            <p>Altro</p>
+            <p style={{ color: "#666666" }}>Altro</p>
           </Button>
         </div>
       </Form>
