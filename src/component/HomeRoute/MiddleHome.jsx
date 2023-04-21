@@ -61,6 +61,7 @@ const MiddleHome = () => {
             <div className="d-flex h-25">
               <div className="">
                 <img
+                  id="picProHome"
                   className="profilePictureHome"
                   src={profile.image}
                   alt=""
