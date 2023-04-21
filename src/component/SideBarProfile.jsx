@@ -57,8 +57,8 @@ const SideBarProfile = () => {
                   <img
                     width="20%"
                     height="20%"
-                    className="me-1"
-                    src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png"
+                    className="me-1 rounded-circle"
+                    src={profile.image}
                     alt=""
                   />
                   <div>
@@ -81,8 +81,8 @@ const SideBarProfile = () => {
                   <img
                     width="20%"
                     height="20%"
-                    className="me-1"
-                    src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png"
+                    className="me-1 rounded-circle"
+                    src={profile.image}
                     alt=""
                   />
                   <div>
