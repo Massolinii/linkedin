@@ -11,7 +11,7 @@ import {
   BsFillCaretDownFill,
 } from "react-icons/bs";
 import { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { createPost } from "../../redux/action/PostAction";
 
 function FormPost({ handleclose3 }) {
@@ -19,6 +19,7 @@ function FormPost({ handleclose3 }) {
   const [writing, setWriting] = useState(false);
   const [formData, setFormData] = useState(new FormData());
   const dispatch = useDispatch();
+  const user = useSelector((state) => state.user.myProfile);
 
   const checkWriting = () => {
     if (postText.length > 0) {
@@ -41,7 +42,7 @@ function FormPost({ handleclose3 }) {
       <Form>
         <div className="d-flex">
           <div className="icona-per-post">
-            <img src="https://placekitten.com/200" alt="" />
+            <img src={user.image} alt="" />
           </div>
           <div className="privacyPost mx-2">
             <h5>{user.username}</h5>
