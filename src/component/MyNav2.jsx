@@ -56,7 +56,7 @@ const MyNav2 = () => {
 
           <ul className="ul-nav ms-5">
             <li>
-              <Link className="text-secondary " to="/home">
+              <Link className="text-secondary " to="/">
                 <MdHome className="i-nav home" />
                 <span className="d-none d-lg-block">Home</span>
               </Link>

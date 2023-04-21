@@ -18,7 +18,7 @@ function App() {
         </Row>
         <Routes>
           <Route path="*" />
-          <Route path="/home" element={<MyHomePage />} />
+          <Route path="/" element={<MyHomePage />} />
           <Route
             path="/profile/:userID"
             element={
@@ -46,7 +46,7 @@ function App() {
           />
           <Route path="*" element={<NotFound></NotFound>} />
         </Routes>
-        <Message/>
+        <Message />
       </Container>
     </BrowserRouter>
   );
