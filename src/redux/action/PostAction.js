@@ -1,3 +1,5 @@
+import { async } from "q";
+
 /* AZIONI POST */
 export const SET_POSTS = "SET_POST";
 export const SET_SINGLE_POST = "SET_SINGLE_POST";
@@ -111,11 +113,11 @@ export const createPost = (postText, formData) => {
               },
               body: formData,
             }
-          ); 
+          );
           if (imgResponse.ok) {
-            console.log("Photo Uploaded succcessfully!")
+            console.log("Photo Uploaded succcessfully!");
           } else {
-            console.log("There was an error uploading the photo.")
+            console.log("There was an error uploading the photo.");
           }
         }
         dispatch(addPost(newPost));
@@ -130,25 +132,48 @@ export const createPost = (postText, formData) => {
 
 /* PUT - EDIT POST*/
 
-export const editPost = async (formData, post_id) => {
-  try {
-    let response = await fetch(
-      `https://striveschool-api.herokuapp.com/api/posts/` + post_id,
-      {
-        method: "PUT",
-        headers: {
-          "Content-type": "application/json",
-          Authorization: API_KEY,
-        },
-        body: JSON.stringify(formData),
+export const editPost = (textPost, post_id) => {
+  const text = { text: textPost };
+  return async (dispatch) => {
+    try {
+      let response = await fetch(
+        `https://striveschool-api.herokuapp.com/api/posts/` + post_id,
+        {
+          method: "PUT",
+          headers: {
+            "Content-type": "application/json",
+            Authorization: API_KEY,
+          },
+          body: JSON.stringify(text),
+        }
+      );
+      if (response.ok) {
+        dispatch(getPosts);
+        console.log("Post successfully modified.");
+      } else {
+        alert("There was a problem modifying this Post");
       }
-    );
-    if (response.ok) {
-      alert("Post successfully modified.");
-    } else {
-      alert("There was a problem modifying this Post");
+    } catch (error) {
+      console.log("Error:", error);
     }
-  } catch (error) {
-    console.log("Error:", error);
-  }
+  };
+};
+/*DELETEPOST*/
+export const deletePost = (postID) => {
+  return async (dispatch) => {
+    try {
+      let response = await fetch(
+        "https://striveschool-api.herokuapp.com/api/posts/" + postID,
+        {
+          method: "DELETE",
+          headers: {
+            Authorization: API_KEY,
+          },
+        }
+      );
+      if (response.ok) {
+        dispatch(getPosts);
+      }
+    } catch (error) {}
+  };
 };

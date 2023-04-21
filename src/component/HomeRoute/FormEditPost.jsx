@@ -11,16 +11,18 @@ import {
   BsThreeDots,
 } from "react-icons/bs";
 import { useState } from "react";
-import { useDispatch } from "react-redux";
-import { createPost } from "../../redux/action/PostAction";
+import { useDispatch, useSelector } from "react-redux";
+import { createPost, editPost } from "../../redux/action/PostAction";
 
-function FormEditPost() {
-  const [postText, setPostText] = useState("");
+function FormEditPost({ post }) {
+  const [postText, setPostText] = useState(post.text);
+  console.log(postText);
+
   const dispatch = useDispatch();
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    dispatch(createPost(postText));
+  const handleSubmit = () => {
+    dispatch(editPost(postText, post._id));
+    handleClose();
     setPostText(""); // svuota il campo di input
   };
   const [show, setShow] = useState(false);
@@ -38,7 +40,7 @@ function FormEditPost() {
           <Form>
             <div className="d-flex">
               <div className="icona-per-post">
-                <img src="https://placekitten.com/200" alt="" />
+                <img width={50} height={50} src={post.user.image} alt="" />
               </div>
               <div className="privacyPost mx-2">
                 <h5>{}</h5>
@@ -112,7 +114,7 @@ function FormEditPost() {
           </Form>
         </Modal.Body>
         <Modal.Footer className="justify-content-center">
-          <Button variant="secondary" onClick={handleClose}>
+          <Button variant="secondary" onClick={handleSubmit}>
             MODIFICA
           </Button>
           <Button variant="primary" onClick={handleClose}>

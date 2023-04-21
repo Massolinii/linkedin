@@ -14,9 +14,13 @@ import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import FormEditPost from "./FormEditPost";
 
-function DeleteModal() {
+function DeleteModal({ post }) {
+  const dispatch = useDispatch();
   const [show, setShow] = useState(false);
-
+  const handleSubmit = () => {
+    dispatch(deletePost(post._id));
+    handleClose();
+  };
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
@@ -29,7 +33,7 @@ function DeleteModal() {
       <Modal show={show} onHide={handleClose}>
         <Modal.Body>Sei sicuro di voler elimare questo post?</Modal.Body>
         <Modal.Footer className="justify-content-center">
-          <Button variant="secondary" onClick={handleClose}>
+          <Button variant="secondary" onClick={handleSubmit}>
             Elimina
           </Button>
           <Button variant="primary" onClick={handleClose}>
@@ -43,7 +47,6 @@ function DeleteModal() {
 
 const PostCard = ({ post }) => {
   const userID = useSelector((state) => state.user.myProfile._id);
-  const [authorization, setAuthorization] = useState(false);
 
   return (
     <div className="newsCard mb-3 rounded-3 bg-white border">
@@ -76,10 +79,10 @@ const PostCard = ({ post }) => {
                   </Dropdown.Toggle>
                   <Dropdown.Menu>
                     <Dropdown.Item>
-                      <DeleteModal />
+                      <DeleteModal post={post} />
                     </Dropdown.Item>
                     <Dropdown.Item>
-                      <FormEditPost />
+                      <FormEditPost post={post} />
                     </Dropdown.Item>
                   </Dropdown.Menu>
                 </Dropdown>

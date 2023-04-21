@@ -114,7 +114,27 @@ export const createExperience = async (dispatch, getState) => {
     if (response.ok) {
       let data = await response.json();
       // console.log(data);
-      dispatch(addExperience(data));
+      dispatch(getUserExperience);
+      dispatch(
+        setSingleExperience({
+          role: "",
+          company: "",
+          startDate: "",
+          endDate: null,
+          description: "",
+          area: "",
+        })
+      );
+      dispatch(
+        setNewExp({
+          role: "",
+          company: "",
+          startDate: "",
+          endDate: null,
+          description: "",
+          area: "",
+        })
+      );
     } else {
       console.log("Error has happened with the POST request");
     }
