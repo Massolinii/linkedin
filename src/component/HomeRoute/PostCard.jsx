@@ -50,7 +50,6 @@ const PostCard = ({ post }) => {
       <div className="p-4">
         <div className="initialNews d-flex justify-content-between">
           <div className="d-flex align-items-center ">
-
             <div className="descriptionText mx-2">
               <h6 className="m-0">{post.username.toUpperCase()}</h6>
               <div className=" mt-2 mb-3">{post.text}</div>
@@ -88,15 +87,17 @@ const PostCard = ({ post }) => {
         </div>
       </div>
       <div className="imgNews">
-      <div className="text-center">
-              <div className="border-top border-bottom">
-                {" "}
-                <img
-                  src={post.image || null} alt={post.image} className="me-2"
-                  style={{ height: "200px"}}
-                />
-              </div>
-            </div>
+        <div className="text-center">
+          <div className="border-top border-bottom">
+            {" "}
+            <img
+              src={post.image || null}
+              alt={post.image}
+              className="me-2"
+              style={{ height: "200px" }}
+            />
+          </div>
+        </div>
       </div>
 
       <div className="commentIcons d-flex justify-content-between px-4 py-2">
@@ -104,25 +105,25 @@ const PostCard = ({ post }) => {
           <div>
             <FiThumbsUp />
           </div>
-          <div>Consiglia</div>
+          <div className="d-none d-md-block">Consiglia</div>
         </div>
         <div className="d-flex flex-column align-items-center commentIcon p-1">
           <div>
             <AiOutlineMessage />
           </div>
-          <div>Commenta</div>
+          <div className="d-none d-md-block">Commenta</div>
         </div>
         <div className="d-flex flex-column align-items-center commentIcon p-1">
           <div>
             <BsArrowLeftRight />
           </div>
-          <div>Diffondi il post</div>
+          <div className="d-none d-md-block">Diffondi il post</div>
         </div>
         <div className="d-flex flex-column align-items-center commentIcon p-1">
           <div>
             <FaTelegramPlane />
           </div>
-          <div>Invia</div>
+          <div className="d-none d-md-block">Invia</div>
         </div>
       </div>
     </div>

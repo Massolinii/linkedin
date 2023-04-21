@@ -57,8 +57,8 @@ const SideBarProfile = () => {
                   <img
                     width="20%"
                     height="20%"
-                    className="me-1"
-                    src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png"
+                    className="me-1 rounded-circle"
+                    src={profile.image}
                     alt=""
                   />
                   <div>
@@ -68,7 +68,13 @@ const SideBarProfile = () => {
                         ·{i + 1}°
                       </span>
                     </p>
-                    <p className="attivitaAmici m-0">{profile.title}</p>
+                    <p className="attivitaAmici m-0">
+                      {profile.title
+                        ? profile.title.length < 16
+                          ? profile.title
+                          : profile.title.substring(0, 16) + "..."
+                        : ""}
+                    </p>
                     <button className="secondary-button">
                       <BsPersonPlusFill className="button-icon" />
                       Collegati
@@ -81,8 +87,8 @@ const SideBarProfile = () => {
                   <img
                     width="20%"
                     height="20%"
-                    className="me-1"
-                    src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png"
+                    className="me-1 rounded-circle"
+                    src={profile.image}
                     alt=""
                   />
                   <div>
@@ -127,8 +133,8 @@ const SideBarProfile = () => {
             <img
               width="20%"
               height="20%"
-              className="me-1"
-              src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png"
+              className="me-1 rounded-circle"
+              src="https://www.iowawild.com/assets/img/TGZ_0168-9301766363.jpg"
               alt=""
             />
             <div>
@@ -166,8 +172,8 @@ const SideBarProfile = () => {
             <img
               width="20%"
               height="20%"
-              className="me-1"
-              src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png"
+              className="me-1 rounded-circle"
+              src="https://static.vecteezy.com/system/resources/previews/009/023/888/non_2x/pmo-logo-pmo-letter-pmo-letter-logo-design-initials-pmo-logo-linked-with-circle-and-uppercase-monogram-logo-pmo-typography-for-technology-business-and-real-estate-brand-vector.jpg"
               alt=""
             />
             <div>
@@ -186,8 +192,8 @@ const SideBarProfile = () => {
           <img
             width="20%"
             height="20%"
-            className="me-1"
-            src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png"
+            className="me-1 rounded-circle"
+            src="https://as2.ftcdn.net/v2/jpg/05/09/87/47/500_F_509874727_6O0NmKoKUBEkDn2UlIZvfDeoK9NtF49e.jpg"
             alt=""
           />
           <div>

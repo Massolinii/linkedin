@@ -1,7 +1,7 @@
 import Card from "react-bootstrap/Card";
 import { Link } from "react-router-dom";
 import { BsLinkedin, BsFillBookmarkFill } from "react-icons/bs";
-import { Container, Col, Row } from "react-bootstrap";
+import { Container } from "react-bootstrap";
 import { useSelector } from "react-redux";
 const LeftHome = () => {
   const user = useSelector((state) => state.user.myProfile);
@@ -42,17 +42,11 @@ const LeftHome = () => {
           />
 
           <Card.Body className="hoverElement py-1">
-            <Card.Text className="textSmall fw-bold d-flex justify-content-between text-secondary">
-              Chi ha visitato il tuo profilo?{" "}
+            <Card.Text className="textSmall mb-0 fw-bold d-flex justify-content-between text-secondary">
+              Collegamenti
               <span className="text-info ms-2">235</span>
             </Card.Text>
-          </Card.Body>
-
-          <Card.Body className="hoverElement py-1">
-            <Card.Text className="textSmall fw-bold d-flex justify-content-between text-secondary">
-              Visualizzazoni del tuo profilo{" "}
-              <span className="text-info ms-2">320</span>
-            </Card.Text>
+            <p className="Plefthome fw-bold">espandi la tua rete</p>
           </Card.Body>
 
           <hr
