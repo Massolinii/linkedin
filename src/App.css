@@ -167,16 +167,17 @@ body {
 
 /* MEDIA QUERY PER NAVBAR MOBILE */
 
-@media only screen and (max-width: 600px) {
-  .i-nav,
-  .premium,
+@media only screen and (max-width: 576px) {
+  .i-nav {
+    display: block !important;
+  }
+
   .linkedin-logo {
-    display: none !important;
+    display: block !important;
   }
 
   .home {
     display: block !important;
-    margin-left: 40px !important;
   }
 
   .tu {
@@ -185,8 +186,7 @@ body {
 
   .navbar-navigation {
     display: flex;
-    justify-content: space-between !important;
-    padding: 0 !important;
+    justify-content: space-around !important;
   }
 
   .nav-col {
@@ -200,6 +200,30 @@ body {
   }
 }
 
+@media screen and (width: 320px) {
+  .i-nav {
+    display: none !important;
+  }
+
+  .premium {
+    display: none !important;
+  }
+
+  .linkedin-logo {
+    display: block !important;
+  }
+
+  .tu {
+    margin-right: 20px;
+  }
+
+  .navbar-navigation {
+    box-sizing: none !important;
+    margin-bottom: 10px !important;
+    margin-left: auto !important;
+  }
+}
+
 @media only screen and (min-width: 857px) {
   .background {
     width: 92% !important;
@@ -207,7 +231,8 @@ body {
     height: 180px !important;
     position: absolute !important;
   }
-}*/
+}
+*/
 
 /* footer */
 
@@ -665,8 +690,6 @@ h4 {
 /* MOBILE*/
 
 @media (max-width: 576px) {
-  .commentIcons {
-  }
   .commentIcon {
     flex-basis: 45%;
     margin: 0;

@@ -14,7 +14,6 @@ import Card from "react-bootstrap/Card";
 import { Link } from "react-router-dom";
 import RightHome from "./RightHome";
 
-
 const MiddleHome = () => {
   const [showPost, setShowPost] = useState(false);
   const handleclose3 = () => setShowPost(false);
@@ -25,30 +24,33 @@ const MiddleHome = () => {
     <Row>
       {/*SOLO PER MOBILE*/}
       <Container className="d-sm-none ">
-        <Row className="">
-        <Card >
-          <Card.Img
-            variant="top"
-            src="https://media.licdn.com/dms/image/D4D16AQH_FZDkDj5sow/profile-displaybackgroundimage-shrink_350_1400/0/1670341689480?e=1687392000&v=beta&t=5LSh9omqYGwXGvEo95GlfiwsH12FtnpriAW5rtpPwWM"
-            style={{ height: "60px" }}
-          />
-          <div className="d-flex justify-content-center">
-            <img
-              className="profilePictureHome"
-              src={user.image}
-              alt="profile"
+        <Row>
+          <Card>
+            <Card.Img
+              variant="top"
+              src="https://media.licdn.com/dms/image/D4D16AQH_FZDkDj5sow/profile-displaybackgroundimage-shrink_350_1400/0/1670341689480?e=1687392000&v=beta&t=5LSh9omqYGwXGvEo95GlfiwsH12FtnpriAW5rtpPwWM"
+              style={{ height: "60px" }}
             />
-          </div>
-          <Card.Body className="pt-0 ">
-            <Link to="/" style={{ color: "black", textDecoration: "inherit" }}>
-              <Card.Title className="text-center m-0 fs-5 fw-bold">
-                {user.name} {user.surname}
-              </Card.Title>
-            </Link>
-            <Card.Text className="textSmall text-center text-secondary">
-              {user.title}
-            </Card.Text>
-          </Card.Body>
+            <div className="d-flex justify-content-center">
+              <img
+                className="profilePictureHome"
+                src={user.image}
+                alt="profile"
+              />
+            </div>
+            <Card.Body className="pt-0 ">
+              <Link
+                to="/"
+                style={{ color: "black", textDecoration: "inherit" }}
+              >
+                <Card.Title className="text-center m-0 fs-5 fw-bold">
+                  {user.name} {user.surname}
+                </Card.Title>
+              </Link>
+              <Card.Text className="textSmall text-center text-secondary">
+                {user.title}
+              </Card.Text>
+            </Card.Body>
           </Card>
         </Row>
 
@@ -123,11 +125,9 @@ const MiddleHome = () => {
       {/*PER MOBILE*/}
       <Container className="d-sm-none">
         <Row>
-        <RightHome/>
+          <RightHome />
         </Row>
       </Container>
-      
-      
     </Row>
   );
 };
