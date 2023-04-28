@@ -41,7 +41,7 @@ const SingleExp = ({ exp }) => {
     }
   };
   return (
-    <Row className="mt-3">
+    <Row>
       <Col>
         <Card className>
           <Card.Header>

@@ -15,10 +15,15 @@ const Formation = () => {
             </div>
           </div>
           <Col className="d-flex">
+            <img src="*" alt="LOGO FORMAZIONE" className="me-2" />
             <Row>
-              <h5>EPICODE School</h5>
-              <p>FullStack Web Developer</p>
-              <p>01/2023 - 07/2023</p>
+              <h5>Nome Formazione</h5>
+              <p>Tipo di formazione</p>
+              <p>Luogo e data</p>
+              <p>
+                Competenze:{" "}
+                <span>qui dentro ci vanno le competenze acquisite </span>
+              </p>
             </Row>
           </Col>
         </Row>

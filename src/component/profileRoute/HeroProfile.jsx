@@ -20,12 +20,12 @@ function HeroProfile() {
             <Row style={{ height: "400px" }}>
               <Col className="p-0 m-0">
                 <Col className="profileCover">{/* IMMAGINE COPERTINA */}</Col>
-                <div className="linkprofilePicWrap">
+                <div className="profilePicWrap">
                   <Image
                     src={profile.image}
                     alt="profile-picture"
                     roundedCircle
-                    className="linkprofilePic"
+                    className="profilePic"
                   />
                   {/* IMMAGINE PROFILO */}
                 </div>
@@ -90,7 +90,7 @@ function HeroProfile() {
               <BsPencil />
             </div>
             <p className="mb-0">Ruoli di Sviluppatore Full Stack</p>
-            <a style={{ fontWeight: "bold", textDecoration: "none" }} href="/profile">
+            <a style={{ fontWeight: "bold", textDecoration: "none" }} href="*">
               Mostra dettagli
             </a>
           </Col>

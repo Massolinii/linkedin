@@ -1,9 +1,7 @@
 import { Container, Row, Col } from "react-bootstrap";
 import { BsPencil } from "react-icons/bs";
-import { useSelector } from "react-redux";
 
 const Information = () => {
-  const profile = useSelector((state) => state.user.myProfile);
   return (
     <div>
       <Container className="mt-4 p-4 border border-1 rounded-3 bg-light">
@@ -14,7 +12,10 @@ const Information = () => {
               <BsPencil />
             </div>
             <p>
-              {profile.bio}
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui,
+              nemo. Porro, dolores placeat. Doloremque assumenda fuga, at
+              exercitationem iste error fugiat obcaecati ratione dolores ipsa
+              eum velit animi veritatis! Error.
             </p>
           </Col>
         </Row>

@@ -14,13 +14,9 @@ import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import FormEditPost from "./FormEditPost";
 
-function DeleteModal({ post }) {
-  const dispatch = useDispatch();
+function DeleteModal() {
   const [show, setShow] = useState(false);
-  const handleSubmit = () => {
-    dispatch(deletePost(post._id));
-    handleClose();
-  };
+
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
@@ -38,7 +34,7 @@ function DeleteModal({ post }) {
       <Modal show={show} onHide={handleClose}>
         <Modal.Body>Sei sicuro di voler elimare questo post?</Modal.Body>
         <Modal.Footer className="justify-content-center">
-          <Button variant="secondary" onClick={handleSubmit}>
+          <Button variant="secondary" onClick={handleClose}>
             Elimina
           </Button>
           <Button variant="primary" onClick={handleClose}>
@@ -52,22 +48,18 @@ function DeleteModal({ post }) {
 
 const PostCard = ({ post }) => {
   const userID = useSelector((state) => state.user.myProfile._id);
+  const [authorization, setAuthorization] = useState(false);
 
   return (
     <div className="newsCard mb-3 rounded-3 bg-white border">
       <div className="p-4">
         <div className="initialNews d-flex justify-content-between">
           <div className="d-flex align-items-center ">
-            <div className="descriptionText mx-2 d-flex">
-              <div>
-              <img src={post.user.image} alt="" className="profilePicWrap me-2"/>
-              </div>
-              <div>
+            <div className="descriptionText mx-2">
               <h6 className="m-0">{post.username.toUpperCase()}</h6>
               <div className=" mt-2 mb-3">{post.text}</div>
-              <div className="text-muted dataPost">
-              {new Date(post.createdAt).toLocaleString([], { year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute:'2-digit'})}
-                </div>
+              <div className="text-muted">
+                {new Date(post.createdAt).toLocaleString()}
               </div>
             </div>
           </div>
@@ -89,10 +81,10 @@ const PostCard = ({ post }) => {
                   </Dropdown.Toggle>
                   <Dropdown.Menu>
                     <Dropdown.Item>
-                      <DeleteModal post={post} />
+                      <DeleteModal />
                     </Dropdown.Item>
                     <Dropdown.Item>
-                      <FormEditPost post={post} />
+                      <FormEditPost />
                     </Dropdown.Item>
                   </Dropdown.Menu>
                 </Dropdown>

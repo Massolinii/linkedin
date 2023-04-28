@@ -17,7 +17,7 @@ function App() {
           <MyNav2 />
         </Row>
         <Routes>
-          <Route path="*" element={<NotFound />} />
+          <Route path="*" />
           <Route path="/" element={<MyHomePage />} />
           <Route
             path="/profile/:userID"
