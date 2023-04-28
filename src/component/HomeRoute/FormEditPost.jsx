@@ -12,16 +12,19 @@ import {
   BsPencil,
 } from "react-icons/bs";
 import { useState } from "react";
-import { useDispatch } from "react-redux";
-import { createPost } from "../../redux/action/PostAction";
+import { useDispatch, useSelector } from "react-redux";
+import { createPost, editPost } from "../../redux/action/PostAction";
 
-function FormEditPost() {
-  const [postText, setPostText] = useState("");
+function FormEditPost({ post }) {
+  const [postText, setPostText] = useState(post.text);
+  console.log(postText);
+  const [formData, setFormData] = useState(new FormData());
   const dispatch = useDispatch();
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    dispatch(createPost(postText));
+  const handleSubmit = () => {
+    dispatch(editPost(postText, post._id, formData));
+
+    handleClose();
     setPostText(""); // svuota il campo di input
   };
   const [show, setShow] = useState(false);
@@ -44,7 +47,7 @@ function FormEditPost() {
           <Form>
             <div className="d-flex">
               <div className="icona-per-post">
-                <img src="https://placekitten.com/200" alt="" />
+                <img width={50} height={50} src={post.user.image} alt="" />
               </div>
               <div className="privacyPost mx-2">
                 <h5>{}</h5>
@@ -64,11 +67,28 @@ function FormEditPost() {
                 onChange={(e) => setPostText(e.target.value)}
               />
             </Form.Group>
-            <BsEmojiExpressionless className="ms-3 " />
+            <Form.Group controlId="formFile" className="mb-3 d-none">
+              <Form.Label>Choose a pic.</Form.Label>
+              <Form.Control
+                id="cliccami"
+                type="file"
+                onChange={(e) => {
+                  const file = e.target.files[0];
+                  console.log(file);
+                  formData.append("post", file);
+                }}
+              />
+            </Form.Group>
+            <BsEmojiExpressionless className="ms-3 fs-4 text-secondary" />
 
             <div className="d-flex mt-3">
               {/* FOTO */}
-              <Button variant="light" type="button" className="btnn foto">
+              <Button
+                variant="light"
+                type="button"
+                className="btnn foto"
+                onClick={() => document.querySelector("#cliccami").click()}
+              >
                 <div
                   className="roundBtn"
                   style={{ backgroundColor: "#0966c2" }}
@@ -118,7 +138,7 @@ function FormEditPost() {
           </Form>
         </Modal.Body>
         <Modal.Footer className="justify-content-center">
-          <Button className="modificaBtn" variant="none" onClick={handleClose}>
+          <Button variant="secondary" onClick={handleSubmit}>
             MODIFICA
           </Button>
           <Button className="annullaPost" variant="none" onClick={handleClose}>

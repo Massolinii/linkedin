@@ -15,9 +15,9 @@ import {
 import { Col } from "react-bootstrap";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { createPost } from "../../redux/action/PostAction";
+import { createPost, getPosts } from "../../redux/action/PostAction";
 
-function FormPost({ handleclose3 }) {
+function FormPost({ handleclose }) {
   const [postText, setPostText] = useState("");
   const [writing, setWriting] = useState(false);
   const [formData, setFormData] = useState(new FormData());
@@ -25,15 +25,19 @@ function FormPost({ handleclose3 }) {
   const user = useSelector((state) => state.user.myProfile);
 
   const checkWriting = () => {
-    if (postText.length > 0) {
-      writing ? setWriting(false) : setWriting(true);
+    if (postText.length - 1 !== 0) {
+      setWriting(true);
+    } else {
+      setWriting(false);
     }
 
     console.log(writing);
   };
   const handleSubmit = (e) => {
+    handleclose();
     e.preventDefault();
     dispatch(createPost(postText, formData));
+    dispatch(getPosts);
     setPostText(""); // svuota il campo di input
   };
 
@@ -49,7 +53,7 @@ function FormPost({ handleclose3 }) {
           </div>
           <div className="privacyPost mx-2">
             <h5>{user.username}</h5>
-            <a href="*">
+            <a href="">
               <BsGlobeAmericas className="mx-2" /> Chiunque{" "}
               <BsFillCaretDownFill className="mx-2" />
             </a>
@@ -67,11 +71,11 @@ function FormPost({ handleclose3 }) {
               checkWriting();
             }}
           />
-          {writing ? "true" : "false"}
         </Form.Group>
-        <Form.Group controlId="formFile" className="mb-3">
+        <Form.Group controlId="formFile" className="mb-3 d-none">
           <Form.Label>Choose a pic.</Form.Label>
           <Form.Control
+            id="cliccami"
             type="file"
             onChange={(e) => {
               const file = e.target.files[0];
@@ -84,7 +88,12 @@ function FormPost({ handleclose3 }) {
 
         <div className="d-flex mt-3">
           {/* FOTO */}
-          <Button variant="light" type="button" className="btnn foto">
+          <Button
+            variant="light"
+            type="button"
+            className="btnn foto"
+            onClick={() => document.querySelector("#cliccami").click()}
+          >
             <div className="roundBtn" style={{ backgroundColor: "#0966c2" }}>
               <BsImage style={{ fontSize: "25px", color: "#dbe7e9" }} />
             </div>
@@ -127,14 +136,26 @@ function FormPost({ handleclose3 }) {
           </Col>
           <span>
             <BsClock className="me-3 fs-4 text-secondary" />
-            <Button
-              type="submit"
-              variant="none"
-              className="btnPubblish"
-              disabled
-            >
-              Pubblica
-            </Button>
+            {writing ? (
+              <Button
+                type="button"
+                variant="primary"
+                className="btnPubblish"
+                onClick={handleSubmit}
+              >
+                Pubblica
+              </Button>
+            ) : (
+              <Button
+                type="button"
+                variant="secondary"
+                className="btnPubblish"
+                onClick={handleSubmit}
+                disabled
+              >
+                Pubblica
+              </Button>
+            )}
           </span>
         </Col>
       </Modal.Footer>
