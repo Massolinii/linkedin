@@ -130,7 +130,7 @@ const MyNav2 = () => {
                     <Row className="justify-content-center">
                       <Col>
                         <Link
-                          className="toProfile btn btn-outline-primary py-0 "
+                          className="toProfile btn text-light btn-primary py-0 "
                           to="/profile"
                         >
                           Visualizza profilo

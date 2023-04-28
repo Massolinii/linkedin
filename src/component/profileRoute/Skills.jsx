@@ -28,9 +28,16 @@ const Skills = () => {
           </div>
           <Col>
             <Row>
-              <h5>Nome skills</h5>
-              {/* se volete possiamo mettere l'imamgine a sinistra dello skills come su linkedin vero ma perchè volerci male? */}
-              <p>tipi di skills</p>
+              <h5>Web Dev Basics</h5>
+              <p>HTML, CSS & Javascript</p>
+            </Row>
+            <Row>
+              <h5>Redux</h5>
+              <p>State and action managment through Redux</p>
+            </Row>
+            <Row>
+              <h5><del>SASS</del></h5>
+              <p>Nobody wants to use SASS</p>
             </Row>
           </Col>
         </Row>
