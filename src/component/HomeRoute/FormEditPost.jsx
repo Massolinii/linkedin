@@ -9,6 +9,7 @@ import {
   BsCameraVideo,
   BsCalendar2DateFill,
   BsThreeDots,
+  BsPencil,
 } from "react-icons/bs";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
@@ -29,8 +30,13 @@ function FormEditPost() {
   const handleShow = () => setShow(true);
   return (
     <>
-      <Button variant="link" className="text-dark" onClick={handleShow}>
-        Edit post
+      <Button
+        variant="link"
+        className="text-dark editPost"
+        onClick={handleShow}
+      >
+        <BsPencil className="fs-6 me-2" />
+        Edit Post
       </Button>
 
       <Modal show={show} onHide={handleClose}>
@@ -112,10 +118,10 @@ function FormEditPost() {
           </Form>
         </Modal.Body>
         <Modal.Footer className="justify-content-center">
-          <Button variant="secondary" onClick={handleClose}>
+          <Button className="modificaBtn" variant="none" onClick={handleClose}>
             MODIFICA
           </Button>
-          <Button variant="primary" onClick={handleClose}>
+          <Button className="annullaPost" variant="none" onClick={handleClose}>
             ANNULLA
           </Button>
         </Modal.Footer>

@@ -1,6 +1,6 @@
 import React from "react";
 import { AiOutlinePlus } from "react-icons/ai";
-import { BsBriefcaseFill, BsThreeDots } from "react-icons/bs";
+import { BsBriefcaseFill, BsThreeDots, BsTrash3 } from "react-icons/bs";
 import { FiThumbsUp } from "react-icons/fi";
 import { AiOutlineMessage } from "react-icons/ai";
 import { BsArrowLeftRight } from "react-icons/bs";
@@ -22,7 +22,12 @@ function DeleteModal() {
 
   return (
     <>
-      <Button variant="link" className="text-dark" onClick={handleShow}>
+      <Button
+        variant="link"
+        className="text-dark deletePost"
+        onClick={handleShow}
+      >
+        <BsTrash3 className="fs-6 me-2" />
         Delete post
       </Button>
 
